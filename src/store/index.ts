@@ -1,13 +1,17 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { pageTypes } from "../constants";
+import { pageTypes, toolTypes, characterTypes } from "../constants";
 
 Vue.use(Vuex);
 
+const successes : string[] = [];
+
 export default new Vuex.Store({
   state: {
-    character: "no one yet",
-    currentPage: pageTypes.CHOOSE
+    character: characterTypes.FARMHAND,
+    currentPage: pageTypes.TABLEAU,
+    activeTool: "",
+    successes
   },
   getters: {
     getCharacter: state => {
@@ -15,6 +19,12 @@ export default new Vuex.Store({
     },
     getCurrentPage: state => {
       return state.currentPage
+    }, 
+    getActiveTool: state => {
+      return state.activeTool;
+    },
+    getSuccesses: state => {
+      return state.successes;
     }
   },
   mutations: {
@@ -25,6 +35,14 @@ export default new Vuex.Store({
     setCurrentPage (state, newValue:string) {
       console.log('setting current page to ', newValue);
       state.currentPage = newValue;
+    },
+    setActiveTool (state, newValue:string) {
+      console.log("setting active tool to ", newValue);
+      state.activeTool = newValue;
+    },
+    addSuccess (state, newSuccess:string) {
+      console.log(`adding success ${newSuccess} to success array: ${state.successes}`)
+      state.successes.push(newSuccess);
     }
   },
   actions: {},

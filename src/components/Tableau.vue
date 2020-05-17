@@ -1,48 +1,71 @@
 <template>
   <div class="container">
     <div class="tableau">
-      <div class="item" id="yellow"></div>
+      <!-- SVG click masks -->
+      <div v-on:click="attemptClick($event, 'SHRINE')" v-html="require(`!svg-inline-loader!../assets/flower.svg`)"></div>
+      <!-- End SVG click masks -->
     </div>
     <div class="inventory">
-      <div v-html="buildInventory(characterTools)" class="inventory"></div>
+      <div v-for="tool in characterTools" :key="tool.type">
+        <Tool v-bind="tool"></Tool>
+      </div>
+      <div class="characterImage" v-bind:style="{ backgroundImage: characterImageUrl }"></div>
     </div>
   </div>
 </template>
 <script>
 import store from "@/store";
-import { pageTypes, characterTypes, characters } from "../constants";
+import { pageTypes, characters, tools } from "@/constants";
+import Tool from "@/components/Tool.vue";
 
-function buildInventory(charTools) {
-  let inventory = "";
-  charTools.forEach(tool => {
-    // probably make a component for this
-    inventory += `<div class="tool">${tool.flavorText}</div>`;
-  });
-  return inventory;
+function attemptClick(event, clickTarget) {
+  if (!event.target.matches("polygon")) {
+    return;
+  }
+  const currentTool = store.getters.getActiveTool;
+  if (currentTool.target === clickTarget) {
+    store.commit("addSuccess", currentTool.type);
+    store.commit("setCurrentPage", pageTypes.NARRATIVE);
+  }
+  return;
 }
 
 export default {
   name: "tableau",
+  components: {
+    Tool
+  },
   data() {
     return {
       constants: {
-        pageTypes,
-        characters
+        pageTypes
       }
     };
   },
   methods: {
-    buildInventory
+    attemptClick
   },
   computed: {
     characterTools() {
-      const toolsObj = characters[store.getters.getCharacter].tools;
-      return JSON.parse(JSON.stringify(toolsObj));
+      let toolsObj = characters[store.getters.getCharacter].tools;
+      toolsObj = JSON.parse(JSON.stringify(toolsObj));
+      toolsObj.forEach(tool => {
+        tool.isActive = tool.type === store.getters.getActiveTool.type;
+      });
+      return toolsObj;
+    },
+    characterImageUrl() {
+      const characterName = store.getters.getCharacter;
+      return "url(" + require(`@/assets/${characterName}_ICON.jpg`) + ")";
     }
   }
 };
 </script>
 <style>
+svg {
+  position: absolute;
+  opacity: 0.2;
+}
 .container {
   height: 677px;
   width: 1000px;
@@ -53,9 +76,21 @@ export default {
 
 .tableau {
   background-color: lightgray;
-  background-image: url('../assets/tableau.jpg');
+  background-image: url("../assets/tableau.jpg");
   background-size: contain;
   height: 528px;
+}
+
+.characterImage {
+  position: absolute;
+  right: 20px;
+  height: 130px;
+  width: 130px;
+  /* background-color: lightcoral; */
+  border-radius: 130px;
+  /* background-image: url(characterImageUrl); needs default image */
+  /* background-image: url('../assets/sword_logo.jpg'); */
+  background-size: contain;
 }
 
 .inventory {
@@ -78,7 +113,10 @@ export default {
 
 .item {
   position: absolute;
-  display: none;
+  /* display: none; */
+  background-color: red;
+  width: 100px;
+  height: 100px;
 }
 
 .active {
