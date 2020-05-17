@@ -2,20 +2,22 @@
   <div class="home">
     <ChooseYourCharacter v-if="currentPage == 'CHOOSE'"></ChooseYourCharacter>
     <Tableau v-else-if="currentPage == 'TABLEAU'"></Tableau>
+    <Narrative v-else-if="currentPage == 'NARRATIVE'"></Narrative>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import ChooseYourCharacter from "@/components/ChooseYourCharacter";
 import Tableau from "@/components/Tableau.vue";
+import Narrative from "@/components/Narrative.vue";
 import store from "@/store";
 
 export default {
   name: "Home",
   components: {
-    ChooseYourCharacter, /* eslint-disable-line vue/no-unused-components */
-    Tableau /* eslint-disable-line vue/no-unused-components */
+    ChooseYourCharacter,
+    Tableau,
+    Narrative
   },
   data() {
     return {

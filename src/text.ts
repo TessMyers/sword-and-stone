@@ -70,7 +70,7 @@ export const narratives = {
     ]
   },
   LUNCH: {
-    bodyText: "Noticing a small shrine at the root of the tree, you carefully place half your lunch of bread and cheese in the little offering bowl. As you step back respectfully, the stone figurine rattles and the tree branches begin to shake. You place your palms together and bow yor head, asking the tree spirit for help",
+    bodyText: "Noticing a small shrine at the root of the tree, you carefully place half your lunch of bread and cheese in the little offering bowl. As you step back respectfully, the stone figurine rattles and the tree branches begin to shake. You place your palms together and bow your head, asking the tree spirit for help.",
     swordStatus: [
       "The ground trembles, and the sword begins to slide out of the stone, but stop after just a few inches. The rustling branches subside; the tree spirit has helped as much as it can.",
       "The ground trembles, and the sword slowly slides a few more inches out of the stone. The rustling branches subside; the tree spirit has helped as much as it can.",
