@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="tool"
-    v-bind:class="{ active: isActive }"
-    v-on:click="chooseTool(type)"
-  >
+  <div class="tool" v-bind:class="{ active: isActive, hidden: isHidden }" v-on:click="chooseTool(type)">
     {{ flavorText }}
   </div>
 </template>
@@ -18,12 +14,14 @@ export default {
     type: String,
     flavorText: String,
     imageSrc: String,
-    isActive: Boolean
+    isHidden: Boolean,
+    isActive: Boolean,
+    isSecondary: Boolean
   },
   methods: {
-    chooseTool: tool => {
+    chooseTool(tool) {
       const toolObj = tools[tool];
-      store.commit("setActiveTool", toolObj);
+      this.$emit("toolClicked", toolObj);
     }
   }
 };
@@ -37,5 +35,9 @@ export default {
   height: 130px;
   width: 130px;
   margin: 10px 5px;
+}
+
+.hidden {
+  display: none;
 }
 </style>

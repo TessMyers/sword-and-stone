@@ -21,7 +21,8 @@ export const toolTypes = {
   LANCE: "LANCE",
   LASSO: "LASSO",
   SHIELD: "SHIELD",
-  COW: "COW"
+  COW: "COW",
+  DONE: "DONE"
 }
 
 export const targetTypes = {
@@ -45,14 +46,15 @@ export const tools = {
     flavorText: "A shovel",
     imageSrc: "",
     owner: characterTypes.FARMHAND,
-    target: "THING"
+    target: "PIPES"
   },
   GLOVES: {
     type: toolTypes.GLOVES,
     flavorText: "Gloves",
     imageSrc: "",
     owner: characterTypes.FARMHAND,
-    target: targetTypes.SHARDS
+    target: targetTypes.SHARDS,
+    hasSecondary: true
   },
   LUNCH: {
     type: toolTypes.LUNCH,
@@ -63,11 +65,11 @@ export const tools = {
   },
   SHARDS: {
     type: toolTypes.SHARDS,
-    hidden: true,
+    isHidden: true,
     flavorText: "Sparkling stone shards",
     imageSrc: "",
     owner: characterTypes.FARMHAND,
-    target: targetTypes.NONE
+    target: targetTypes.NONE,
   },
   // MONK
   STAFF: {
@@ -89,11 +91,12 @@ export const tools = {
     flavorText: "A sharp sickle",
     imageSrc: "",
     owner: characterTypes.MONK,
-    target: targetTypes.FLOWERS
+    target: targetTypes.FLOWERS,
+    hasSecondary: true
   },
   FLOWERS: {
     type: toolTypes.FLOWERS,
-    hidden: true,
+    isHidden: true,
     flavorText: "Purple flowers",
     imageSrc: "",
     owner: characterTypes.MONK,
@@ -112,7 +115,8 @@ export const tools = {
     flavorText: "A knight's lasso",
     imageSrc: "",
     owner: characterTypes.KNIGHT,
-    target: targetTypes.COW
+    target: targetTypes.COW,
+    hasSecondary: true
   },
   SHIELD: {
     type: toolTypes.SHIELD,
@@ -123,7 +127,7 @@ export const tools = {
   },
   COW: {
     type: toolTypes.COW,
-    hidden: true,
+    isHidden: true,
     flavorText: "A wild Longhorn cow",
     imageSrc: "",
     owner: characterTypes.KNIGHT,
@@ -134,17 +138,14 @@ export const tools = {
 export const characters = {
   FARMHAND: {
     name: characterTypes.FARMHAND,
-    tools: [tools.SHOVEL, tools.GLOVES, tools.LUNCH],
-    hiddenTools: [tools.SHARDS]
+    tools: [tools.SHOVEL, tools.GLOVES, tools.LUNCH, tools.SHARDS]
   },
   MONK: {
     name: characterTypes.MONK,
-    tools: [tools.STAFF, tools.BALM, tools.SICKLE],
-    hiddenTools: [tools.FLOWERS]
+    tools: [tools.STAFF, tools.BALM, tools.SICKLE, tools.FLOWERS]
   },
   KNIGHT: {
     name: characterTypes.KNIGHT, 
-    tools: [tools.SHIELD, tools.LASSO, tools.LANCE],
-    hiddenTools: [tools.COW]
+    tools: [tools.SHIELD, tools.LASSO, tools.LANCE, tools.COW]
   }
 }

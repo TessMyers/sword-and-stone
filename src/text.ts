@@ -1,16 +1,17 @@
 import { toolTypes } from "./constants"
 
-export const statusOptions = [
+export const continueOptions = [
   "Keep trying", // continue, Try again,
+  "Almost there",
   "Take the sword!"
 ];
 
-export const secondaryActionOptions = {
+export const modalTexts = {
   SHARDS: {
     bodyText: "With your sturdy gardening gloves, you pick up the very sharp stone shards. You:",
     options: [
       {
-        actionText: "Use a shards to make a blood sacrifice to the sword",
+        actionText: "Use a shard to make a blood sacrifice to the sword",
         outcome: "You cut your palm with a razor sharp edge and let the blood drip onto the ancient sword. Nothing happens. Ouch."
       },
       {
@@ -28,15 +29,15 @@ export const secondaryActionOptions = {
     options: [
       {
         actionText: "Eat the flowers",
-        outcome: ""
+        outcome: "FLOWERS"
       },
       {
-        actionText: "",
-        outcome: ""
+        actionText: "uhh do something else",
+        outcome: "something else happens, who'da thunk it "
       },
       {
         actionText: "Squeeze the flower juice onto the sword pommel",
-        outcome: ""
+        outcome: " "
       }
     ]
   },
@@ -56,6 +57,11 @@ export const secondaryActionOptions = {
         outcome: "Your Bovinese must be rusty. The cow flicks her ears at you and continues to munch grass."
       }
     ]
+  },
+  DONE: {
+    bodyText: "You have already done this!",
+    options: [],
+    buttonText: "ok"
   }
 }
 

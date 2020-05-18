@@ -7,9 +7,9 @@
       <h3>Who are you?</h3>
     </div>
     <div class="panels">
-      <div class="panel farmhand" v-on:click="beginGame(constants.characters.FARMHAND.name)"></div>
-      <div class="panel knight" v-on:click="beginGame(constants.characters.KNIGHT.name)"></div>
-      <div class="panel monk" v-on:click="beginGame(constants.characters.MONK.name)"></div>
+      <div class="panel farmhand" v-on:click="beginGame(constants.characters.FARMHAND)"></div>
+      <div class="panel knight" v-on:click="beginGame(constants.characters.KNIGHT)"></div>
+      <div class="panel monk" v-on:click="beginGame(constants.characters.MONK)"></div>
     </div>
   </div>
 </template>
