@@ -1,23 +1,35 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import VuexPersist from 'vuex-persist'
 import { pageTypes } from "../constants";
 
 Vue.use(Vuex);
 
-const successes: string[] = [];
-const inventory: any[] = [];
+const vuexPersist = new VuexPersist({
+  key: 'destiny',
+  storage: window.localStorage
+})
+
+// const successes: string[] = [];
+// const inventory: any[] = [];
+const finishedCharacters: string[] = [];
+
+const initialState = {
+  character: "",
+  activeTool: "",
+  successes: [],
+  inventory: [],
+}
 
 export default new Vuex.Store({
-  state: {
-    character: "",
+  plugins: [vuexPersist.plugin],
+  state:{...initialState,
     currentPage: pageTypes.CHOOSE,
-    activeTool: "",
-    successes,
-    inventory
+    finishedCharacters
   },
   getters: {
     getCharacter: state => {
-      return state.character
+      return state.character;
     },
     getCurrentPage: state => {
       return state.currentPage
@@ -29,14 +41,20 @@ export default new Vuex.Store({
       return state.successes;
     },
     getInventory: state => {
-      return state.inventory
+      return state.inventory;
+    },
+    getFinishedCharacters: state => {
+      return state.finishedCharacters;
+    },
+    canClaim: state => {
+      return state.successes.length === 3;
     }
   },
   mutations: {
-    setCharacter (state, newValue) {
-      console.log('setting character to ', newValue);
-      state.character = newValue.name;
-      state.inventory = newValue.tools;
+    setCharacter (state, characterObject) {
+      console.log('setting character to ', characterObject);
+      state.character = characterObject.name;
+      state.inventory = characterObject.tools;
     },
     setCurrentPage (state, newValue:string) {
       console.log('setting current page to ', newValue);
@@ -57,7 +75,13 @@ export default new Vuex.Store({
           tool.isHidden = !shouldShow;
         }
       });
-    }
+    },
+    endGameForCharacter (state) {
+      state.finishedCharacters.push(state.character);
+      state = Object.assign(state, initialState);
+      state.currentPage = pageTypes.CHOOSE;
+      console.log("state reassigned", state);
+    } 
   },
   actions: {},
   modules: {}

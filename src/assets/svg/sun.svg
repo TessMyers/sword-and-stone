@@ -1,0 +1,12 @@
+<svg class="sun">
+<defs>
+  <style>
+    .sun {
+      left: 792px;
+      top: 0px;
+      height: 90px;
+    }
+  </style>
+</defs>
+  <circle cx="50" cy="50" r="40" fill="red" />
+</svg>

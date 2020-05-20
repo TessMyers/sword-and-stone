@@ -1,15 +1,16 @@
-export const pageTypes = {
+export const pageTypes = Object.freeze({
   CHOOSE: "CHOOSE",
   TABLEAU: "TABLEAU",
-  NARRATIVE: "NARRATIVE"
-}
-export const characterTypes = {
+  NARRATIVE: "NARRATIVE",
+  ENDING: "ENDING"
+})
+export const characterTypes = Object.freeze({
   FARMHAND: "FARMHAND",
   MONK: "MONK",
   KNIGHT: "KNIGHT"
-}
+})
 
-export const toolTypes = {
+export const toolTypes = Object.freeze({
   SHOVEl: "SHOVEL",
   GLOVES: "GLOVES",
   LUNCH: "LUNCH",
@@ -23,9 +24,9 @@ export const toolTypes = {
   SHIELD: "SHIELD",
   COW: "COW",
   DONE: "DONE"
-}
+})
 
-export const targetTypes = {
+export const targetTypes = Object.freeze({
   PIPES: "PIPES",
   SHARDS: "SHARDS",
   SHRINE: "SHRINE",
@@ -37,9 +38,9 @@ export const targetTypes = {
   COW: "COW",
   SUN: "SUN",
   NONE: "NONE"
-}
+})
 
-export const tools = {
+export const tools = Object.freeze({
   // FARMHAND
   SHOVEL: {
     type: toolTypes.SHOVEl,
@@ -133,9 +134,9 @@ export const tools = {
     owner: characterTypes.KNIGHT,
     target: targetTypes.NONE
   }
-};
+});
 
-export const characters = {
+export const characters = Object.freeze({
   FARMHAND: {
     name: characterTypes.FARMHAND,
     tools: [tools.SHOVEL, tools.GLOVES, tools.LUNCH, tools.SHARDS]
@@ -148,4 +149,4 @@ export const characters = {
     name: characterTypes.KNIGHT, 
     tools: [tools.SHIELD, tools.LASSO, tools.LANCE, tools.COW]
   }
-}
+})

@@ -1,0 +1,12 @@
+<svg class="sword">
+<defs>
+  <style>
+    .sword {
+      left: 456px;
+      top: 93px;
+      height: 90px;
+    }
+  </style>
+</defs>
+  <circle cx="50" cy="50" r="40" fill="red" />
+</svg>
