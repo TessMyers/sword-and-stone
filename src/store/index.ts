@@ -7,54 +7,61 @@ Vue.use(Vuex);
 
 const vuexPersist = new VuexPersist({
   key: 'destiny',
-  storage: window.localStorage
+  storage: window.sessionStorage
 })
 
-// const successes: string[] = [];
-// const inventory: any[] = [];
-const finishedCharacters: string[] = [];
+// const initialState = {
+//   character: "",
+//   activeTool: "",
+//   successes: [],
+//   inventory: [],
+// }
 
-const initialState = {
-  character: "",
-  activeTool: "",
-  successes: [],
-  inventory: [],
+function returnFreshCharState() {
+  return {
+    character: "",
+    activeTool: "",
+    successes: [],
+    inventory: []
+  };
 }
+
 
 export default new Vuex.Store({
   plugins: [vuexPersist.plugin],
-  state:{...initialState,
+  state: {
+    charState: returnFreshCharState(),
     currentPage: pageTypes.CHOOSE,
-    finishedCharacters
+    finishedCharacters: []
   },
   getters: {
     getCharacter: state => {
-      return state.character;
+      return state.charState.character;
     },
     getCurrentPage: state => {
-      return state.currentPage
+      return state.currentPage;
     }, 
     getActiveTool: state => {
-      return state.activeTool;
+      return state.charState.activeTool;
     },
     getSuccesses: state => {
-      return state.successes;
+      return state.charState.successes;
     },
     getInventory: state => {
-      return state.inventory;
+      return state.charState.inventory;
     },
     getFinishedCharacters: state => {
       return state.finishedCharacters;
     },
     canClaim: state => {
-      return state.successes.length === 3;
+      return state.charState.successes.length === 3;
     }
   },
   mutations: {
     setCharacter (state, characterObject) {
       console.log('setting character to ', characterObject);
-      state.character = characterObject.name;
-      state.inventory = characterObject.tools;
+      state.charState.character = characterObject.name;
+      state.charState.inventory = characterObject.tools;
     },
     setCurrentPage (state, newValue:string) {
       console.log('setting current page to ', newValue);
@@ -62,26 +69,30 @@ export default new Vuex.Store({
     },
     setActiveTool (state, newValue) {
       console.log("setting active tool to ", newValue, newValue.type);
-      state.activeTool = newValue;
+      state.charState.activeTool = newValue;
     },
     addSuccess (state, newSuccess:string) {
-      console.log(`adding success ${newSuccess} to success array: ${state.successes}`)
-      state.successes.push(newSuccess);
+      console.log(`adding success ${newSuccess} to success array: ${state.charState.successes}`)
+      state.charState.successes.push(newSuccess);
     },
     showHiddenTool (state, shouldShow:boolean) {
-      state.inventory.forEach(tool => {
+      state.charState.inventory.forEach(tool => {
         if (Object.prototype.hasOwnProperty.call(tool, "isHidden")) {
-          console.log(`tool ${tool.type} was hidden, setting isHidden to ${!shouldShow}`);
           tool.isHidden = !shouldShow;
         }
       });
     },
     endGameForCharacter (state) {
-      state.finishedCharacters.push(state.character);
-      state = Object.assign(state, initialState);
+      state.finishedCharacters.push(state.charState.character);
+      state.charState = returnFreshCharState();
       state.currentPage = pageTypes.CHOOSE;
       console.log("state reassigned", state);
-    } 
+    },
+    newGame (state) {
+      state.charState = returnFreshCharState();
+      state.currentPage = pageTypes.CHOOSE,
+      state.finishedCharacters = []; 
+    }
   },
   actions: {},
   modules: {}

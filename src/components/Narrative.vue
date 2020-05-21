@@ -26,9 +26,9 @@ export default {
     navAway: () => {
       if (store.getters.getSuccesses.length === 4) {
         store.commit("endGameForCharacter");
-      } else if (store.getters.getFinishedCharacters.length === 3) {
-        //end the game for real
-        store.commit("setCurrentPage", pageTypes.ENDING);
+        if (store.getters.getFinishedCharacters.length === 3) {
+          store.commit("setCurrentPage", pageTypes.ENDING);
+        }
       } else {
         store.commit("setCurrentPage", pageTypes.TABLEAU);
       }

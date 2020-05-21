@@ -104,11 +104,11 @@ export default {
   text-align: center;
   padding-bottom: 40px;
 }
-
+/* 
 #message {
   background-color: lightgray;
   height: 75px;
   width: 700px;
   margin: 30px auto;
-}
+} */
 </style>

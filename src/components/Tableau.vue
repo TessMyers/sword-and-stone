@@ -10,7 +10,7 @@
       <div v-on:click="attemptClick($event, constants.targetTypes.STONE)" v-html="require(`!svg-inline-loader!../assets/svg/stone.svg`)"></div>
       <div v-on:click="attemptClick($event, constants.targetTypes.CLOUDS)" v-html="require(`!svg-inline-loader!../assets/svg/clouds.svg`)"></div>
       <div v-on:click="attemptClick($event, constants.targetTypes.PIPES)" v-html="require(`!svg-inline-loader!../assets/svg/pipes.svg`)"></div>
-      <div v-on:click="attemptClick($event, constants.targetTypes.FLOWER)" v-html="require(`!svg-inline-loader!../assets/svg/flower.svg`)"></div>
+      <div v-on:click="attemptClick($event, constants.targetTypes.FLOWERS)" v-html="require(`!svg-inline-loader!../assets/svg/flower.svg`)"></div>
       <div v-on:click="attemptClick($event, constants.targetTypes.COW)" v-html="require(`!svg-inline-loader!../assets/svg/cow.svg`)"></div>
       <div v-on:click="attemptClick($event, constants.targetTypes.MENHIR)" v-html="require(`!svg-inline-loader!../assets/svg/menhir.svg`)"></div>
       <div v-on:click="attemptClick($event, constants.targetTypes.SHARDS)" v-html="require(`!svg-inline-loader!../assets/svg/shards.svg`)"></div>
@@ -49,10 +49,13 @@ function attemptClick(event, clickTarget) {
 function trySuccess(clickTarget) {
   const currentTool = store.getters.getActiveTool;
   const successes = store.getters.getSuccesses;
+  console.log(currentTool.type, currentTool.target, clickTarget);
 
-  if (currentTool.hasSecondary) {
-    store.commit("showHiddenTool", true);
-  } else if (currentTool.target === clickTarget || currentTool.type === clickTarget) {
+  if (currentTool.target === clickTarget || currentTool.type === clickTarget) {
+    if (currentTool.hasSecondary) {
+      store.commit("showHiddenTool", true);
+      return;
+    }
     if (successes.includes(currentTool.type)) {
       console.log("you have already done this", successes);
       this.modalProps = modalTexts[toolTypes.DONE];
@@ -130,9 +133,9 @@ export default {
       return "url(" + require(`@/assets/versions/tableau${points}.png`) + ")";
     }
   },
-  created() {
-    console.log("created");
-  }
+  // created() {
+  //   console.log("created");
+  // }
 };
 </script>
 <style>

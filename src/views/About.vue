@@ -17,13 +17,29 @@
       This was my first browser-based game, inspired by a love of fantasy, legends, and exploratory puzzle games. DESTINY is built in Vue.js with
       Typescript: See the code <a>here</a>. The art is watercolor, micron pen, and white ink with minor digital editing. Thank you for playing!
     </p>
-    <center><p>-|---- New Game ----|-</p></center>
+    <center>
+      <div v-on:click="newGame">New Game</div>
+    </center>
     <div class="links">
       <a>MORE GAMES</a> |
       <a>MORE ART</a>
     </div>
   </div>
 </template>
+<script>
+import store from "@/store/index";
+import router from "@/router/index";
+
+export default {
+  name: "about",
+  methods: {
+    newGame: () => {
+      store.commit("newGame");
+      router.push("/");
+    }
+  }
+}
+</script>
 
 <style>
 li {
