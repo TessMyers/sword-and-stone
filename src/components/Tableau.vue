@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <div class="overlay"></div>
+    <!-- <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet' type='text/css'> -->
+    <!-- <div class="overlayText">Pull The Sword From The stone</div> -->
+    <!-- <div class="overlay"></div> -->
     <transition name="modal_fade">
       <Modal v-show="isModalVisible" @close="closeModal" @success="trySuccess" @hideTool="hideTool" v-bind="modalProps"></Modal>
     </transition>
@@ -16,11 +18,15 @@
       <div v-on:click="attemptClick($event, constants.targetTypes.SHARDS)" v-html="require(`!svg-inline-loader!../assets/svg/shards.svg`)"></div>
       <div v-on:click="attemptClick($event, constants.targetTypes.SHRINE)" v-html="require(`!svg-inline-loader!../assets/svg/shrine.svg`)"></div>
 
-      <div v-on:click="attemptClick($event, constants.targetTypes.SWORD)" v-html="require(`!svg-inline-loader!../assets/svg/sword.svg`)"></div>
+      <div v-on:click="attemptClick($event, constants.targetTypes.SWORD)" v-html="require(`!svg-inline-loader!../assets/svg/circle-sword.svg`)"></div>
       <!-- End SVG click masks -->
     </div>
     <div class="inventory">
-      <router-link to="/about" class="aboutLink">ABOUT</router-link>
+      <div class="infoLinks">
+        <div class="link circle">?</div>
+        <div class="link"><router-link to="/about" class="aboutLink">ABOUT</router-link></div>
+        <div class="link"><span class="aboutLink" v-on:click="newGame">NEW GAME</span></div>
+      </div>
       <div v-for="tool in characterTools" :key="tool.type">
         <Tool v-bind="tool" @toolClicked="handleToolClicked"></Tool>
       </div>
@@ -114,6 +120,9 @@ export default {
     hideTool() {
       console.log("hiding tool");
       store.commit("showHiddenTool", false);
+    },
+    newGame() {
+      store.commit("newGame");
     }
   },
   computed: {
@@ -132,7 +141,7 @@ export default {
       const points = store.getters.getSuccesses.length;
       return "url(" + require(`@/assets/versions/tableau${points}.png`) + ")";
     }
-  },
+  }
   // created() {
   //   console.log("created");
   // }
@@ -141,7 +150,7 @@ export default {
 <style>
 svg {
   position: absolute;
-  opacity: 0.5;
+  opacity: 0;
 }
 .container {
   height: 677px;
@@ -160,26 +169,52 @@ svg {
   position: absolute;
 }
 
+/* .overlayText {
+  font-family: 'MedievalSharp';
+  position: absolute;
+  left: 150px;
+  top: 30px;
+  color: rgb(179, 0, 0);
+  font-size: 35pt;
+  text-shadow: 0px 0px 5px rgb(68, 0, 0);
+} */
+
 .tableau {
-  background-color: lightgray;
-  /* background-image: require('../assets/versions/tableau0.png'); */
   background-size: contain;
   height: 528px;
 }
 
-.aboutLink {
+.infoLinks {
   position: absolute;
-  left: 50px;
+  left: 0px;
+  bottom: 0px;
+  display: inline-block;
+  text-align: left;
+  cursor: pointer;
+}
+
+.circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  border: 1px solid white;
+  text-align: center;
+  margin: 0px 0px 5px 0px;
+}
+
+.link,
+.link > a {
+  text-decoration: none;
+  color: white;
+  margin-top: 10px;
 }
 
 .characterImage {
   position: absolute;
-  right: 20px;
+  right: 0px;
   height: 130px;
   width: 130px;
-  /* background-color: lightcoral; */
   border-radius: 130px;
-  /* background-image: url(characterImageUrl); needs default image */
   background-size: contain;
 }
 
@@ -187,34 +222,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: dimgray;
   height: 150px;
-  margin: 13px 0px;
-}
-
-.tool {
-  text-align: center;
-  /* line-height: 130px; */
-  background-color: lightgray;
-  height: 130px;
-  width: 130px;
-  margin: 10px 5px;
-}
-
-.modal_fade-enter-active,
-.modal_fade-leave-active {
-  transition: opacity-color 0.25s ease-out;
-}
-
-/* .body_fade_begin, */
-
-/* .body_fade-enter,
-.body_fade-leave-to {
-  opacity: 0;
-} */
-
-.modal_fade-enter,
-.modal_fade-leave-to {
-  opacity: 0;
+  margin: 8px 0px;
 }
 </style>

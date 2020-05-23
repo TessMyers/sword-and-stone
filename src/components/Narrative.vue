@@ -39,9 +39,8 @@ export default {
       const successes = store.getters.getSuccesses;
       const mostRecentSuccess = successes[successes.length - 1];
 
-      // TODO add <p></p> wrap
       return {
-        bodyText: narratives[mostRecentSuccess].bodyText,
+        bodyText: wrap(narratives[mostRecentSuccess].bodyText),
         status: narratives[mostRecentSuccess].swordStatus[successes.length - 1],
         continueText: continueOptions[successes.length - 1]
       };

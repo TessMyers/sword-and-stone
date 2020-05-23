@@ -1,19 +1,18 @@
 <template>
-  <div class="modal">
-
-    <div class="modal_body" v-if="result">
-      <p>{{ result }}</p>
-      <button @click="close">ok</button>
-    </div>
-
-    <div class="modal_body" v-else>
-      <p>{{ bodyText }}</p>
-      <div v-for="(option, index) in options" v-bind:key="index">
-        <p @click="selectOption(index)">{{ `> ${option.actionText}` }}</p>
+  <div class="modal_container" @click="noop($event)">
+    <div class="modal">
+      <div class="modal_body" v-if="result">
+        <p>{{ result }}</p>
+        <button @click="close">ok</button>
       </div>
-      <button v-if="buttonText" @click="close">{{ buttonText }}</button>
+      <div class="modal_body" v-else>
+        <p>{{ bodyText }}</p>
+        <div v-for="(option, index) in options" v-bind:key="index">
+          <p @click="selectOption(index)">{{ `> ${option.actionText}` }}</p>
+        </div>
+        <button v-if="buttonText" @click="close">{{ buttonText }}</button>
+      </div>
     </div>
-
   </div>
 </template>
 
@@ -46,13 +45,27 @@ export default {
     close() {
       this.result = null;
       this.$emit("close");
+    },
+    noop(event) {
+      event.stopPropagation();
+      console.log("noop stop prop", event);
+      return false;
     }
   }
 };
 </script>
 
 <style scoped>
+.modal_container {
+  /* pointer-events: none; */
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 100vh;
+  width: 100%;
+}
+
 .modal {
+  pointer-events: auto;
   height: 220px;
   width: 390px;
   padding: 30px;
@@ -66,5 +79,15 @@ export default {
 }
 .modal_body {
   text-align: left;
+}
+
+.modal_fade-enter-active,
+.modal_fade-leave-active {
+  transition: opacity-color 0.25s ease-out;
+}
+
+.modal_fade-enter,
+.modal_fade-leave-to {
+  opacity: 0;
 }
 </style>

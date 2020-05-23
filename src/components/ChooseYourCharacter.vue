@@ -4,24 +4,38 @@
     <div id="introText">
       <h1>Destiny</h1>
       <h3>A game of perspective and choice</h3>
-      <h3>Who are you?</h3>
+      <h3>Who will you be?</h3>
     </div>
     <div class="panels">
-      <div
-        class="panel farmhand"
-        v-on:click="beginGame(constants.characters.FARMHAND)"
-        v-bind:class="{ completed: completedChars.includes(constants.characters.FARMHAND.name) }"
-      ></div>
-      <div
-        class="panel knight"
-        v-on:click="beginGame(constants.characters.KNIGHT)"
-        v-bind:class="{ completed: completedChars.includes(constants.characters.KNIGHT.name) }"
-      ></div>
-      <div
-        class="panel monk"
-        v-on:click="beginGame(constants.characters.MONK)"
-        v-bind:class="{ completed: completedChars.includes(constants.characters.MONK.name) }"
-      ></div>
+      <div>
+        <div class="characterTitle">The Farmhand</div>
+        <div
+          class="panel farmhand"
+          v-on:click="beginGame(constants.characters.FARMHAND)"
+          v-bind:class="{ completed: completedChars.includes(constants.characters.FARMHAND.name) }"
+        ></div>
+        <div class="characterTraits">Gentle and Curious</div>
+      </div>
+
+      <div>
+        <div class="characterTitle">The Knight</div>
+        <div
+          class="panel knight"
+          v-on:click="beginGame(constants.characters.KNIGHT)"
+          v-bind:class="{ completed: completedChars.includes(constants.characters.KNIGHT.name) }"
+        ></div>
+        <div class="characterTraits">Strong and Resourceful</div>
+      </div>
+
+      <div>
+        <div class="characterTitle">The Monk</div>
+        <div
+          class="panel monk"
+          v-on:click="beginGame(constants.characters.MONK)"
+          v-bind:class="{ completed: completedChars.includes(constants.characters.MONK.name) }"
+        ></div>
+        <div class="characterTraits">Resolute and Cunning</div>
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +57,7 @@ export default {
   methods: {
     beginGame: character => {
       if (!store.getters.getFinishedCharacters.includes(character.name)) {
+        console.log("CONST",characters.FARMHAND);
         store.commit("setCharacter", character);
         store.commit("setCurrentPage", pageTypes.TABLEAU);
       } else {
@@ -65,6 +80,7 @@ export default {
   position: relative;
   margin: 13px auto 0px auto;
   background-color:black;
+  color: whitesmoke;
 }
 
 .panels {
@@ -82,6 +98,17 @@ export default {
   width: 300px;
   margin: 0px 10px;
   background-size: contain;
+}
+
+.characterTitle {
+  font-size: 20pt;
+  padding: 15px;
+}
+
+.characterTraits {
+  font-size: 16pt;
+  padding: 10px;
+  color: lightgray;
 }
 
 .knight {
@@ -102,7 +129,7 @@ export default {
 
 #introText {
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
 }
 /* 
 #message {

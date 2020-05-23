@@ -10,29 +10,38 @@ const vuexPersist = new VuexPersist({
   storage: window.sessionStorage
 })
 
-// const initialState = {
-//   character: "",
-//   activeTool: "",
-//   successes: [],
-//   inventory: [],
-// }
+interface Tool {
+  type: string,
+  flavorText: string,
+  imageSrc: string,
+  target: string,
+  isActive?: boolean,
+  isHidden?: boolean
+}
+
+// This seems bafflingly unneccesary. Why can't I just declare the typed array literally?
+function returnStringArray() {
+  const arr: string[] = [];
+  return arr;
+}
 
 function returnFreshCharState() {
+  console.log("return fresh char state");
+  const inventory:any[] = []; // TODO replace as TOOL
   return {
     character: "",
     activeTool: "",
-    successes: [],
-    inventory: []
+    successes: returnStringArray(),
+    inventory: inventory,
   };
 }
-
 
 export default new Vuex.Store({
   plugins: [vuexPersist.plugin],
   state: {
     charState: returnFreshCharState(),
     currentPage: pageTypes.CHOOSE,
-    finishedCharacters: []
+    finishedCharacters: returnStringArray()
   },
   getters: {
     getCharacter: state => {
@@ -61,7 +70,7 @@ export default new Vuex.Store({
     setCharacter (state, characterObject) {
       console.log('setting character to ', characterObject);
       state.charState.character = characterObject.name;
-      state.charState.inventory = characterObject.tools;
+      state.charState.inventory = JSON.parse(JSON.stringify(characterObject.tools));
     },
     setCurrentPage (state, newValue:string) {
       console.log('setting current page to ', newValue);
@@ -91,7 +100,7 @@ export default new Vuex.Store({
     newGame (state) {
       state.charState = returnFreshCharState();
       state.currentPage = pageTypes.CHOOSE,
-      state.finishedCharacters = []; 
+      state.finishedCharacters = returnStringArray();
     }
   },
   actions: {},

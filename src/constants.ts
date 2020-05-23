@@ -42,111 +42,99 @@ export const targetTypes = Object.freeze({
 
 export const tools = Object.freeze({
   // FARMHAND
-  SHOVEL: {
+  SHOVEL: Object.freeze({
     type: toolTypes.SHOVEl,
     flavorText: "A shovel",
-    imageSrc: "",
-    owner: characterTypes.FARMHAND,
+    imageName: "shovel_tool.png",
     target: "PIPES"
-  },
-  GLOVES: {
+  }),
+  GLOVES: Object.freeze({
     type: toolTypes.GLOVES,
     flavorText: "Gloves",
-    imageSrc: "",
-    owner: characterTypes.FARMHAND,
+    imageName: "gloves_tool.png",
     target: targetTypes.SHARDS,
     hasSecondary: true
-  },
-  LUNCH: {
+  }),
+  LUNCH: Object.freeze({
     type: toolTypes.LUNCH,
     flavorText: "Bread and cheese",
-    imageSrc: "",
-    owner: characterTypes.FARMHAND,
+    imageName: "lunch_tool.png",
     target: targetTypes.SHRINE
-  },
-  SHARDS: {
+  }),
+  SHARDS: Object.freeze({
     type: toolTypes.SHARDS,
     isHidden: true,
     flavorText: "Sparkling stone shards",
-    imageSrc: "",
-    owner: characterTypes.FARMHAND,
+    imageName: "shards_tool.png",
     target: targetTypes.NONE,
-  },
+  }),
   // MONK
-  STAFF: {
+  STAFF: Object.freeze({
     type: toolTypes.STAFF,
     flavorText: "A holy staff",
-    imageSrc: "",
-    owner: characterTypes.MONK,
+    imageName: "staff_tool.png",
     target: targetTypes.CLOUDS
-  },
-  BALM: {
+  }),
+  BALM: Object.freeze({
     type: toolTypes.BALM,
     flavorText: "Healing balm",
-    imageSrc: "",
-    owner: characterTypes.MONK,
+    imageName: "",
     target: targetTypes.STONE // or sword??
-  },
-  SICKLE: {
+  }),
+  SICKLE: Object.freeze({
     type: toolTypes.SICKLE,
     flavorText: "A sharp sickle",
-    imageSrc: "",
-    owner: characterTypes.MONK,
+    imageName: "",
     target: targetTypes.FLOWERS,
     hasSecondary: true
-  },
-  FLOWERS: {
+  }),
+  FLOWERS: Object.freeze({
     type: toolTypes.FLOWERS,
     isHidden: true,
     flavorText: "Purple flowers",
-    imageSrc: "",
-    owner: characterTypes.MONK,
+    imageName: "flower_tool.png",
     target: targetTypes.NONE
-  },
+  }),
   // KNIGHT
-  LANCE: {
+  LANCE: Object.freeze({
     type: toolTypes.LANCE,
     flavorText: "A sturdy lance",
-    imageSrc: "",
-    owner: characterTypes.KNIGHT,
+    imageName: "",
     target: targetTypes.MENHIR
-  },
-  LASSO: {
+  }),
+  LASSO: Object.freeze({
     type: toolTypes.LASSO,
     flavorText: "A knight's lasso",
-    imageSrc: "",
-    owner: characterTypes.KNIGHT,
+    imageName: "",
     target: targetTypes.COW,
     hasSecondary: true
-  },
-  SHIELD: {
+  }),
+  SHIELD: Object.freeze({
     type: toolTypes.SHIELD,
     flavorText: "A very shiny shield",
-    imageSrc: "",
-    owner: characterTypes.KNIGHT,
+    imageName: "shield_tool.png",
     target: targetTypes.SUN
-  },
-  COW: {
+  }),
+  COW: Object.freeze({
     type: toolTypes.COW,
     isHidden: true,
     flavorText: "A wild Longhorn cow",
-    imageSrc: "",
-    owner: characterTypes.KNIGHT,
+    imageName: "cow_tool.png",
     target: targetTypes.NONE
-  }
+  })
 });
 
 export const characters = Object.freeze({
-  FARMHAND: {
+  FARMHAND: Object.freeze({
     name: characterTypes.FARMHAND,
-    tools: [tools.SHOVEL, tools.GLOVES, tools.LUNCH, tools.SHARDS]
-  },
-  MONK: {
+    tools: [tools.SHOVEL, tools.LUNCH, tools.GLOVES, tools.SHARDS]
+  }),
+  MONK: Object.freeze({
     name: characterTypes.MONK,
     tools: [tools.STAFF, tools.BALM, tools.SICKLE, tools.FLOWERS]
-  },
-  KNIGHT: {
+  }),
+  KNIGHT: Object.freeze({
     name: characterTypes.KNIGHT, 
     tools: [tools.SHIELD, tools.LASSO, tools.LANCE, tools.COW]
-  }
+  })
 })

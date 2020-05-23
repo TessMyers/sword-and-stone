@@ -1,5 +1,10 @@
 <template>
-  <div class="tool" v-bind:class="{ active: isActive, hidden: isHidden }" v-on:click="chooseTool(type)">
+  <div
+    class="tool"
+    v-bind:class="{ active: isActive, hidden: isHidden }"
+    v-bind:style="{ backgroundImage: toolImageUrl }"
+    v-on:click="chooseTool(type)"
+  >
     <div class="tool_text">
       <p>{{ flavorText }}</p>
     </div>
@@ -15,7 +20,7 @@ export default {
   props: {
     type: String,
     flavorText: String,
-    imageSrc: String,
+    imageName: String,
     isHidden: Boolean,
     isActive: Boolean,
     isSecondary: Boolean
@@ -25,21 +30,32 @@ export default {
       const toolObj = tools[tool];
       this.$emit("toolClicked", toolObj);
     }
+  },
+  computed: {
+    toolImageUrl: function() {
+      if (this.imageName !== "") {
+        return "url(" + require(`../assets/tools/${this.imageName}`) + ")";
+      } else {
+        return "";
+      }
+    }
   }
 };
 </script>
 
 <style scoped>
 .tool {
-  background-color: lightgray;
+  background-color: rgb(20, 20, 20);
   height: 130px;
   width: 130px;
-  margin: 10px 5px;
-  position: relative;
+  margin: 20px 10px;
+  /* position: relative; */
+  /* background-image: url("../assets/tools/cow_image.png"); */
+  background-size: contain;
 }
 
 .tool_text {
-  position: absolute;
+  /* position: absolute; */
   height: 130px;
   width: 130px;
   font-size: 14pt;
@@ -53,9 +69,11 @@ export default {
   vertical-align: bottom;
   text-align: center;
   padding: 0px 8px 20px 8px;
+  color: black;
 }
 
 .tool_text:hover {
+  background-color:rgba(255, 255, 255, 0.6);
   opacity: 1;
 }
 
