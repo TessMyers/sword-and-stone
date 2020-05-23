@@ -23,7 +23,7 @@
     </div>
     <div class="inventory">
       <div class="infoLinks">
-        <div class="link circle">?</div>
+        <div class="link circle" @click="showModal">?</div>
         <div class="link"><router-link to="/about" class="aboutLink">ABOUT</router-link></div>
         <div class="link"><span class="aboutLink" v-on:click="newGame">NEW GAME</span></div>
       </div>
@@ -37,7 +37,7 @@
 <script>
 import store from "@/store";
 import { pageTypes, toolTypes, targetTypes } from "@/constants";
-import { modalTexts } from "@/text";
+import { modalTexts, modalTypes, modalTips } from "@/text";
 import Tool from "@/components/Tool.vue";
 import Modal from "@/components/Modal";
 
@@ -97,13 +97,19 @@ export default {
         pageTypes,
         targetTypes
       },
-      modalProps: modalTexts["COW"] //FIX
+      modalProps: this.getHowTo()
     };
   },
   methods: {
     attemptClick,
     trySuccess,
     tryClaimSword,
+    getHowTo() {
+      const characterName = store.getters.getCharacter;
+      const modal = modalTexts[modalTypes.HOWTO];
+      modal.tip = modalTips[characterName];
+      return modal;
+    },
     showModal() {
       this.isModalVisible = true;
     },

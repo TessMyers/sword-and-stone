@@ -1,19 +1,19 @@
 <template>
-  <div class="modal_container" @click="noop($event)">
-    <div class="modal">
-      <div class="modal_body" v-if="result">
-        <p>{{ result }}</p>
-        <button @click="close">ok</button>
-      </div>
-      <div class="modal_body" v-else>
-        <p>{{ bodyText }}</p>
-        <div v-for="(option, index) in options" v-bind:key="index">
-          <p @click="selectOption(index)">{{ `> ${option.actionText}` }}</p>
-        </div>
-        <button v-if="buttonText" @click="close">{{ buttonText }}</button>
+  <!-- <div class="modal_container" @click="noop($event)"> -->
+  <div class="modal">
+    <p v-if="tip" v-html="tip"></p>
+    <div class="modal_body" v-if="result">
+      <p>{{ result }}</p>
+    </div>
+    <div class="modal_body" v-else>
+      <p>{{ bodyText }}</p>
+      <div v-for="(option, index) in options" v-bind:key="index">
+        <p @click="selectOption(index)">{{ `> ${option.actionText}` }}</p>
       </div>
     </div>
+    <button @click="close">ok</button>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -29,7 +29,7 @@ export default {
   props: {
     bodyText: String,
     options: Array,
-    buttonText: String
+    tip: String
   },
   methods: {
     selectOption(index) {
@@ -46,11 +46,11 @@ export default {
       this.result = null;
       this.$emit("close");
     },
-    noop(event) {
-      event.stopPropagation();
-      console.log("noop stop prop", event);
-      return false;
-    }
+    // noop(event) {
+    //   event.stopPropagation();
+    //   console.log("noop stop prop", event);
+    //   return false;
+    // }
   }
 };
 </script>
@@ -65,7 +65,7 @@ export default {
 }
 
 .modal {
-  pointer-events: auto;
+  /* pointer-events: auto; */
   height: 220px;
   width: 390px;
   padding: 30px;

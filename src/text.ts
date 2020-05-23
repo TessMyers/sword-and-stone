@@ -7,6 +7,14 @@ export const continueOptions = [
   "Play again as a different character"
 ];
 
+export const modalTypes = {
+  SHARDS: "SHARDS",
+  FLOWERS: "FLOWERS",
+  COW: "COW",
+  DONE: "DONE",
+  HOWTO: "HOWTO"
+};
+
 export const modalTexts = {
   SHARDS: {
     bodyText: "With your sturdy gardening gloves, you pick up the very sharp stone shards. You:",
@@ -61,9 +69,18 @@ export const modalTexts = {
   },
   DONE: {
     bodyText: "You have already done this!",
-    options: [],
-    buttonText: "ok"
+    options: []
+  },
+  HOWTO: {
+    bodyText: "Your task is to pull the sword from the stone. You have three tools in your inventory, and each tool can be used in some way to help free the sword. Select a tool, and use your mouse to click on elements in the scene to use the tool on that element. Click around and see what happens!",
+    options: []
   }
+}
+
+export const modalTips = {
+  FARMHAND: "You are The Farmhand, and you are <b>gentle</b> and <b>curious.</b>",
+  KNIGHT: "You are The Knight, and you are <b>strong</b> and <b>resourceful.</b>",
+  MONK: "You are The Monk, and you are <b>resolute</b> and <b>cunning.</b>"
 }
 
 export const narratives = {
