@@ -1,5 +1,9 @@
 const execa = require("execa");
 const fs = require("fs");
+const { exec } = require('child_process');
+
+exec("git stash"); // just in case I have local changes I forgot to commit
+console.log("STASHING ANY LOCAL CHANGES");
 
 (async () => {
   try {
