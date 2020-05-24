@@ -56,6 +56,11 @@ export default {
 </script>
 
 <style scoped>
+button {
+  position: absolute;
+  bottom: 30px;
+}
+
 .modal_container {
   /* pointer-events: none; */
   position: absolute;
@@ -65,9 +70,9 @@ export default {
 }
 
 .modal {
-  /* pointer-events: auto; */
+  pointer-events: auto;
   height: 220px;
-  width: 390px;
+  width: 400px;
   padding: 30px;
   background-color: rgb(46, 44, 51);
   position: absolute;
@@ -76,14 +81,21 @@ export default {
   margin-left: -200px;
   z-index: 1;
   color: white;
+  display: inline;
 }
+
 .modal_body {
   text-align: left;
+  vertical-align: middle;
 }
 
 .modal_fade-enter-active,
 .modal_fade-leave-active {
-  transition: opacity-color 0.25s ease-out;
+  transition: opacity 0.25s ease-out;
+}
+
+.modal_fade-leave-active {
+  color: rgb(46, 44, 51);
 }
 
 .modal_fade-enter,

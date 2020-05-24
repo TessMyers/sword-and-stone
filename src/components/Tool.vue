@@ -52,6 +52,8 @@ export default {
   /* position: relative; */
   /* background-image: url("../assets/tools/cow_image.png"); */
   background-size: contain;
+  border: 3px solid black;
+  opacity: 0.6;
 }
 
 .tool_text {
@@ -82,8 +84,8 @@ export default {
 }
 
 .active {
-  border: 1px solid white;
+  /* border: 3px solid #fdd56c; */
   /* opacity: 0; */
-  /* opacity: 1; */
+  opacity: 1;
 }
 </style>

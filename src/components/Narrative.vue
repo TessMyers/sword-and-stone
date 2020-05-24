@@ -61,6 +61,6 @@ export default {
   padding: 10px;
   background-color: lightgray;
   width: fit-content;
-  margin: auto;
+  margin: 30px auto;
 }
 </style>

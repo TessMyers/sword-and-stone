@@ -29,12 +29,12 @@ export const modalTexts = {
       },
       {
         actionText: "Look through the shards",
-        outcome: "Everything looks pink now. Nice."
+        outcome: "You hold two of the shards up like spectacles and look through them. Everything looks pink now. Nice."
       }
     ]
   },
   FLOWERS: {
-    bodyText: "With your sharp sickle, you delicately harvest the deep purple flowers. You:",
+    bodyText: "With your sharp sickle, you delicately harvest the purple flowers. You:",
     options: [
       {
         actionText: "Eat the flowers",
@@ -58,12 +58,12 @@ export const modalTexts = {
         outcome: "This cow is not remotely interested in ramming the stone. With a baleful look in her eye, she deposits a cow pat on your boots."
       },
       {
-        actionText: "Hitch the Longhorn to the sword",
-        outcome: "COW"
-      },
-      {
         actionText: "Ask the Longhorn for help",
         outcome: "Your Bovinese must be rusty. The cow flicks her ears at you and continues to munch grass."
+      },
+      {
+        actionText: "Hitch the Longhorn to the sword",
+        outcome: "COW"
       }
     ]
   },
@@ -78,9 +78,9 @@ export const modalTexts = {
 }
 
 export const modalTips = {
-  FARMHAND: "You are The Farmhand, and you are <b>gentle</b> and <b>curious.</b>",
-  KNIGHT: "You are The Knight, and you are <b>strong</b> and <b>resourceful.</b>",
-  MONK: "You are The Monk, and you are <b>resolute</b> and <b>cunning.</b>"
+  FARMHAND: "You are The Farmhand, and you are <b>gentle</b> and <b>curious</b>",
+  KNIGHT: "You are The Knight, and you are <b>strong</b> and <b>resourceful</b>",
+  MONK: "You are The Monk, and you are <b>resolute</b> and <b>cunning</b>"
 }
 
 export const narratives = {

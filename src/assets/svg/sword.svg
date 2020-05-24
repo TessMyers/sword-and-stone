@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.56 138.02"><defs><style>.cls-1{fill:#cf2026;}</style></defs><title>Sword</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="30.87 35.1 30.87 117.57 22.14 138.02 16.34 121.95 15.34 107.79 12.26 35.1 9.3 41.45 4.08 38.48 0 28.34 15.44 26.22 15.44 7.19 22.77 0 29.18 6.34 28.76 26.22 43.56 29.6 35.95 43.98 30.87 35.1"/></g></g></svg>
+<svg class="sword" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.56 138.02"><defs>
+<style>
+.cls-1{
+  fill:#cf2026;
+}
+.sword {
+  left: 480px;
+  top: 100px;
+  height: 160px;
+}
+</style>
+</defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="30.87 35.1 30.87 117.57 22.14 138.02 16.34 121.95 15.34 107.79 12.26 35.1 9.3 41.45 4.08 38.48 0 28.34 15.44 26.22 15.44 7.19 22.77 0 29.18 6.34 28.76 26.22 43.56 29.6 35.95 43.98 30.87 35.1"/></g></g></svg>

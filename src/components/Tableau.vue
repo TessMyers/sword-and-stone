@@ -18,7 +18,7 @@
       <div v-on:click="attemptClick($event, constants.targetTypes.SHARDS)" v-html="require(`!svg-inline-loader!../assets/svg/shards.svg`)"></div>
       <div v-on:click="attemptClick($event, constants.targetTypes.SHRINE)" v-html="require(`!svg-inline-loader!../assets/svg/shrine.svg`)"></div>
 
-      <div v-on:click="attemptClick($event, constants.targetTypes.SWORD)" v-html="require(`!svg-inline-loader!../assets/svg/circle-sword.svg`)"></div>
+      <div v-on:click="attemptClick($event, constants.targetTypes.SWORD)" v-html="require(`!svg-inline-loader!../assets/svg/sword.svg`)"></div>
       <!-- End SVG click masks -->
     </div>
     <div class="inventory">
@@ -55,7 +55,6 @@ function attemptClick(event, clickTarget) {
 function trySuccess(clickTarget) {
   const currentTool = store.getters.getActiveTool;
   const successes = store.getters.getSuccesses;
-  console.log(currentTool.type, currentTool.target, clickTarget);
 
   if (currentTool.target === clickTarget || currentTool.type === clickTarget) {
     if (currentTool.hasSecondary) {
@@ -63,7 +62,6 @@ function trySuccess(clickTarget) {
       return;
     }
     if (successes.includes(currentTool.type)) {
-      console.log("you have already done this", successes);
       this.modalProps = modalTexts[toolTypes.DONE];
       this.showModal();
       return;
@@ -115,6 +113,7 @@ export default {
     },
     closeModal() {
       this.isModalVisible = false;
+      this.modalProps = this.getHowTo();
     },
     handleToolClicked(toolObj) {
       store.commit("setActiveTool", toolObj);
@@ -148,9 +147,6 @@ export default {
       return "url(" + require(`@/assets/versions/tableau${points}.png`) + ")";
     }
   }
-  // created() {
-  //   console.log("created");
-  // }
 };
 </script>
 <style>
@@ -166,14 +162,15 @@ svg {
   background-color:black;
 }
 
-.overlay {
-  /* background-color: black; */
-  /* z-index: 2; */
-  /* not an ideal height solution */
-  /* height: 100vh; */
-  width: 100%;
-  position: absolute;
-}
+/* .overlay {
+  background-color: black;
+  z-index: 2;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+} */
 
 /* .overlayText {
   font-family: 'MedievalSharp';
