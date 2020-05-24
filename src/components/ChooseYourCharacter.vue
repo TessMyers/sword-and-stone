@@ -3,8 +3,8 @@
   <div class="container">
     <div id="introText">
       <h1>Destiny</h1>
-      <h3>A game of perspective and choice</h3>
-      <h3>Who will you be?</h3>
+      <p class="legend">Legend tells of a sword thrust into a stone, removable by none but the most worthy. It was lost many decades ago, throwing this country into turmoil and conflict. But there is hope that one bold person may claim the fated blade and lead the country to peace and prosperity. Could it be you?</p>
+      <h3>Choose who you will be:</h3>
     </div>
     <div class="panels">
       <div>
@@ -34,7 +34,7 @@
           v-on:click="beginGame(constants.characters.MONK)"
           v-bind:class="{ completed: completedChars.includes(constants.characters.MONK.name) }"
         ></div>
-        <div class="characterTraits">Resolute and Cunning</div>
+        <div class="characterTraits">Confident and Cunning</div>
       </div>
     </div>
   </div>
@@ -73,7 +73,12 @@ export default {
 <style>
 @font-face {
   font-family: "Ringbearer";
-  src: url("/assets/fonts/ringbearer/RINGM___.TTF") format("truetype");
+  src: url("../assets/fonts/ringbearer/RINGM___.TTF") format("truetype");
+}
+
+.legend {
+  font-size: 13pt;
+  font-style: italic;
 }
 
 .container {

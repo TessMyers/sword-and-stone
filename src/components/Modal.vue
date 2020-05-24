@@ -59,7 +59,7 @@ export default {
 button {
   position: absolute;
   bottom: 30px;
-  font-family: "MedievalSharp";
+  font-family: "Ringbearer";
   font-size: 14pt;
 }
 

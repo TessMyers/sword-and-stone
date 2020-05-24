@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>DESTINY</h1>
+    <!-- <div class="swordArt"></div> -->
     <h2>Design, art, and development by Tess Myers</h2>
     <h4>With thanks to Ally Yancey: my sounding board, supporter, and photoshop navigatrix</h4>
     <h4>And to my early beta testers,</h4>
@@ -56,6 +57,13 @@ li {
 .about > p > a {
   text-decoration: underline;
 }
+
+/* .swordArt {
+  background-image: url("../assets/sword.png");
+  background-size: contain;
+  height: 100px;
+  width: 300px;
+} */
 
 .info {
   margin: 50px 0px 40px 0px;

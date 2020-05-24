@@ -15,11 +15,11 @@ export default {
   font-family: "MedievalSharp";
   src: url("/assets/fonts/MedievalSharp/MedievalSharp-Regular.ttf");
 }
-
+/* 
 @font-face {
   font-family: "Ringbearer";
   src: url("/assets/fonts/ringbearer/RINGM___.TTF") format("truetype");
-}
+} */
 
 body {
   background-color: black;
