@@ -3,7 +3,10 @@
     <p v-for="(paragraph, index) in endText" v-bind:key="index">
       {{ paragraph }}
     </p>
-    <button v-on:click="newGame">Reset game</button>
+    <center>
+      <h3>THE END</h3>
+      <button v-on:click="newGame">Reset game</button>
+    </center>
   </div>
 </template>
 <script>
