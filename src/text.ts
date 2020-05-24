@@ -3,7 +3,7 @@ import { toolTypes } from "./constants"
 export const continueOptions = [
   "Continue", // continue, Try again,
   "Almost there",
-  "Take the sword!",
+  "Take the sword",
   "Play again as a different character"
 ];
 
@@ -128,7 +128,7 @@ export const narratives = {
     ]
   },
   BALM: {
-    bodyText: ["You know a solution to this problem! Reaching into your robes, you pull out the jar of healing balm that you always keep with you. With a quiet pop, the cork comes free and you carefully smear some of the balm at the junction of sword and stone. After a few moments, the balm has done its work; no mere stone can withstand the power of a soothing balm made for cracked old hands"],
+    bodyText: ["You know a solution to this problem! Reaching into your robes, you pull out the jar of healing balm that you always keep with you. With a quiet pop, the cork comes free and you carefully smear some of the balm at the junction of sword and stone. After a few moments, the balm has done its work; no mere stone can withstand the power of a soothing balm made for cracked old hands."],
     swordStatus: [
       "With a heave, you haul on the hilt of the sword. Greased by the balm, the blade slides out part way but shudders to a halt. You will need to try something else, if you wish to free this sword completely",
       "With a heave, you haul on the hilt of the sword. Greased by the balm, the blade slides a further few inches out of the entrapping stone. You seem to have reached the limits of your physical power",
@@ -164,7 +164,7 @@ export const narratives = {
     ]
   },
   SHIELD: {
-    bodyText: ["You unstrap your shield, and turn it over to expose the very shiny convex back surface. With an eye to the sky, you estimate the angles required and position your shield such that the sun’s bright light is caught and reflected into the stone. Passing through the crystal material, the solar rays hit the blade of the sword and begin to heat the glimmering steel.",
+    bodyText: ["You unstrap your shield, and turn it over to expose the highly reflective convex back surface. With an eye to the sky, you estimate the angles required and position your shield such that the sun’s bright light is caught and reflected into the stone. Passing through the crystal material, the solar rays hit the blade of the sword and begin to heat the glimmering steel.",
     "You probably should have brought eye protection for this."
     ],
     swordStatus: [
@@ -174,7 +174,7 @@ export const narratives = {
     ]
   },
   COW: {
-    bodyText: ["Propping your sturdy lance up as an overhead fulcrum, you loop one end of your lasso around the sword hilt and hitch the other end to the placid Longhorn cow. After some initial resistance she is cajoled into forward progress, exerting her considerable strength and mass against the firmly stuck sword.",
+    bodyText: ["Driving your sturdy lance into the ground to create a fulcrum, you loop one end of your lasso around the sword hilt and hitch the other end to the placid Longhorn cow. After some initial resistance she is cajoled into forward progress, exerting her considerable strength and mass against the firmly stuck sword.",
      "Your lance creaks under the strain, but the heavy wood holds fast. Archimedes would be proud of your improvised lever."
     ],
     swordStatus: [
@@ -185,7 +185,7 @@ export const narratives = {
   },
   KNIGHT_ENDING: {
     bodyText: ["You reach out and take the sword, its wrapped hilt cool in your hand. With an experimental swing, you test the heft and balance. Not bad.", 
-    "Resting for a moment, you look around you. The interdependence of the glade has revealed itself: now that you have unblocked the stream and cleared the obstructing sword, you can see how the spring feeds through the pipes and into the stone, which has become a tranquil fountain. The slowly replenishing pool at its base will sustain fresh growth and revitalize this peaceful spot.", 
+    "Resting for a moment, you look around you. The interdependence of the glade has revealed itself: now that you have unblocked the stream and cleared the obstructing sword, you can see how the spring feeds through the pipes and into the stone, which has now become a tranquil fountain. The slowly replenishing pool at its base will sustain fresh growth and revitalize this peaceful spot.", 
     "You hold the sword up and eye its length, examining the intricate metalwork. This sword, spoken of in legend and sought by many, is now yours. "],
     swordStatus: [0,0,0,""]
   },
@@ -195,7 +195,7 @@ export const end = [
   "A soft breeze rustles through the long grass as you hold the sword. Mellow birdsong comes from high in the tree, complimenting the pleasant gurgling of the fountain.",
   "It is unknown what people or civilization first built the fountain, but for ages it persisted, quietly bringing serenity and healing to the country. The blessed waters were sought out not only by the sick and hurt, but leaders and warriors also made pilgrimages in search of peace and reason. As a result, accords were made instead of bloodshed, and the realm prospered. ",
   "Legend spoke of a mighty sword, the loss of which began an era of war and calamity. Indeed, the sword did play a role in this decline: for when the blade was thrust into the holy fountain, it stoppered the flow of water. The pool dried up and the once-thriving tree shriveled and began to die. Leaders and warriors no longer came to find humility in the cool shade of the glade, choosing instead to squabble over a lost weapon as cities fell and crops failed.",
-  "In pulling the sword from the stone, you have restored balance to this sacred place. The spring now feeds merrily into the complex system of pipes that in turn provide for and power the fountain. The crystal stone is once again whole and holy, quietly bubbling blessed waters into a pool that will revitalize the glade. The ancient tree, under which so many great leaders have found temperance and wisdom, begins to heal and grow.",
+  "In pulling the sword from the stone, you have restored balance to this sacred place. The spring now feeds merrily into the complex system of pipes that in turn provide for and power the fountain. The crystal stone is once again whole and holy, quietly bubbling blessed waters into a pool that will revitalize the glade. The ancient tree, under which so many great leaders have once found temperance and wisdom, begins to heal and grow.",
   "You look down at the sword in your hands, and you see that the blade is stained by the blood of kings and innocents alike. What would happen if this sword were to reappear, after so many years? How many lives would be lost, by its edge and for its sake?",
   "You toss the sword away. It will rust and be swallowed by the earth soon. Its iron will be reclaimed and the shining jewel in the pommel will fall off and roll away, perhaps to be discovered by a curious child in search of shiny objects. You take one last look at the peaceful scene before you, at the gnarled tree that will bloom this year, at the water that burbles gently over the shining stone surface, and you continue on your way."
 ]

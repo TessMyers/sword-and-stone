@@ -8,7 +8,7 @@
     <div class="modal_body" v-else>
       <p>{{ bodyText }}</p>
       <div v-for="(option, index) in options" v-bind:key="index">
-        <p @click="selectOption(index)">{{ `> ${option.actionText}` }}</p>
+        <p class="option" @click="selectOption(index)">{{ `> ${option.actionText}` }}</p>
       </div>
     </div>
     <button @click="close">OK</button>
@@ -91,6 +91,14 @@ button {
 .modal_body {
   text-align: left;
   /* vertical-align: middle; */
+}
+
+.option {
+  cursor: pointer;
+}
+
+.option:hover {
+  font-weight: bold;
 }
 
 .modal_fade-enter-active,

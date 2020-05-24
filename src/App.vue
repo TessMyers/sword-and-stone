@@ -24,6 +24,11 @@ export default {
 body {
   background-color: black;
 }
+.button {
+  cursor: pointer;
+  font-family: Ringbearer;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,10 +1,14 @@
 <template>
   <!DOCTYPE html>
   <div class="container">
-    <div id="introText">
-      <h1>Destiny</h1>
-      <p class="legend">Legend tells of a sword thrust into a stone, removable by none but the most worthy. It was lost many decades ago, throwing this country into turmoil and conflict. But there is hope that one bold person may claim the fated blade and lead the country to peace and prosperity. Could it be you?</p>
-      <h3>Choose who you will be:</h3>
+    <div class="introText">
+      <div class="titlePanel">
+        <div class="swordImage"></div>
+        <span class="title">Destiny</span>
+        <div class="swordImage reverse"></div>
+      </div>
+      <p class="legend">Legend tells of a sword thrust into a stone, removable by none but the most worthy. It was lost many decades ago, throwing this country into turmoil and conflict. But there is hope that one bold person may claim the fated blade and lead the country to peace and prosperity. Could it be you? Choose your identity:</p>
+      <!-- <h3>Choose who you will be:</h3> -->
     </div>
     <div class="panels">
       <div>
@@ -76,6 +80,41 @@ export default {
   src: url("../assets/fonts/ringbearer/RINGM___.TTF") format("truetype");
 }
 
+.introText {
+  text-align: center;
+  margin-top: 30px;
+
+  /* padding-bottom: 10px; */
+}
+
+.title {
+  font-family: Ringbearer;
+  font-size: 34pt;
+  margin: 0px 30px;
+}
+
+.titlePanel {
+  display: flex;
+  margin: auto;
+  width: fit-content;
+}
+
+.swordImage {
+  background-image: url("../assets/sword_vector.png");
+  height: 36px;
+  width: 170px;
+  background-size: contain;
+  margin-top: 8px;
+    /* background-image: url("../assets/swordbw.png"); */
+  /* height: 50px;
+  width: 150px; */
+}
+
+.reverse {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
 .legend {
   font-size: 12pt;
   font-style: italic;
@@ -99,9 +138,10 @@ export default {
 
 .panel {
   height: 400px;
-  width: 300px;
+  width: 301px;
   margin: 0px 10px;
   background-size: contain;
+  cursor: pointer;
 }
 
 .characterTitle {
@@ -115,6 +155,7 @@ export default {
   font-size: 16pt;
   padding: 10px;
   color: lightgray;
+  font-style: italic;
 }
 
 .knight {
@@ -133,8 +174,10 @@ export default {
   opacity: 0.4;
 }
 
-#introText {
+.introText {
   text-align: center;
-  padding-bottom: 10px;
+  margin-top: 30px;
+
+  /* padding-bottom: 10px; */
 }
 </style>

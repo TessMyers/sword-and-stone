@@ -2,8 +2,8 @@
   <div class="about">
     <h1>DESTINY</h1>
     <!-- <div class="swordArt"></div> -->
-    <h2>Design, art, and development by Tess Myers</h2>
-    <h4>With thanks to Ally Yancey: my sounding board, supporter, and photoshop navigatrix</h4>
+    <h2>Design, art, and development by <a href="http://www.tessmyers.com/">Tess Myers</a></h2>
+    <h4>With thanks to <a href="https://www.instagram.com/_the_sum_/">Ally Yancey</a>: my sounding board, supporter, and photoshop navigatrix</h4>
     <h4>And to my early beta testers,</h4>
     <ul>
       <li>A Person</li>
@@ -19,7 +19,7 @@
       Typescript: See the code <a href="https://github.com/TessMyers/sword-and-stone/">here</a>. The art is watercolor, micron pen, and white ink with minor digital editing. Thank you for playing!
     </p>
     <center>
-      <div class="newGame" v-on:click="newGame">New Game</div>
+      <div class="button newGame" v-on:click="newGame">New Game</div>
     </center>
     <div class="links">
       <a>MORE GAMES</a> |
@@ -56,9 +56,6 @@ a {
   margin: 75px;
   /* color: #cecece; */
   color: white;
-}
-
-.links > a {
   text-decoration: none;
 }
 

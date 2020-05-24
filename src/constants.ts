@@ -118,7 +118,7 @@ export const tools = Object.freeze({
   COW: Object.freeze({
     type: toolTypes.COW,
     isHidden: true,
-    flavorText: "A wild Longhorn cow",
+    flavorText: "A wild Longhorn",
     imageName: "cow_tool.png",
     target: targetTypes.NONE
   })
@@ -127,7 +127,7 @@ export const tools = Object.freeze({
 export const characters = Object.freeze({
   FARMHAND: Object.freeze({
     name: characterTypes.FARMHAND,
-    tools: [tools.SHOVEL, tools.LUNCH, tools.GLOVES, tools.SHARDS]
+    tools: [tools.GLOVES, tools.LUNCH, tools.SHOVEL, tools.SHARDS]
   }),
   MONK: Object.freeze({
     name: characterTypes.MONK,

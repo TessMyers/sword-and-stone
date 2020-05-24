@@ -184,6 +184,7 @@ svg {
 .tableau {
   background-size: contain;
   height: 528px;
+  cursor: crosshair;
 }
 
 .infoLinks {
