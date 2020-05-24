@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: "/sword-and-stone /"
+  publicPath: "/sword-and-stone/"
 }
