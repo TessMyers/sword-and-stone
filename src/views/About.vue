@@ -6,7 +6,7 @@
     <h4>With thanks to Ally Yancey: my sounding board, supporter, and photoshop navigatrix</h4>
     <h4>And to my early beta testers,</h4>
     <ul>
-      <li>Wendell Britt</li>
+      <li>A Person</li>
       <li>other name</li>
       <li>some other people</li>
       <li>someone else</li>
@@ -16,14 +16,14 @@
     </ul>
     <p class="info">
       This was my first browser-based game, inspired by a love of fantasy, legends, and exploratory puzzle games. DESTINY is built in Vue.js with
-      Typescript: See the code <a>here</a>. The art is watercolor, micron pen, and white ink with minor digital editing. Thank you for playing!
+      Typescript: See the code <a href="https://github.com/TessMyers/sword-and-stone/">here</a>. The art is watercolor, micron pen, and white ink with minor digital editing. Thank you for playing!
     </p>
     <center>
-      <div v-on:click="newGame">New Game</div>
+      <div class="newGame" v-on:click="newGame">New Game</div>
     </center>
     <div class="links">
       <a>MORE GAMES</a> |
-      <a>MORE ART</a>
+      <a href="https://www.instagram.com/tesslacoiled/">MORE ART</a>
     </div>
   </div>
 </template>
@@ -47,15 +47,25 @@ li {
   list-style-type: none;
 }
 
+a {
+  color: white;
+}
+
 .about {
   text-align: left;
-  margin: 100px;
+  margin: 75px;
   /* color: #cecece; */
   color: white;
 }
 
-.about > p > a {
-  text-decoration: underline;
+.links > a {
+  text-decoration: none;
+}
+
+.newGame {
+  border: 2px solid white;
+  width: fit-content;
+  padding: 10px;
 }
 
 /* .swordArt {

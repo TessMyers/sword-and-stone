@@ -77,7 +77,7 @@ export default {
 }
 
 .legend {
-  font-size: 13pt;
+  font-size: 12pt;
   font-style: italic;
 }
 

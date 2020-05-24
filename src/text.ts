@@ -124,7 +124,7 @@ export const narratives = {
     swordStatus: [
       "As the spots clear from your eyes, you see that the sword has been pushed partway out of the stone. Smoke curls around the sword’s hilt, but it remains partially embedded in the stone.",
       "As the spots clear from your eyes, you see that the sword has been pushed another third of the way out of the stone. Smoke curls gently around the sword’s hilt, but it is not yet free",
-      "As the spots clear from your eyes, you see that the lightning strike has blown the sword free from the stone. Soot streaks the blade, but the pommel shimmers brightly."
+      "As the spots clear from your eyes, you see that the lightning strike has blown the sword free from the stone. Soot streaks the blade, but the hilt shines bright."
     ]
   },
   BALM: {
