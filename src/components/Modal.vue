@@ -11,7 +11,7 @@
         <p @click="selectOption(index)">{{ `> ${option.actionText}` }}</p>
       </div>
     </div>
-    <button @click="close">ok</button>
+    <button @click="close">OK</button>
   </div>
   <!-- </div> -->
 </template>
@@ -59,6 +59,8 @@ export default {
 button {
   position: absolute;
   bottom: 30px;
+  font-family: "MedievalSharp";
+  font-size: 14pt;
 }
 
 .modal_container {
@@ -70,7 +72,7 @@ button {
 }
 
 .modal {
-  pointer-events: auto;
+  /* pointer-events: auto; */
   height: 220px;
   width: 400px;
   padding: 30px;
@@ -80,13 +82,15 @@ button {
   left: 50%;
   margin-left: -200px;
   z-index: 1;
-  color: white;
-  display: inline;
+  color: whitesmoke;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
 .modal_body {
   text-align: left;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 
 .modal_fade-enter-active,

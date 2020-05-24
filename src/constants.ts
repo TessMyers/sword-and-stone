@@ -72,19 +72,19 @@ export const tools = Object.freeze({
   STAFF: Object.freeze({
     type: toolTypes.STAFF,
     flavorText: "A holy staff",
-    imageName: "staff_tool.png", //replace
+    imageName: "staff_tool.png",
     target: targetTypes.CLOUDS
   }),
   BALM: Object.freeze({
     type: toolTypes.BALM,
     flavorText: "Healing balm",
-    imageName: "",
+    imageName: "balm_tool.png",
     target: targetTypes.STONE
   }),
   SICKLE: Object.freeze({
     type: toolTypes.SICKLE,
     flavorText: "A sharp sickle",
-    imageName: "",
+    imageName: "sickle_tool.png",
     target: targetTypes.FLOWERS,
     hasSecondary: true
   }),
@@ -92,7 +92,7 @@ export const tools = Object.freeze({
     type: toolTypes.FLOWERS,
     isHidden: true,
     flavorText: "Purple flowers",
-    imageName: "flower_tool.png", //replace
+    imageName: "flower_tool.png",
     target: targetTypes.NONE
   }),
   // KNIGHT
@@ -112,14 +112,14 @@ export const tools = Object.freeze({
   SHIELD: Object.freeze({
     type: toolTypes.SHIELD,
     flavorText: "A very shiny shield",
-    imageName: "shield_tool.png", //replace
+    imageName: "shield_tool.png",
     target: targetTypes.SUN
   }),
   COW: Object.freeze({
     type: toolTypes.COW,
     isHidden: true,
     flavorText: "A wild Longhorn cow",
-    imageName: "cow_tool.png", //replace
+    imageName: "cow_tool.png",
     target: targetTypes.NONE
   })
 });

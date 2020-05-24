@@ -57,11 +57,8 @@ export default {
   methods: {
     beginGame: character => {
       if (!store.getters.getFinishedCharacters.includes(character.name)) {
-        console.log("CONST",characters.FARMHAND);
         store.commit("setCharacter", character);
         store.commit("setCurrentPage", pageTypes.TABLEAU);
-      } else {
-        console.log("YOU HAVE ALREADY BEEN THIS CHARACTER");
       }
     }
   },
@@ -74,10 +71,15 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: "Ringbearer";
+  src: url("/assets/fonts/ringbearer/RINGM___.TTF") format("truetype");
+}
+
 .container {
+  position: relative;
   height: 677px;
   width: 1000px;
-  position: relative;
   margin: 13px auto 0px auto;
   background-color:black;
   color: whitesmoke;
@@ -88,19 +90,18 @@ export default {
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: black;
 }
 
 .panel {
-  background-color: lightgray;
   height: 400px;
-  /*width: 275px;*/
   width: 300px;
   margin: 0px 10px;
   background-size: contain;
 }
 
 .characterTitle {
+  /* import font if using */
+  font-family: Ringbearer;
   font-size: 20pt;
   padding: 15px;
 }
@@ -131,11 +132,4 @@ export default {
   text-align: center;
   padding-bottom: 10px;
 }
-/* 
-#message {
-  background-color: lightgray;
-  height: 75px;
-  width: 700px;
-  margin: 30px auto;
-} */
 </style>

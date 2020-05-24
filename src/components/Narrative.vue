@@ -48,10 +48,9 @@ export default {
   }
 };
 </script>
-
 <style scoped>
 .narrativePage {
-  color: white;
+  color: whitesmoke;
   text-align: left;
   padding: 100px;
   font-size: 14pt;

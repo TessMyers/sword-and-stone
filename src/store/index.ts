@@ -19,15 +19,13 @@ interface Tool {
   isHidden?: boolean
 }
 
-// This seems bafflingly unneccesary. Why can't I just declare the typed array literally?
 function returnStringArray() {
   const arr: string[] = [];
   return arr;
 }
 
 function returnFreshCharState() {
-  console.log("return fresh char state");
-  const inventory:any[] = []; // TODO replace as TOOL
+  const inventory:Tool[] = [];
   return {
     character: "",
     activeTool: "",
@@ -68,20 +66,20 @@ export default new Vuex.Store({
   },
   mutations: {
     setCharacter (state, characterObject) {
-      console.log('setting character to ', characterObject);
+      console.log('Setting character to (name):', characterObject.name);
       state.charState.character = characterObject.name;
       state.charState.inventory = JSON.parse(JSON.stringify(characterObject.tools));
     },
     setCurrentPage (state, newValue:string) {
-      console.log('setting current page to ', newValue);
+      console.log('Setting current page to: ', newValue);
       state.currentPage = newValue;
     },
     setActiveTool (state, newValue) {
-      console.log("setting active tool to ", newValue, newValue.type);
+      console.log("Setting active tool to (type): ", newValue.type);
       state.charState.activeTool = newValue;
     },
     addSuccess (state, newSuccess:string) {
-      console.log(`adding success ${newSuccess} to success array: ${state.charState.successes}`)
+      console.log(`Adding success ${newSuccess} to success array: ${state.charState.successes}`)
       state.charState.successes.push(newSuccess);
     },
     showHiddenTool (state, shouldShow:boolean) {
@@ -102,7 +100,5 @@ export default new Vuex.Store({
       state.currentPage = pageTypes.CHOOSE,
       state.finishedCharacters = returnStringArray();
     }
-  },
-  actions: {},
-  modules: {}
+  }
 });

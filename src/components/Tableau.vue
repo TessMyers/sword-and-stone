@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <!-- <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet' type='text/css'> -->
+    <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet' type='text/css'>
     <!-- <div class="overlayText">Pull The Sword From The stone</div> -->
     <!-- <div class="overlay"></div> -->
     <transition name="modal_fade">
@@ -90,7 +90,6 @@ export default {
   data() {
     return {
       isModalVisible: false,
-      image: "../assets/versions/tableau0.png", //remove
       constants: {
         pageTypes,
         targetTypes
@@ -140,7 +139,7 @@ export default {
     },
     characterImageUrl() {
       const characterName = store.getters.getCharacter;
-      return "url(" + require(`@/assets/${characterName}_ICON.jpg`) + ")";
+      return "url(" + require(`@/assets/${characterName}_ICON.png`) + ")";
     },
     backgroundImageUrl() {
       const points = store.getters.getSuccesses.length;
@@ -202,7 +201,7 @@ svg {
   border-radius: 20px;
   border: 1px solid white;
   text-align: center;
-  margin: 0px 0px 5px 0px;
+  margin: 0px 0px 15px 0px;
 }
 
 .link,
