@@ -1,7 +1,7 @@
 import { toolTypes } from "./constants"
 
 export const continueOptions = [
-  "Keep trying", // continue, Try again,
+  "Continue", // continue, Try again,
   "Almost there",
   "Take the sword!",
   "Play again as a different character"

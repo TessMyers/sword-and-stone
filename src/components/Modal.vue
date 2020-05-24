@@ -11,7 +11,7 @@
         <p @click="selectOption(index)">{{ `> ${option.actionText}` }}</p>
       </div>
     </div>
-    <button @click="close">OK</button>
+    <button v-if="result" @click="close">OK</button>
   </div>
   <!-- </div> -->
 </template>
