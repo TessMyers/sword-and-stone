@@ -1,8 +1,6 @@
 import thunderSmacks from "./assets/audio/thunder_with_thumps.mp3";
 import distantThunder from "./assets/audio/distant_thunder.mp3"
 import cork from "./assets/audio/cork.mp3";
-// import cuttingFlowers from "./assets/audio/cuttingflowers.mp3";
-// import bread from "./assets/audio/cuttingbread.mp3";
 import rocksSplash from "./assets/audio/rocksplash.mp3";
 import sunvoom from "./assets/audio/sunvoom.mp3";
 import clinkBreeze from "./assets/audio/clink_and_breeze.mp3";
@@ -21,13 +19,13 @@ import bowlRattle03 from "./assets/audio/bowl_rattle03.mp3";
 import moo01 from "./assets/audio/moo01.mp3";
 import moo02 from "./assets/audio/moo02.mp3";
 import moo03 from "./assets/audio/moo03.mp3";
-import mooSecondary from "./assets/audio/moo_success.mp3";
+import mooSecondary from "./assets/audio/moo_secondary.mp3";
 
 import rattle03 from "./assets/audio/rattle03.mp3";
 import rattle04 from "./assets/audio/rattle04.mp3";
 import rattle06 from "./assets/audio/rattle06.mp3";
 import rattle07 from "./assets/audio/rattle07.mp3";
-import rattleSecondary from "./assets/audio/rattle05.mp3";
+import rattleSecondary from "./assets/audio/rattleSecondary.mp3";
 
 import clank01 from "./assets/audio/clank01_echo.mp3";
 import clank02 from "./assets/audio/clank02_echo.mp3";
