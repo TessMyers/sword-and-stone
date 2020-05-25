@@ -1,0 +1,13 @@
+<svg class="flock">
+<defs>
+  <style>
+    .flock {
+      left: 366px;
+      top: 90px;
+      height: 22px;
+      width: 22px;
+    }
+  </style>
+</defs>
+  <circle cx="10" cy="10" r="10" fill="red" />
+</svg>

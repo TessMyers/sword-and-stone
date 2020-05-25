@@ -1,0 +1,85 @@
+import thunderSmacks from "./assets/audio/thunder_with_thumps.mp3";
+import distantThunder from "./assets/audio/distant_thunder.mp3"
+import cork from "./assets/audio/cork.mp3";
+// import cuttingFlowers from "./assets/audio/cuttingflowers.mp3";
+// import bread from "./assets/audio/cuttingbread.mp3";
+import rocksSplash from "./assets/audio/rocksplash.mp3";
+import sunvoom from "./assets/audio/sunvoom.mp3";
+import clinkBreeze from "./assets/audio/clink_and_breeze.mp3";
+import diggingPipes from "./assets/audio/digging_and_pipes.mp3";
+import swordDraw from "./assets/audio/sworddraw.mp3";
+import flock from "./assets/audio/flock01.mp3";
+
+import caw1 from "./assets/audio/caw01.mp3";
+import caw2 from "./assets/audio/caw02.mp3";
+import caw3 from "./assets/audio/caw03.mp3";
+
+import bowlRattle01 from "./assets/audio/bowl_rattle01.mp3";
+import bowlRattle02 from "./assets/audio/bowl_rattle02.mp3";
+import bowlRattle03 from "./assets/audio/bowl_rattle03.mp3";
+
+import moo01 from "./assets/audio/moo01.mp3";
+import moo02 from "./assets/audio/moo02.mp3";
+import moo03 from "./assets/audio/moo03.mp3";
+import mooSecondary from "./assets/audio/moo_success.mp3";
+
+import rattle03 from "./assets/audio/rattle03.mp3";
+import rattle04 from "./assets/audio/rattle04.mp3";
+import rattle06 from "./assets/audio/rattle06.mp3";
+import rattle07 from "./assets/audio/rattle07.mp3";
+import rattleSecondary from "./assets/audio/rattle05.mp3";
+
+import clank01 from "./assets/audio/clank01_echo.mp3";
+import clank02 from "./assets/audio/clank02_echo.mp3";
+import clank03 from "./assets/audio/clank03_echo.mp3";
+
+import rockRattle01 from "./assets/audio/rocks_rattle01.mp3";
+import rockRattle02 from "./assets/audio/rocks_rattle02.mp3";
+import rockRattle03 from "./assets/audio/rocks_rattle03.mp3";
+
+import flowersSecondary from "./assets/audio/flowersSecondary.mp3";
+import flowers02 from "./assets/audio/flowers02.mp3";
+import flowers03 from "./assets/audio/flowers03.mp3";
+import flowers04 from "./assets/audio/flowers04.mp3";
+
+import grass01 from "./assets/audio/grass01.mp3";
+import grass02 from "./assets/audio/grass02.mp3";
+
+export const soundMap:any = {
+  "SWORD": { audio: [new Audio(swordDraw)] },
+
+  "PIPES_SUCCESS": { audio: [new Audio(diggingPipes)] },
+  "SHRINE_SUCCESS": { audio: [new Audio(clinkBreeze)] },
+  "STONE_SUCCESS": { audio: [new Audio(cork)] },
+  "CLOUDS_SUCCESS": { audio: [new Audio(thunderSmacks)] },
+  "MENHIR_SUCCESS": { audio: [new Audio(rocksSplash)] },
+  "SUN_SUCCESS": { audio: [new Audio(sunvoom)] },
+
+  "FLOWERS_SECONDARY": { audio: [new Audio(flowersSecondary)] },
+  "COW_SECONDARY": { audio: [new Audio(mooSecondary)] },
+  "SHARDS_SECONDARY": { audio: [new Audio(rattleSecondary)] },
+  // Dead end targets
+  "CROW": { audio: [new Audio(caw1), new Audio(caw2), new Audio(caw3)], counter: 0 },
+  "SHRINE": { audio: [new Audio(bowlRattle01), new Audio(bowlRattle02), new Audio(bowlRattle03)], counter: 0},
+  "CLOUDS": { audio: [new Audio(distantThunder)] },
+  "FLOCK": { audio: [new Audio(flock)] },
+  "COW": { audio: [new Audio(moo01), new Audio(moo02), new Audio(moo03)], counter: 0 },
+  "SHARDS": { audio: [new Audio(rattle03), new Audio(rattle04), new Audio(rattle06), new Audio(rattle07)], counter: 0 },
+  "PIPES": { audio: [new Audio(clank01) ,new Audio(clank02), new Audio(clank03)], counter: 0 },
+  "MENHIR": { audio: [new Audio(rockRattle01) ,new Audio(rockRattle02), new Audio(rockRattle03)], counter: 0 },
+  "FLOWERS": { audio: [new Audio(flowers02), new Audio(flowers03), new Audio(flowers04)], counter: 0 },
+}
+
+export function playSound(target:string) {
+  const sound = soundMap[target];
+  if (sound) {
+    let clip = sound.audio[0];
+    if (!isNaN(sound.counter)) {
+      clip = sound.audio[sound.counter];
+      sound.counter = (sound.counter == (sound.audio.length - 1)) ? 0 : sound.counter + 1;
+    }
+    console.log("playing sound: ", target, sound.counter);
+    clip.play();
+  };
+};
+

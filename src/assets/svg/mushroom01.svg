@@ -1,11 +1,10 @@
-<svg class="sun">
+<svg class="mushroom01">
 <defs>
   <style>
-    .sun {
+    .mushroom01 {
       left: 792px;
       top: 0px;
       height: 90px;
-      width: 90px;
     }
   </style>
 </defs>

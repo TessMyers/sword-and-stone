@@ -77,7 +77,7 @@ export const tools = Object.freeze({
   }),
   BALM: Object.freeze({
     type: toolTypes.BALM,
-    flavorText: "Healing balm",
+    flavorText: "Balm",
     imageName: "balm_tool.png",
     target: targetTypes.STONE
   }),

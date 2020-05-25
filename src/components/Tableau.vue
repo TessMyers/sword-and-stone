@@ -8,6 +8,10 @@
     </transition>
     <div class="tableau" v-bind:style="{ backgroundImage: backgroundImageUrl }">
       <!-- SVG click masks -->
+      <div v-on:click="attemptClick($event, 'CROW')" v-html="require(`!svg-inline-loader!../assets/svg/topBird.svg`)"></div>
+      <div v-on:click="attemptClick($event, 'CROW')" v-html="require(`!svg-inline-loader!../assets/svg/bottomBird.svg`)"></div>
+      <div v-on:click="attemptClick($event, 'FLOCK')" v-html="require(`!svg-inline-loader!../assets/svg/flock.svg`)"></div>
+
       <div v-on:click="attemptClick($event, constants.targetTypes.SUN)" v-html="require(`!svg-inline-loader!../assets/svg/sun.svg`)"></div>
       <div v-on:click="attemptClick($event, constants.targetTypes.STONE)" v-html="require(`!svg-inline-loader!../assets/svg/stone.svg`)"></div>
       <div v-on:click="attemptClick($event, constants.targetTypes.CLOUDS)" v-html="require(`!svg-inline-loader!../assets/svg/clouds.svg`)"></div>
@@ -40,6 +44,7 @@ import { pageTypes, toolTypes, targetTypes } from "@/constants";
 import { modalTexts, modalTypes, modalTips } from "@/text";
 import Tool from "@/components/Tool.vue";
 import Modal from "@/components/Modal";
+import { playSound } from "@/sounds";
 
 function attemptClick(event, clickTarget) {
   if (event.target.matches("polygon") || event.target.matches("circle")) {
@@ -54,22 +59,32 @@ function attemptClick(event, clickTarget) {
 
 function trySuccess(clickTarget) {
   const currentTool = store.getters.getActiveTool;
+  // const character = store.getters.getCharacter;
   const successes = store.getters.getSuccesses;
 
+  // if the tool is correct for the target
   if (currentTool.target === clickTarget || currentTool.type === clickTarget) {
+    // display secondary tool if there is one and return
     if (currentTool.hasSecondary) {
+      playSound(`${clickTarget}_SECONDARY`);
       store.commit("showHiddenTool", true);
       return;
     }
+    // if not secondary tool but you have already done this, do nothing
     if (successes.includes(currentTool.type)) {
       this.modalProps = modalTexts[toolTypes.DONE];
       this.showModal();
       return;
     } else {
+      // but if you have not, SUCCESS
+      playSound(`${clickTarget}_SUCCESS`);
       store.commit("addSuccess", currentTool.type);
       store.commit("setCurrentPage", pageTypes.NARRATIVE);
+      return;
     }
   }
+  // if the target has a sound, play it
+  playSound(clickTarget);
   return;
 }
 
@@ -151,7 +166,7 @@ export default {
 <style>
 svg {
   position: absolute;
-  opacity: 0;
+  opacity: 0.4;
 }
 .container {
   height: 677px;

@@ -96,7 +96,7 @@ export const narratives = {
     ]
   },
   LUNCH: {
-    bodyText: ["A tree stands to your right, its aged branches gnarled and bare. You recognize the signs of ill-health in the wood, and know with sadness that the venerable tree is dying",
+    bodyText: ["A tree stands to your right, its aged branches gnarled and bare. You recognize the signs of ill-health in the wood, and know with sadness that the venerable tree is dying.",
     "Noticing a small shrine in the tangled roots, you place half your lunch of bread and cheese in the little offering bowl. You step back respectfully, placing your palms together and bowing your head as you ask for assistance.",
     "As if in a sudden breeze, the branches of the tree begin to shake, and the stone figurine rattles. The tree spirit is pleased with your small but generous gift."],
     swordStatus: [
@@ -128,7 +128,7 @@ export const narratives = {
     ]
   },
   BALM: {
-    bodyText: ["You know a solution to this problem! Reaching into your robes, you pull out the jar of healing balm that you always keep with you. With a quiet pop, the cork comes free and you carefully smear some of the balm at the junction of sword and stone. After a few moments, the balm has done its work; no mere stone can withstand the power of a soothing balm made for cracked old hands."],
+    bodyText: ["You know a solution to this problem! Reaching into your robes, you pull out the jar of healing balm that you always keep with you. With a quiet pop, the cork comes free and you carefully smear some of the balm at the junction of sword and stone. After a few moments, the balm has done its work; no mere sword can withstand the power of a soothing balm made for cracked old hands."],
     swordStatus: [
       "With a heave, you haul on the hilt of the sword. Greased by the balm, the blade slides out part way but shudders to a halt. You will need to try something else, if you wish to free this sword completely",
       "With a heave, you haul on the hilt of the sword. Greased by the balm, the blade slides a further few inches out of the entrapping stone. You seem to have reached the limits of your physical power",

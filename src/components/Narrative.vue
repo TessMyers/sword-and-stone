@@ -10,6 +10,7 @@
 import store from "@/store/index";
 import { pageTypes } from "@/constants";
 import { narratives, continueOptions } from "@/text";
+import { playSound } from "@/sounds";
 
 function wrap(textArray) {
   let string = "";
@@ -24,7 +25,11 @@ export default {
   methods: {
     wrap,
     navAway: () => {
-      if (store.getters.getSuccesses.length === 4) {
+      const successes = store.getters.getSuccesses;
+      if (successes.length === 3) {
+        playSound("SWORD");
+      }
+      if (successes.length === 4) {
         store.commit("endGameForCharacter");
         if (store.getters.getFinishedCharacters.length === 3) {
           store.commit("setCurrentPage", pageTypes.ENDING);
