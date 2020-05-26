@@ -2,7 +2,6 @@
 
 *Sound effects were sourced from https://freesound.org/ and edited in Audacity. I made multiple very short clips from most of these tracks, but a few sources were used in entirety. Thank you to all the foley artists out there who record weird stuff so I don't have to!*
 
-(WIP- Edit this list to remove unused sounds)
 Scale by thejoshuachang -- https://freesound.org/s/197969/ -- License: Attribution Noncommercial  
 Water Trickling.wav by kristinhamby -- https://freesound.org/s/381202/ -- License: Creative Commons 0  
 Tomato squish;wet.wav by HonorHunter -- https://freesound.org/s/271666/ -- License: Creative Commons 0  

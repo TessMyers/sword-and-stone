@@ -19,7 +19,9 @@
     </ul>
     <p class="info">
       This was my first browser-based game, inspired by a love of fantasy, legends, and exploratory puzzle games. DESTINY is built in Vue.js with
-      Typescript: See the code <a href="https://github.com/TessMyers/sword-and-stone/" target="_blank">here</a>. The art is watercolor, micron pen, and white ink with minor digital editing. Thank you for playing!
+      Typescript: See the code <a href="https://github.com/TessMyers/sword-and-stone/" target="_blank">here</a>. Sounds were created in Audacity:
+      please see <a target="_blank" href="https://github.com/TessMyers/sword-and-stone/blob/master/SOUNDCREDITS.md">full attribution list</a> 
+      for sources. The art is watercolor, micron pen, and white ink with minor digital editing. Thank you for playing!
     </p>
     <center>
       <div class="button newGame" v-on:click="newGame">New Game</div>
