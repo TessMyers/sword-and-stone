@@ -185,7 +185,7 @@ svg {
 
 .tableau {
   background-size: contain;
-  height: 528px;
+  height: 526px;
   cursor: crosshair;
 }
 
