@@ -58,10 +58,11 @@ a {
 
 .about {
   text-align: left;
-  margin: 75px;
+  margin: 75px auto;
   /* color: #cecece; */
   color: white;
   text-decoration: none;
+  max-width: 900px;
 }
 
 .newGame {

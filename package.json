@@ -9,6 +9,7 @@
     "deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "core-js": "^3.6.4",
     "execa": "^4.0.2",
     "vue": "^2.6.11",

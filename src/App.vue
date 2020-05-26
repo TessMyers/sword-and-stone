@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet" type="text/css" />
     <router-view></router-view>
   </div>
 </template>
@@ -11,16 +10,6 @@ export default {
 };
 </script>
 <style>
-@font-face {
-  font-family: "MedievalSharp";
-  src: url("/assets/fonts/MedievalSharp/MedievalSharp-Regular.ttf");
-}
-/* 
-@font-face {
-  font-family: "Ringbearer";
-  src: url("/assets/fonts/ringbearer/RINGM___.TTF") format("truetype");
-} */
-
 body {
   background-color: black;
 }
