@@ -1,9 +1,9 @@
-<svg class="mushroom01">
+<svg class="mushroomE">
 <defs>
   <style>
-    .mushroom01 {
-      left: 635px;
-      top: 400px;
+    .mushroomE {
+      left: 796px;
+      top: 324px;
       height: 22px;
       width: 22px;
     }

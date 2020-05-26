@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet' type='text/css'>
-    <!-- <div class="overlayText">Pull The Sword From The stone</div> -->
-    <!-- <div class="overlay"></div> -->
     <transition name="modal_fade">
       <Modal v-show="isModalVisible" @close="closeModal" @success="trySuccess" @hideTool="hideTool" v-bind="modalProps"></Modal>
     </transition>
@@ -11,6 +8,16 @@
       <div v-on:click="attemptClick($event, 'CROW')" v-html="require(`!svg-inline-loader!../assets/svg/topBird.svg`)"></div>
       <div v-on:click="attemptClick($event, 'CROW')" v-html="require(`!svg-inline-loader!../assets/svg/bottomBird.svg`)"></div>
       <div v-on:click="attemptClick($event, 'FLOCK')" v-html="require(`!svg-inline-loader!../assets/svg/flock.svg`)"></div>
+      <div v-on:click="attemptClick($event, 'STREAM')" v-html="require(`!svg-inline-loader!../assets/svg/stream.svg`)"></div>
+
+      <div v-on:click="attemptClick($event, 'MUSHROOM_A')" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomA.svg`)"></div>
+      <div v-on:click="attemptClick($event, 'MUSHROOM_C')" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomC.svg`)"></div>
+      <div v-on:click="attemptClick($event, 'MUSHROOM_D')" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomD.svg`)"></div>
+      <div v-on:click="attemptClick($event, 'MUSHROOM_E')" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomE.svg`)"></div>
+      <div v-on:click="attemptClick($event, 'MUSHROOM_G')" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomG.svg`)"></div>
+      <div v-on:click="attemptClick($event, 'MUSHROOM01')" v-html="require(`!svg-inline-loader!../assets/svg/mushroom01.svg`)"></div>
+      <div v-on:click="attemptClick($event, 'MUSHROOM02')" v-html="require(`!svg-inline-loader!../assets/svg/mushroom02.svg`)"></div>
+      <div v-on:click="attemptClick($event, 'MUSHROOM03')" v-html="require(`!svg-inline-loader!../assets/svg/mushroom03.svg`)"></div>
 
       <div v-on:click="attemptClick($event, constants.targetTypes.SUN)" v-html="require(`!svg-inline-loader!../assets/svg/sun.svg`)"></div>
       <div v-on:click="attemptClick($event, constants.targetTypes.STONE)" v-html="require(`!svg-inline-loader!../assets/svg/stone.svg`)"></div>
@@ -166,7 +173,7 @@ export default {
 <style>
 svg {
   position: absolute;
-  opacity: 0.4;
+  opacity: 0;
 }
 .container {
   height: 677px;
@@ -175,26 +182,6 @@ svg {
   margin: 13px auto 0px auto;
   background-color:black;
 }
-
-/* .overlay {
-  background-color: black;
-  z-index: 2;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-} */
-
-/* .overlayText {
-  font-family: 'MedievalSharp';
-  position: absolute;
-  left: 150px;
-  top: 30px;
-  color: rgb(179, 0, 0);
-  font-size: 35pt;
-  text-shadow: 0px 0px 5px rgb(68, 0, 0);
-} */
 
 .tableau {
   background-size: contain;

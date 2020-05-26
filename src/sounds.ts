@@ -40,8 +40,25 @@ import flowers02 from "./assets/audio/flowers02.mp3";
 import flowers03 from "./assets/audio/flowers03.mp3";
 import flowers04 from "./assets/audio/flowers04.mp3";
 
+import splash01 from "./assets/audio/splash01.mp3";
+import splash02 from "./assets/audio/splash02.mp3";
+import splash03 from "./assets/audio/splash03.mp3";
+import splash04 from "./assets/audio/splash04.mp3";
+
 import grass01 from "./assets/audio/grass01.mp3";
 import grass02 from "./assets/audio/grass02.mp3";
+
+import hiccup from "./assets/audio/hiccup.mp3";
+import squeak from "./assets/audio/squeak02.mp3";
+import weeSqueak from "./assets/audio/squeak01.mp3";
+import fart from "./assets/audio/squish_fart.mp3";
+import wetSquish from "./assets/audio/squish_wet.mp3";
+
+import squeakA from "./assets/audio/squeakA.mp3";
+import squeakC from "./assets/audio/squeakC.mp3";
+import squeakD from "./assets/audio/squeakD.mp3";
+import squeakE from "./assets/audio/squeakE.mp3";
+import squeakG from "./assets/audio/squeakG.mp3";
 
 export const soundMap:any = {
   "SWORD": { audio: [new Audio(swordDraw)] },
@@ -66,6 +83,18 @@ export const soundMap:any = {
   "PIPES": { audio: [new Audio(clank01) ,new Audio(clank02), new Audio(clank03)], counter: 0 },
   "MENHIR": { audio: [new Audio(rockRattle01) ,new Audio(rockRattle02), new Audio(rockRattle03)], counter: 0 },
   "FLOWERS": { audio: [new Audio(flowers02), new Audio(flowers03), new Audio(flowers04)], counter: 0 },
+  "STREAM": { audio: [new Audio(splash01), new Audio(splash02), new Audio(splash03), new Audio(splash04)], counter: 0 },
+  // mushrooms
+  "MUSHROOM_A": { audio: [new Audio(squeakA)] },
+  "MUSHROOM_C": { audio: [new Audio(squeakC)] },
+  "MUSHROOM_D": { audio: [new Audio(squeakD)] },
+  "MUSHROOM_E": { audio: [new Audio(squeakE)] },
+  "MUSHROOM_G": { audio: [new Audio(squeakG)] },
+  "MUSHROOM01": { audio: [new Audio(fart)] },
+  "MUSHROOM02": { audio: [new Audio(squeak)] },
+  "MUSHROOM03": { audio: [new Audio(hiccup)] }
+
+  
 }
 
 export function playSound(target:string) {
@@ -76,7 +105,7 @@ export function playSound(target:string) {
       clip = sound.audio[sound.counter];
       sound.counter = (sound.counter == (sound.audio.length - 1)) ? 0 : sound.counter + 1;
     }
-    console.log("playing sound: ", target, sound.counter);
+    // console.log("playing sound: ", target, sound.counter);
     clip.play();
   };
 };

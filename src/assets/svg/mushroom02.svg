@@ -2,11 +2,12 @@
 <defs>
   <style>
     .mushroom02 {
-      left: 792px;
-      top: 0px;
-      height: 90px;
+      left: 655px;
+      top: 414px;
+      height: 10px;
+      width: 10px;
     }
   </style>
 </defs>
-  <circle cx="50" cy="50" r="40" fill="red" />
+  <circle cx="5" cy="5" r="5" fill="red" />
 </svg>
