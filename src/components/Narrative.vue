@@ -59,6 +59,8 @@ export default {
   text-align: left;
   padding: 100px;
   font-size: 14pt;
+  width: 900px;
+  margin: auto;
 }
 .button {
   color: black;

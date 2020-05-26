@@ -3,10 +3,13 @@
     <p v-for="(paragraph, index) in endText" v-bind:key="index">
       {{ paragraph }}
     </p>
-    <center>
+    <div class="centered">
       <h3>THE END</h3>
-      <button v-on:click="newGame">Reset game</button>
-    </center>
+      <div>
+        <span v-on:click="newGame">Reset</span>  |  
+        <span class="link"><router-link to="/about" class="aboutLink">About</router-link></span>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -29,21 +32,19 @@ export default {
 </script>
 <style scoped>
 /* copied style */
+a {
+  text-decoration: none;
+}
 .endingPage {
   color: whitesmoke;
   text-align: left;
   padding: 50px;
   font-size: 14pt;
+  width: 900px;
+  margin: auto;
 }
 
-/* copied style */
-.button {
-  color: black;
-  padding: 10px;
-  background-color: lightgray;
-  width: fit-content;
-  margin: 30px auto;
-  align-items: center;
-
+.centered {
+  text-align: center;
 }
 </style>

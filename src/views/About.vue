@@ -54,6 +54,7 @@ li {
 
 a {
   color: white;
+  text-decoration: underline;
 }
 
 .about {
@@ -61,7 +62,6 @@ a {
   margin: 75px auto;
   /* color: #cecece; */
   color: white;
-  text-decoration: none;
   max-width: 900px;
 }
 
@@ -70,24 +70,12 @@ a {
   width: fit-content;
   padding: 10px;
 }
-
-/* .swordArt {
-  background-image: url("../assets/sword.png");
-  background-size: contain;
-  height: 100px;
-  width: 300px;
-} */
-
 .info {
   margin: 50px 0px 40px 0px;
 }
 
 .links {
-  /* position: fixed; */
-  /* left: 50%; */
-  /* bottom: 50px; */
   width: fit-content;
-  /* transform: translate(-50%, -50%); */
   margin: 40px auto;
 }
 </style>
