@@ -6,7 +6,12 @@
       With thanks to <a href="https://www.instagram.com/_the_sum_/" target="_blank">Ally Yancey</a>: my sounding board, supporter, and photoshop
       navigatrix
     </h4>
-    <h4>To Olive Perry, Marek Kapolka, and Ben Long for initial consults about game tech</h4>
+    <h4>
+      To <a href="https://wick.works/" target="_blank">Olive Perry</a>,
+      <a href="https://twitter.com/marekkapolka" target="_blank">Marek Kapolka</a>
+      , and <a href="https://www.notaproblemforlong.com/" target="_blank">Ben Long</a>
+      for initial consults about game tech
+    </h4>
     <h4>And to my early beta testers,</h4>
     <ul>
       <li>Wendell Britt</li>
