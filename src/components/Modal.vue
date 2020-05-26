@@ -11,7 +11,7 @@
         <p class="option" @click="selectOption(index)">{{ `> ${option.actionText}` }}</p>
       </div>
     </div>
-    <button @click="close">OK</button>
+    <button v-if="result || tip" @click="close">OK</button>
   </div>
   <!-- </div> -->
 </template>
@@ -45,12 +45,7 @@ export default {
     close() {
       this.result = null;
       this.$emit("close");
-    },
-    // noop(event) {
-    //   event.stopPropagation();
-    //   console.log("noop stop prop", event);
-    //   return false;
-    // }
+    }
   }
 };
 </script>
