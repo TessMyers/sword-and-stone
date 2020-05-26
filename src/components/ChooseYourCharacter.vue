@@ -4,7 +4,7 @@
     <div class="introText">
       <div class="titlePanel">
         <div class="swordImage"></div>
-        <span class="title">Destiny</span>
+        <span class="gameTitle"><router-link to="/about">Destiny</router-link></span>
         <div class="swordImage reverse"></div>
       </div>
       <p class="legend">Legend tells of a sword thrust into a stone, removable by none but the most worthy. It was lost many decades ago, throwing this country into turmoil and conflict. But there is hope that one bold person may claim the fated blade and lead the country to peace and prosperity. Could it be you? Choose your identity:</p>
@@ -87,7 +87,7 @@ export default {
   /* padding-bottom: 10px; */
 }
 
-.title {
+.gameTitle {
   font-family: Ringbearer;
   font-size: 34pt;
   margin: 0px 30px;

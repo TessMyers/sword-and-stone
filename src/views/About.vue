@@ -1,12 +1,12 @@
 <template>
   <div class="about">
-    <h1>DESTINY</h1>
-    <!-- <div class="swordArt"></div> -->
+    <span class="title">Destiny</span>
     <h2>Design, art, and development by <a href="http://www.tessmyers.com/" target="_blank">Tess Myers</a></h2>
     <h4>
       With thanks to <a href="https://www.instagram.com/_the_sum_/" target="_blank">Ally Yancey</a>: my sounding board, supporter, and photoshop
       navigatrix
     </h4>
+    <h4>To Olive Perry, Marek Kapolka, and Ben Long for initial consults about game tech</h4>
     <h4>And to my early beta testers,</h4>
     <ul>
       <li>Wendell Britt</li>
@@ -19,9 +19,10 @@
     </ul>
     <p class="info">
       This was my first browser-based game, inspired by a love of fantasy, legends, and exploratory puzzle games. DESTINY is built in Vue.js with
-      Typescript: See the code <a href="https://github.com/TessMyers/sword-and-stone/" target="_blank">here</a>. Sounds were created in Audacity:
-      please see <a target="_blank" href="https://github.com/TessMyers/sword-and-stone/blob/master/SOUNDCREDITS.md">full attribution list</a> 
-      for sources. The art is watercolor, micron pen, and white ink with minor digital editing. Thank you for playing!
+      Typescript: See the code <a href="https://github.com/TessMyers/sword-and-stone/" target="_blank">here</a>. Sound effects were created in 
+      Audacity: please see
+      <a target="_blank" href="https://github.com/TessMyers/sword-and-stone/blob/master/SOUNDCREDITS.md">full attribution list</a> for sources. The
+      art is watercolor, micron pen, and white ink with minor digital editing. Thank you for playing!
     </p>
     <center>
       <div class="button newGame" v-on:click="newGame">New Game</div>
@@ -52,9 +53,15 @@ li {
   list-style-type: none;
 }
 
-a {
+.about a {
   color: white;
   text-decoration: underline;
+}
+
+.title {
+  font-family: Ringbearer;
+  font-size: 34pt;
+  margin-left: 0px;
 }
 
 .about {
@@ -77,5 +84,9 @@ a {
 .links {
   width: fit-content;
   margin: 40px auto;
+}
+
+.links > a {
+  text-decoration: none;
 }
 </style>
