@@ -40,6 +40,8 @@ export const targetTypes = Object.freeze({
   NONE: "NONE"
 })
 
+export const allSvgTargets = ["CROW_A", "CROW_B", "FLOCK", "STREAM", "MUSHROOM_A", "MUSHROOM_C", "MUSHROOM_D", "MUSHROOM_E", "MUSHROOM_G", "MUSHROOM01", "MUSHROOM02", "MUSHROOM03", targetTypes.SUN, targetTypes.STONE, targetTypes.CLOUDS, targetTypes.PIPES, targetTypes.FLOWERS, targetTypes.COW, targetTypes.MENHIR, targetTypes.SHARDS, targetTypes.SHRINE, targetTypes.SWORD];
+
 export const tools = Object.freeze({
   // FARMHAND
   SHOVEL: Object.freeze({
