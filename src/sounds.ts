@@ -2,7 +2,7 @@ import thunderSmacks from "./assets/audio/thunder_with_thumps.mp3";
 import distantThunder from "./assets/audio/distant_thunder.mp3"
 import cork from "./assets/audio/cork.mp3";
 import rocksSplash from "./assets/audio/rocksplash.mp3";
-import sunvoom from "./assets/audio/sunvoom.mp3";
+// import sunvoom from "./assets/audio/sunvoom.mp3";
 import clinkBreeze from "./assets/audio/clink_and_breeze.mp3";
 import diggingPipes from "./assets/audio/digging_and_pipes.mp3";
 import swordDraw from "./assets/audio/sworddraw.mp3";
@@ -68,7 +68,7 @@ export const soundMap:any = {
   "STONE_SUCCESS": { audio: [new Audio(cork)] },
   "CLOUDS_SUCCESS": { audio: [new Audio(thunderSmacks)] },
   "MENHIR_SUCCESS": { audio: [new Audio(rocksSplash)] },
-  "SUN_SUCCESS": { audio: [new Audio(sunvoom)] },
+  // "SUN_SUCCESS": { audio: [new Audio(sunvoom)] },
 
   "FLOWERS_SECONDARY": { audio: [new Audio(flowersSecondary)] },
   "COW_SECONDARY": { audio: [new Audio(mooSecondary)] },

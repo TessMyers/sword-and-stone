@@ -161,11 +161,11 @@ export default {
     },
     characterImageUrl() {
       const characterName = store.getters.getCharacter;
-      return "url(" + require(`@/assets/${characterName}_ICON.png`) + ")";
+      return "url(" + require(`@/assets/${characterName}_ICON.jpg`) + ")";
     },
     backgroundImageUrl() {
       const points = store.getters.getSuccesses.length;
-      return "url(" + require(`@/assets/versions/tableau${points}.png`) + ")";
+      return "url(" + require(`@/assets/versions/tableau${points}.jpg`) + ")";
     }
   }
 };
@@ -192,7 +192,7 @@ svg {
 .infoLinks {
   position: absolute;
   left: 0px;
-  bottom: 0px;
+  bottom: 50px;
   display: inline-block;
   text-align: left;
   cursor: pointer;
@@ -204,14 +204,14 @@ svg {
   border-radius: 20px;
   border: 1px solid white;
   text-align: center;
-  margin: 0px 0px 15px 0px;
+  margin: 0px 0px 9px 0px;
 }
 
 .link,
 .link > a {
   text-decoration: none;
   color: white;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .characterImage {

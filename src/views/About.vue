@@ -10,7 +10,7 @@
       To <a href="https://wick.works/" target="_blank">Olive Perry</a>,
       <a href="https://twitter.com/marekkapolka" target="_blank">Marek Kapolka</a>
       , and <a href="https://www.notaproblemforlong.com/" target="_blank">Ben Long</a>
-      for initial consults about game tech
+      for initial consults about game tech and essential feedback,
     </h4>
     <h4>And to my early beta testers,</h4>
     <ul>
@@ -22,13 +22,19 @@
       <li>some other people</li>
       <li>someone else</li>
     </ul>
-    <p class="info">
-      This was my first browser-based game, inspired by a love of fantasy, legends, and exploratory puzzle games. DESTINY is built in Vue.js with
-      Typescript: See the code <a href="https://github.com/TessMyers/sword-and-stone/" target="_blank">here</a>. Sound effects were created in 
-      Audacity: please see
-      <a target="_blank" href="https://github.com/TessMyers/sword-and-stone/blob/master/SOUNDCREDITS.md">full attribution list</a> for sources. The
-      art is watercolor, micron pen, and white ink with minor digital editing. Thank you for playing!
-    </p>
+    <div class="info">
+      <p>
+        Music: River Flute by <a href="https://incompetech.filmmusic.io/song/4713-river-flute" target="_blank">Kevin MacLeod</a>, used under
+        <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC License</a>
+      </p>
+      <p>
+        This was my first browser-based game, inspired by a love of fantasy, legends, and exploratory puzzle games. DESTINY is built in Vue.js with
+        Typescript: See the code <a href="https://github.com/TessMyers/sword-and-stone/" target="_blank">here</a>. Sound effects were created in
+        Audacity: please see
+        <a target="_blank" href="https://github.com/TessMyers/sword-and-stone/blob/master/SOUNDCREDITS.md">full attribution list</a> for sources. The
+        art is watercolor, micron pen, and white ink with minor digital editing. Thank you for playing!
+      </p>
+    </div>
     <center>
       <div class="button newGame" v-on:click="newGame">New Game</div>
     </center>
@@ -50,7 +56,7 @@ export default {
       router.push("/");
     }
   }
-}
+};
 </script>
 
 <style>
@@ -71,7 +77,7 @@ li {
 
 .about {
   text-align: left;
-  margin: 75px auto;
+  margin: 50px auto;
   /* color: #cecece; */
   color: white;
   max-width: 900px;
@@ -83,7 +89,7 @@ li {
   padding: 10px;
 }
 .info {
-  margin: 50px 0px 40px 0px;
+  margin: 40px 0px 40px 0px;
 }
 
 .links {

@@ -8,36 +8,23 @@
         <div class="swordImage reverse"></div>
       </div>
       <p class="legend">Legend tells of a sword thrust into a stone, removable by none but the most worthy. It was lost many decades ago, throwing this country into turmoil and conflict. But there is hope that one bold person may claim the fated blade and lead the country to peace and prosperity. Could it be you? Choose your identity:</p>
-      <!-- <h3>Choose who you will be:</h3> -->
     </div>
     <div class="panels">
-      <div>
+      <div v-on:click="beginGame(constants.characters.FARMHAND)">
         <div class="characterTitle">The Farmhand</div>
-        <div
-          class="panel farmhand"
-          v-on:click="beginGame(constants.characters.FARMHAND)"
-          v-bind:class="{ completed: completedChars.includes(constants.characters.FARMHAND.name) }"
-        ></div>
+        <div class="panel farmhand" v-bind:class="{ completed: completedChars.includes(constants.characters.FARMHAND.name) }"></div>
         <div class="characterTraits">Gentle and Curious</div>
       </div>
 
-      <div>
+      <div v-on:click="beginGame(constants.characters.KNIGHT)">
         <div class="characterTitle">The Knight</div>
-        <div
-          class="panel knight"
-          v-on:click="beginGame(constants.characters.KNIGHT)"
-          v-bind:class="{ completed: completedChars.includes(constants.characters.KNIGHT.name) }"
-        ></div>
+        <div class="panel knight" v-bind:class="{ completed: completedChars.includes(constants.characters.KNIGHT.name) }"></div>
         <div class="characterTraits">Strong and Resourceful</div>
       </div>
 
-      <div>
+      <div v-on:click="beginGame(constants.characters.MONK)">
         <div class="characterTitle">The Monk</div>
-        <div
-          class="panel monk"
-          v-on:click="beginGame(constants.characters.MONK)"
-          v-bind:class="{ completed: completedChars.includes(constants.characters.MONK.name) }"
-        ></div>
+        <div class="panel monk" v-bind:class="{ completed: completedChars.includes(constants.characters.MONK.name) }"></div>
         <div class="characterTraits">Confident and Cunning</div>
       </div>
     </div>
@@ -159,15 +146,15 @@ export default {
 }
 
 .knight {
-  background-image: url("../assets/knight.jpg");
+  background-image: url("../assets/knight_147.jpg");
 }
 
 .farmhand {
-  background-image: url("../assets/farmhand.jpg");
+  background-image: url("../assets/farmhand_142.jpg");
 }
 
 .monk {
-  background-image: url("../assets/monk.jpg");
+  background-image: url("../assets/monk_152.jpg");
 }
 
 .completed {

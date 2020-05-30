@@ -12,6 +12,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "core-js": "^3.6.4",
     "execa": "^4.0.2",
+    "mediaelement": "^4.2.16",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.1",
@@ -36,7 +37,9 @@
     "prettier": "^1.19.1",
     "svg-inline-loader": "^0.8.2",
     "typescript": "~3.8.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
   "eslintConfig": {
     "root": true,

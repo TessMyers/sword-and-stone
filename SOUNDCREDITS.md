@@ -1,5 +1,9 @@
 ## SFX CREDITS
 
+Music is River Flute by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/4713-river-flute
+License: http://creativecommons.org/licenses/by/4.0/
+
 *Sound effects were sourced from https://freesound.org/ and edited in Audacity. I made multiple very short clips from most of these tracks, but a few sources were used in entirety. Thank you to all the foley artists out there who record weird stuff so I don't have to!*
 
 Scale by thejoshuachang -- https://freesound.org/s/197969/ -- License: Attribution Noncommercial  

@@ -11,7 +11,7 @@
         <p class="option" @click="selectOption(index)">{{ `> ${option.actionText}` }}</p>
       </div>
     </div>
-    <button v-show="options.length === 0 || result" @click="close">OK</button>
+    <button class="button" v-show="options.length === 0 || result" @click="close">OK</button>
   </div>
   <!-- </div> -->
 </template>
