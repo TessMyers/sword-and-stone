@@ -176,10 +176,10 @@ svg {
   opacity: 0;
 }
 .container {
-  height: 677px;
-  width: 1000px;
+  /* height: 677px;
+  width: 1000px; */
   position: relative;
-  margin: 13px auto 0px auto;
+  /* margin: 13px auto 0px auto; */
   background-color:black;
 }
 

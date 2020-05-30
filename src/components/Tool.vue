@@ -48,7 +48,7 @@ export default {
   background-color: rgb(20, 20, 20);
   height: 130px;
   width: 130px;
-  margin: 20px 10px;
+  margin: 20px 8px;
   /* position: relative; */
   /* background-image: url("../assets/tools/cow_image.png"); */
   background-size: contain;

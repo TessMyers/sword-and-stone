@@ -2,15 +2,37 @@
   <div id="app">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Gentium" rel="stylesheet" /> -->
     <router-view></router-view>
-    <audio controls src="@/assets/audio/river-flute.mp3" type="audio/mpeg" loop preload="true">
+    <audio
+      controls
+      volume="0.1"
+      src="@/assets/audio/river-flute.mp3"
+      type="audio/mpeg"
+      loop
+      preload="true"
+      controlsList="nodownload"
+      v-bind:class="{ hidden: isChoosePage }"
+      @play="onPlay"
+    >
       Your browser does not support the audio element.
     </audio>
   </div>
 </template>
 
 <script>
+import store from "./store";
+
 export default {
-  name: "App"
+  name: "App",
+  methods: {
+    onPlay() {
+      console.log("PLAYING!");
+    }
+  },
+  computed: {
+    isChoosePage() {
+      return store.getters.getCurrentPage === "CHOOSE";
+    }
+  }
 };
 </script>
 <style>
@@ -26,10 +48,24 @@ body {
 audio {
   outline: none;
   height: 35px;
-  width: 250px;
-  left: 20px;
-  margin-top: -38px;
-  position: absolute;
+  width: 200px;
+  top: -35px;
+  float: left;
+  position: relative;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: rgba(20, 20, 20, 0.8);
+}
+
+audio.hidden,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  display: none;
+}
+
+audio.pinned {
+  margin-top: 100px;
 }
 
 .button {
@@ -45,5 +81,9 @@ audio {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  /* my styles below */
+  height: 677px;
+  width: 1000px;
+  margin: 13px auto 0px auto;
 }
 </style>
