@@ -2,20 +2,34 @@
   <span class="tooltip" @click="hide" v-bind:style="{ top: `${yPosition}px`, left: `${xPosition}px` }">{{ text }}</span>
 </template>
 <script>
+import { tipTexts } from "@/text";
+
 export default {
   name: "tooltip",
   props: {
-    text: String,
-    xPosition: Number,
-    yPosition: Number
+    mouseEvent: Event,
+    boundingRect: DOMRect,
+    text: String
+  },
+  data() {
+    return {
+      yPosition: 0,
+      xPosition: 0
+    };
   },
   methods: {
     hide() {
       this.$emit("hideTooltip");
     }
-    // processCoordinates() {
-    //   const screenWidth
-    // }
+  },
+  watch: {
+    $props: {
+      handler() {
+        this.xPosition = this.mouseEvent.clientX - this.boundingRect.left;
+        this.yPosition = this.mouseEvent.clientY - this.boundingRect.top;
+      },
+      deep: true
+    }
   }
 };
 </script>

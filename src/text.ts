@@ -1,4 +1,4 @@
-import { toolTypes } from "./constants"
+import { toolTypes, characterTypes, targetTypes } from "./constants"
 
 export const continueOptions = [
   "Continue", // continue, Try again,
@@ -199,3 +199,15 @@ export const end = [
   "You look down at the sword in your hands, and you see that the blade is stained by the blood of kings and innocents alike. What would happen if this sword were to reappear, after so many years? How many lives would be lost, by its edge and for its sake?",
   "You toss the sword away. It will rust and be swallowed by the earth soon. Its iron will be reclaimed and the shining jewel in the pommel will fall off and roll away, perhaps to be discovered by a curious child in search of shiny objects. You take one last look at the peaceful scene before you, at the gnarled tree that will bloom this year, at the water that burbles gently over the shining stone surface, and you continue on your way."
 ]
+
+export const tipTexts = {
+  [characterTypes.FARMHAND]: {
+    [targetTypes.PIPES]: "These are pipes"
+  },
+  [characterTypes.KNIGHT]: {
+    [targetTypes.SUN]: "This is a sun"
+  },
+  [characterTypes.MONK]: {
+    [targetTypes.FLOWERS]: "These are flowers" 
+  }
+}

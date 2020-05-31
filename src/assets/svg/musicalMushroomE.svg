@@ -9,5 +9,5 @@
     }
   </style>
 </defs>
-  <circle cx="10" cy="10" r="10" fill="red" />
+  <circle id="MUSHROOM_E" cx="10" cy="10" r="10" fill="red" />
 </svg>

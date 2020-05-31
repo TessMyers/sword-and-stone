@@ -8,5 +8,5 @@
     }
   </style>
 </defs>
-  <circle cx="30" cy="30" r="20" fill="red" id="CROW"/>
+  <circle id="CROW_B" cx="30" cy="30" r="20" fill="red" id="CROW"/>
 </svg>

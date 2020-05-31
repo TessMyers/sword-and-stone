@@ -5,33 +5,35 @@
     </transition>
     <Tooltip v-show="isTooltipVisible" @hideTooltip="hideTooltip" v-bind="tooltipProps"></Tooltip>
     <div class="tableau" v-bind:style="{ backgroundImage: backgroundImageUrl }" ref="tableau">
+      <!-- eslint-disable -->
       <!-- SVG click masks -->
-      <div v-on:mousedown="attemptClick($event, 'CROW_A')" v-html="require(`!svg-inline-loader!../assets/svg/topBird.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
-      <div v-on:mousedown="attemptClick($event, 'CROW_B')" v-html="require(`!svg-inline-loader!../assets/svg/bottomBird.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, 'FLOCK')" v-html="require(`!svg-inline-loader!../assets/svg/flock.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
-      <div v-on:mousedown="attemptClick($event, 'STREAM')" v-html="require(`!svg-inline-loader!../assets/svg/stream.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/topBird.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/bottomBird.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/flock.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/stream.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
 
-      <div v-on:mousedown="attemptClick($event, 'MUSHROOM_A')" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomA.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, 'MUSHROOM_C')" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomC.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, 'MUSHROOM_D')" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomD.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, 'MUSHROOM_E')" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomE.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, 'MUSHROOM_G')" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomG.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, 'MUSHROOM01')" v-html="require(`!svg-inline-loader!../assets/svg/mushroom01.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, 'MUSHROOM02')" v-html="require(`!svg-inline-loader!../assets/svg/mushroom02.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, 'MUSHROOM03')" v-html="require(`!svg-inline-loader!../assets/svg/mushroom03.svg`)"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomA.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomC.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomD.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomE.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/musicalMushroomG.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/mushroom01.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/mushroom02.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/mushroom03.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
 
-      <div v-on:mousedown="attemptClick($event, constants.targetTypes.SUN)" v-html="require(`!svg-inline-loader!../assets/svg/sun.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, constants.targetTypes.STONE)" v-html="require(`!svg-inline-loader!../assets/svg/stone.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, constants.targetTypes.CLOUDS)" v-html="require(`!svg-inline-loader!../assets/svg/clouds.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, constants.targetTypes.PIPES)" v-html="require(`!svg-inline-loader!../assets/svg/pipes.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, constants.targetTypes.FLOWERS)" v-html="require(`!svg-inline-loader!../assets/svg/flower.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, constants.targetTypes.COW)" v-html="require(`!svg-inline-loader!../assets/svg/cow.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, constants.targetTypes.MENHIR)" v-html="require(`!svg-inline-loader!../assets/svg/menhir.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, constants.targetTypes.SHARDS)" v-html="require(`!svg-inline-loader!../assets/svg/shards.svg`)"></div>
-      <div v-on:mousedown="attemptClick($event, constants.targetTypes.SHRINE)" v-html="require(`!svg-inline-loader!../assets/svg/shrine.svg`)"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/sun.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/stone.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/clouds.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/pipes.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/flower.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/cow.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/menhir.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/shards.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/shrine.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
 
-      <div v-on:mousedown="attemptClick($event, constants.targetTypes.SWORD)" v-html="require(`!svg-inline-loader!../assets/svg/sword.svg`)"></div>
+      <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/sword.svg`)" @mouseover="showTooltip($event)" @mouseleave="hideTooltip"></div>
       <!-- End SVG click masks -->
+      <!-- eslint-enable -->
     </div>
     <div class="inventory">
       <div class="infoLinks">
@@ -49,14 +51,15 @@
 <script>
 import store from "@/store";
 import { pageTypes, toolTypes, targetTypes } from "@/constants";
-import { modalTexts, modalTypes, modalTips } from "@/text";
+import { modalTexts, modalTypes, modalTips, tipTexts } from "@/text";
 import Tool from "@/components/Tool.vue";
 import Modal from "@/components/Modal";
 import Tooltip from "@/components/Tooltip";
 import { playSound } from "@/sounds";
 
-function attemptClick(event, clickTarget) {
+function attemptClick(event) {
   if (event.target.matches("polygon") || event.target.matches("circle")) {
+    const clickTarget = event.target.id;
     if (clickTarget === "SWORD") {
       this.tryClaimSword();
     } else {
@@ -105,6 +108,17 @@ function tryClaimSword() {
   return;
 }
 
+function showTooltip(e) {
+  if (this.$refs.tableau && (e.target.matches("polygon") || e.target.matches("circle")) && tipTexts[store.getters.getCharacter][e.target.id]) {
+    this.tooltipProps = {
+      mouseEvent: e,
+      boundingRect: this.$refs.tableau.getBoundingClientRect(),
+      text: tipTexts[store.getters.getCharacter][e.target.id]
+    };
+    this.isTooltipVisible = true;
+  }
+}
+
 export default {
   name: "tableau",
   components: {
@@ -115,7 +129,7 @@ export default {
   data() {
     return {
       isModalVisible: false,
-      isTooltipVisible: true,
+      isTooltipVisible: false,
       constants: {
         pageTypes,
         targetTypes
@@ -128,6 +142,10 @@ export default {
     attemptClick,
     trySuccess,
     tryClaimSword,
+    showTooltip,
+    hideTooltip() {
+      this.isTooltipVisible = false;
+    },
     getHowTo() {
       const characterName = store.getters.getCharacter;
       const modal = modalTexts[modalTypes.HOWTO];
@@ -140,21 +158,6 @@ export default {
     closeModal() {
       this.isModalVisible = false;
       this.modalProps = this.getHowTo();
-    },
-    showTooltip(event) {
-      if (this.$refs.tableau && (event.target.matches("polygon") || event.target.matches("circle"))) {
-        const rect = this.$refs.tableau.getBoundingClientRect();
-        console.log(event);
-        this.tooltipProps = {
-          text: "neww texttttt yeahahhh boiii",
-          xPosition: event.clientX - rect.left,
-          yPosition: event.clientY - rect.top
-        };
-        this.isTooltipVisible = true;
-      }
-    },
-    hideTooltip() {
-      this.isTooltipVisible = false;
     },
     handleToolClicked(toolObj) {
       store.commit("setActiveTool", toolObj);
@@ -193,7 +196,7 @@ export default {
 <style>
 svg {
   position: absolute;
-  opacity: 1;
+  opacity: 0.2;
 }
 .container {
   /* height: 677px;
