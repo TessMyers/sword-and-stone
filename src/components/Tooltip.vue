@@ -1,9 +1,7 @@
 <template>
-  <span class="tooltip" @click="hide" v-bind:style="{ top: `${yPosition}px`, left: `${xPosition}px` }">{{ text }}</span>
+  <span class="tooltip" v-bind:style="{ top: `${yPosition}px`, left: `${xPosition}px` }">{{ text }}</span>
 </template>
 <script>
-import { tipTexts } from "@/text";
-
 export default {
   name: "tooltip",
   props: {
@@ -17,16 +15,13 @@ export default {
       xPosition: 0
     };
   },
-  methods: {
-    hide() {
-      this.$emit("hideTooltip");
-    }
-  },
   watch: {
     $props: {
       handler() {
-        this.xPosition = this.mouseEvent.clientX - this.boundingRect.left;
-        this.yPosition = this.mouseEvent.clientY - this.boundingRect.top;
+        const xWithinTableau = this.mouseEvent.clientX - this.boundingRect.left;
+        const leftness = xWithinTableau > 700 ? this.boundingRect.left + 300 : this.boundingRect.left;
+        this.xPosition = Math.round(this.mouseEvent.clientX - leftness) + 2;
+        this.yPosition = Math.round(this.mouseEvent.clientY - this.boundingRect.top) + 2;
       },
       deep: true
     }
@@ -41,7 +36,9 @@ export default {
   left: 50%;
   top: 50%;
   width: fit-content;
-  padding: 2px 10px;
+  max-width: 310px;
+  padding: 2px 5px;
   border-radius: 3px;
+  z-index: 2;
 }
 </style>

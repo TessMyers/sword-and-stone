@@ -74,7 +74,8 @@ export const soundMap:any = {
   "COW_SECONDARY": { audio: [new Audio(mooSecondary)] },
   "SHARDS_SECONDARY": { audio: [new Audio(rattleSecondary)] },
   // Dead end targets
-  "CROW": { audio: [new Audio(caw1), new Audio(caw2), new Audio(caw3)], counter: 0 },
+  "CROW_A": { audio: [new Audio(caw1), new Audio(caw2), new Audio(caw3)], counter: 0 },
+  "CROW_B": { audio: [new Audio(caw1), new Audio(caw2), new Audio(caw3)], counter: 0 },
   "SHRINE": { audio: [new Audio(bowlRattle01), new Audio(bowlRattle02), new Audio(bowlRattle03)], counter: 0},
   "CLOUDS": { audio: [new Audio(distantThunder)] },
   "FLOCK": { audio: [new Audio(flock)] },

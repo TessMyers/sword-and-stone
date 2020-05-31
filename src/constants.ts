@@ -40,7 +40,14 @@ export const targetTypes = Object.freeze({
   NONE: "NONE"
 })
 
-export const allSvgTargets = ["CROW_A", "CROW_B", "FLOCK", "STREAM", "MUSHROOM_A", "MUSHROOM_C", "MUSHROOM_D", "MUSHROOM_E", "MUSHROOM_G", "MUSHROOM01", "MUSHROOM02", "MUSHROOM03", targetTypes.SUN, targetTypes.STONE, targetTypes.CLOUDS, targetTypes.PIPES, targetTypes.FLOWERS, targetTypes.COW, targetTypes.MENHIR, targetTypes.SHARDS, targetTypes.SHRINE, targetTypes.SWORD];
+export const otherTargetTypes = Object.freeze({
+  STREAM: "STREAM",
+  CROW_A: "CROW_A",
+  CROW_B: "CROW_B",
+  FLOCK: "FLOCK",
+  SKULL: "SKULL",
+  MUSHROOM01: "MUSHROOM01"
+})
 
 export const tools = Object.freeze({
   // FARMHAND
@@ -79,7 +86,7 @@ export const tools = Object.freeze({
   }),
   BALM: Object.freeze({
     type: toolTypes.BALM,
-    flavorText: "Balm",
+    flavorText: "Healing balm",
     imageName: "balm_tool.png",
     target: targetTypes.STONE
   }),

@@ -1,4 +1,4 @@
-import { toolTypes, characterTypes, targetTypes } from "./constants"
+import { toolTypes, characterTypes, targetTypes, otherTargetTypes } from "./constants"
 
 export const continueOptions = [
   "Continue", // continue, Try again,
@@ -202,12 +202,48 @@ export const end = [
 
 export const tipTexts = {
   [characterTypes.FARMHAND]: {
-    [targetTypes.PIPES]: "These are pipes"
+    [toolTypes.GLOVES]: {
+      [targetTypes.FLOWERS]: "Probably shouldn't pick these, even with gloves",
+      [otherTargetTypes.STREAM]: "WET GLOVES :(",
+      [otherTargetTypes.CROW_B]: "This flappy friend cannot be caught"
+    },
+    [toolTypes.LUNCH]: {
+      [otherTargetTypes.CROW_A]: "CAW! Thank you for the breadcrumbs, flightless friend",
+      [toolTypes.COW]: "Why would you give cheese to a cow? Yikes"
+    },
+    [toolTypes.SHOVEl]: {
+      [targetTypes.MENHIR]: "You'll probably disturb the spring if you dig here"
+    },
+    undefined: {}
   },
   [characterTypes.KNIGHT]: {
-    [targetTypes.SUN]: "This is a sun"
+    [toolTypes.SHIELD]: {
+      [otherTargetTypes.STREAM]: "You use your shield to take a drink of water. Mmm. Silty."
+    },
+    [toolTypes.LASSO]: {
+      [targetTypes.SWORD]: "You're not strong enough to rope this out by yourself", //will be broken 
+      [otherTargetTypes.MUSHROOM01]: "Time to rope some dinner",
+      [otherTargetTypes.FLOCK]: "Your range is good, but not that good",
+      [otherTargetTypes.CROW_B]: "Rude"
+    },
+    [toolTypes.LANCE]: {
+      [targetTypes.COW]: "How could you?",
+      [targetTypes.SWORD]: "Bold, but ineffective", // will be broken
+      [targetTypes.SHRINE]: "Seems like a great way to piss off the local diety"
+    },
+    undefined: {}
   },
   [characterTypes.MONK]: {
-    [targetTypes.FLOWERS]: "These are flowers" 
+    [toolTypes.STAFF]: {
+    },
+    [toolTypes.SICKLE]: {
+      [targetTypes.CLOUDS]: "You're reminded of a joke from your childhood: old man yells at cloud",
+      [otherTargetTypes.CROW_B]: "The crow does not seem to appreciate this"
+    },
+    [toolTypes.BALM]: {
+      [otherTargetTypes.SKULL]: "It may be a little late for that",
+      [targetTypes.SHARDS]: "These are too sharp to pick up"
+    },
+    undefined: {}
   }
 }

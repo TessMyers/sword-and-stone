@@ -1,12 +1,13 @@
-<svg class="topBird">
+<svg class="crow_a">
 <defs>
   <style>
-    .topBird {
+    .crow_a {
       left: 913px;
       top: 50px;
       height: 50px;
+      width: 50px;
     }
   </style>
 </defs>
-  <circle id="CROW_B" cx="30" cy="30" r="20" fill="red" id="CROW"/>
+  <circle id="CROW_A" cx="30" cy="30" r="20" fill="red"/>
 </svg>
