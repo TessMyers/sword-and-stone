@@ -29,8 +29,12 @@ export default {
     }
   },
   mounted() {
-    EventBus.$on("play", () => {
-      this.$refs.audio.play();
+    EventBus.$on("introOKClicked", () => {
+      if (!store.getters.getHasSeenCharIntro) {
+        this.$refs.audio.play();
+        store.commit("seenCharIntro");
+        console.log("PLAYING, COMMIT SEENCHARINTRO");
+      }
     });
   }
 };

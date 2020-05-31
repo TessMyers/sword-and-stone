@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="modal_container" @click="noop($event)"> -->
   <div class="modal">
-    <p v-if="tip" v-html="tip"></p>
+    <p class="tip" v-if="tip" v-html="tip"></p>
     <div class="modal_body" v-if="result">
       <p>{{ result }}</p>
     </div>
@@ -48,7 +48,7 @@ export default {
       this.result = null;
       this.$emit("close");
       if (this.type === "INTRO") {
-        EventBus.$emit("play");
+        EventBus.$emit("introOKClicked");
       }
     }
   }
@@ -88,7 +88,11 @@ button {
 
 .modal_body {
   text-align: left;
-  /* vertical-align: middle; */
+}
+
+.tip {
+  text-align: left;
+  font-style: italic;
 }
 
 .option {

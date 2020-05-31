@@ -7,7 +7,11 @@
         <span class="gameTitle"><router-link to="/about">Destiny</router-link></span>
         <div class="swordImage reverse"></div>
       </div>
-      <p class="legend">Legend tells of a sword thrust into a stone, removable by none but the most worthy. It was lost many decades ago, throwing this country into turmoil and conflict. But there is hope that one bold person may claim the fated blade and lead the country to peace and prosperity. Could it be you? Choose your identity:</p>
+      <p class="legend">
+        Legend tells of a sword with the power to keep peace, prosperity, and balance. For many years this blade protected the land, but it was lost
+        nearly a century ago, throwing the country into turmoil and conflict. Many believe that the sword will one day be found by some bold person
+        who will put the country to rights. Could it be you? Choose your identity:
+      </p>
     </div>
     <div class="panels">
       <div v-on:click="beginGame(constants.characters.FARMHAND)">
@@ -25,7 +29,7 @@
       <div v-on:click="beginGame(constants.characters.MONK)">
         <div class="characterTitle">The Monk</div>
         <div class="panel monk" v-bind:class="{ completed: completedChars.includes(constants.characters.MONK.name) }"></div>
-        <div class="characterTraits">Confident and Cunning</div>
+        <div class="characterTraits">Adept and Cunning</div>
       </div>
     </div>
   </div>

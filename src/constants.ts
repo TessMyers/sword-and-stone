@@ -26,6 +26,10 @@ export const toolTypes = Object.freeze({
   DONE: "DONE"
 })
 
+export const nullTargetTypes = {
+  NONE: "NONE"
+}
+
 export const targetTypes = Object.freeze({
   PIPES: "PIPES",
   SHARDS: "SHARDS",
@@ -36,8 +40,7 @@ export const targetTypes = Object.freeze({
   FLOWERS: "FLOWERS",
   MENHIR: "MENHIR",
   COW: "COW",
-  SUN: "SUN",
-  NONE: "NONE"
+  SUN: "SUN"
 })
 
 export const otherTargetTypes = Object.freeze({
@@ -46,8 +49,18 @@ export const otherTargetTypes = Object.freeze({
   CROW_B: "CROW_B",
   FLOCK: "FLOCK",
   SKULL: "SKULL",
-  MUSHROOM01: "MUSHROOM01"
+  MUSHROOM01: "MUSHROOM01",
+  MUSHROOM02: "MUSHROOM02",
+  MUSHROOM03: "MUSHROOM03",
+  MUSHROOM_A: "MUSHROOM_A",
+  MUSHROOM_C: "MUSHROOM_C",
+  MUSHROOM_D: "MUSHROOM_D",
+  MUSHROOM_E: "MUSHROOM_E",
+  MUSHROOM_G: "MUSHROOM_G",
 })
+
+// All target type string values
+export const allSvgTargets = Object.entries(targetTypes).map(kv => { return kv[1]; }).concat(Object.entries(otherTargetTypes).map(kv => { return kv[1]; }))
 
 export const tools = Object.freeze({
   // FARMHAND
@@ -75,7 +88,7 @@ export const tools = Object.freeze({
     isHidden: true,
     flavorText: "Sparkling stone shards",
     imageName: "shards_tool.png",
-    target: targetTypes.NONE,
+    target: nullTargetTypes.NONE,
   }),
   // MONK
   STAFF: Object.freeze({
@@ -102,7 +115,7 @@ export const tools = Object.freeze({
     isHidden: true,
     flavorText: "Purple flowers",
     imageName: "flower_tool.png",
-    target: targetTypes.NONE
+    target: nullTargetTypes.NONE
   }),
   // KNIGHT
   LANCE: Object.freeze({
@@ -129,7 +142,7 @@ export const tools = Object.freeze({
     isHidden: true,
     flavorText: "A wild Longhorn",
     imageName: "cow_tool.png",
-    target: targetTypes.NONE
+    target: nullTargetTypes.NONE
   })
 });
 

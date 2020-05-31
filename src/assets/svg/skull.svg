@@ -1,0 +1,13 @@
+<svg class="skull">
+<defs>
+  <style>
+    .skull {
+      left: 158px;
+      top: 405px;
+      height: 50px;
+      width: 50px;
+    }
+  </style>
+</defs>
+  <circle id="SKULL" cx="30" cy="30" r="20" fill="red"/>
+</svg>

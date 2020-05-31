@@ -73,18 +73,19 @@ export const modalTexts = {
   },
   [modalTypes.HOWTO]: {
     bodyText: "Your task is to pull the sword from the stone. You have three tools in your inventory, and each tool can be used in some way to help free the sword. Select a tool, and use your mouse to click on elements in the scene to use the tool on that element. Click around and see what happens!",
+    tip: "Turn your sound on; headphones are recommended. Consider using the zoom function to correct for variable screen size. (<b>CMD +/- </b> on Mac or <b>CTRL +/-</b> for a PC)",
     options: []
   }
 }
 
 export const modalCharacterIntros = {
   [characterTypes.FARMHAND]: { 
-    bodyText: "You are The Farmhand. Gentle and curious, you are a plucky youngster on a quest to heal the land. This country was once verdant and prosperous, but decades of drought and blight have marred the fields and left the people hungry. As a child, you heard tales of a Legendary Sword that had the power to grant abundance and fruitfulness. Now, you have left your family’s struggling farm in search of this blade, hoping that you can restore prosperity and plenty.",
+    bodyText: "You are The Farmhand. Gentle and curious, you are a plucky youngster on a quest to heal the land. This country was once verdant and prosperous, but decades of drought and blight have marred the fields and left the people hungry. As a child, you heard tales of a Legendary Sword that had the power to grant abundance and fruitfulness. Now, you have left your family’s struggling farm in search of this blade, hoping that you can restore prosperity and plenty. You have just now stumbled upon this stark but peaceful glade.",
     options: [],
     type: "INTRO"
   },
   [characterTypes.KNIGHT]: {
-    bodyText: "You are The Knight. Strong and resourceful, you have been seeking an end to the war and conflict that has besieged this country. Though your nation was once peaceful, civil war and external skirmishes now rage, and you have seen far too many innocents slaughtered. You have heard of a Legendary Sword with the power to bring peace to whichever nation holds it, and now you search diligently for this fabled weapon.",
+    bodyText: "You are The Knight. Strong and resourceful, you have been seeking an end to the war and conflict that has besieged this country. Though your nation was once peaceful, civil war and external skirmishes now rage, and you have seen far too many innocents slaughtered. You have heard of a Legendary Sword with the power to bring peace to whichever nation holds it, and now your diligent search for this fabled weapon has brought you to this glade.",
     options: [],
     type: "INTRO"
   },
@@ -93,12 +94,6 @@ export const modalCharacterIntros = {
     options: [],
     type: "INTRO"
   }
-}
-
-export const modalTips = {
-  [characterTypes.FARMHAND]: "You are The Farmhand, and you are <b>gentle</b> and <b>curious</b>",
-  [characterTypes.KNIGHT]: "You are The Knight, and you are <b>strong</b> and <b>resourceful</b>",
-  [characterTypes.MONK]: "You are The Monk, and you are <b>confident</b> and <b>cunning</b>"
 }
 
 export const narratives = {
@@ -155,7 +150,7 @@ export const narratives = {
   },
   [toolTypes.FLOWERS]: {
     bodyText: ["You take the freshly harvested flowers and examine them carefully. Pale purple, these flowers are powerfully hallucinogenic in the right dose but deadly otherwise. Your monastic order has a very specific use for this herb. Carefully selecting an exact number of flower petals, you place them under your tongue and settle down to wait, breathing deeply.",
-    "Soon your breaths have slowed to twice a minute, and you feel your substance flying apart, each fragment intertwining with everything around you. In such a state you can clearly see the interconnected web in this glade - spring, stone, and tree linked together in a cyclic relationship. But this web is in disorder, bulging and attenuated where a blockage has prevented normal flow. Identifying the block, you PUSH.. and pass into a dream."],
+    "Soon your breaths have slowed to twice a minute, and you feel your substance flying apart, each fragment intertwining with everything around you. In such a state you can clearly see the interconnected web in this glade - spring, stone, and tree linked together in a cyclic relationship. But this web is in disorder, bulging and attenuated where a blockage has prevented normal flow. Identifying the block, you force your entire will against it... and pass into a dream."],
     swordStatus: [
       "When you awake, you see that you have met with some success. Your astral efforts have coaxed the blade partway out of the stone",
       "When you awake, you see that you have met with some success. Your astral efforts have coaxed the blade yet further out of the stone, though several inches remain firmly imbedded in the crystal.",
@@ -186,14 +181,14 @@ export const narratives = {
     "You probably should have brought eye protection for this."
     ],
     swordStatus: [
-      "As centuries of grime and rust begin to loosen in the heat, you give the hilt a sharp tug and enjoy a thrill of satisfaction as several handspans of the blade pull free from the stone. Alas, your solar method was insufficient to unlock the sword any further.",
-      "As centuries of grime and rust begin to loosen in the heat, you give the hilt a sharp tug and enjoy a thrill of satisfaction as several more handspans of the blade pull free from the stone. Alas, your solar method wasn’t quite sufficient to fully free the blade",
-      "As centuries of grime and rust begin to loosen in the heat, you give the hilt a sharp tug and enjoy a thrill of satisfaction as the last few inches of blade slide free of the still-warm crystal."
+      "As decades of grime and rust begin to loosen in the heat, you give the hilt a sharp tug and enjoy a thrill of satisfaction as several handspans of the blade pull free from the stone. Alas, your solar method was insufficient to unlock the sword any further.",
+      "As decades of grime and rust begin to loosen in the heat, you give the hilt a sharp tug and enjoy a thrill of satisfaction as several more handspans of the blade pull free from the stone. Alas, your solar method wasn’t quite sufficient to fully free the blade",
+      "As decades of grime and rust begin to loosen in the heat, you give the hilt a sharp tug and enjoy a thrill of satisfaction as the last few inches of blade slide free of the still-warm crystal."
     ]
   },
   [toolTypes.COW]: {
     bodyText: ["Driving your sturdy lance into the ground to create a fulcrum, you loop one end of your lasso around the sword hilt and hitch the other end to the placid Longhorn cow. After some initial resistance she is cajoled into forward progress, exerting her considerable strength and mass against the firmly stuck sword.",
-     "Your lance creaks under the strain, but the heavy wood holds fast. Archimedes would be proud of your improvised lever."
+     "Your lance creaks under the strain, but the heavy wood holds fast. Archimedes would be proud of your improvised pulley."
     ],
     swordStatus: [
       "As the cow plods forward, the sword begins to emerge from the stone, inch by inch. However, progress halts after a mere third of the blade has been exposed and no amount of heaving by the capable cow will budge it further.",
@@ -215,7 +210,7 @@ export const end = [
   "Legend spoke of a mighty sword, the loss of which began an era of war and calamity. Indeed, the sword did play a role in this decline: for when the blade was thrust into the holy fountain, it stoppered the flow of water. The pool dried up and the once-thriving tree shriveled and began to die. Leaders and warriors no longer came to find humility in the cool shade of the glade, choosing instead to squabble over a lost weapon as cities fell and crops failed.",
   "In pulling the sword from the stone, you have restored balance to this sacred place. The spring now feeds merrily into the complex system of pipes that in turn provide for and power the fountain. The crystal stone is once again whole and holy, quietly bubbling blessed waters into a pool that will revitalize the glade. The ancient tree, under which so many great leaders have once found temperance and wisdom, begins to heal and grow.",
   "You look down at the sword in your hands, and you see that the blade is stained by the blood of kings and innocents alike. What would happen if this sword were to reappear, after so many years? How many lives would be lost, by its edge and for its sake?",
-  "You toss the sword away. It will rust and be swallowed by the earth soon. Its iron will be reclaimed and the shining jewel in the pommel will fall off and roll away, perhaps to be discovered by a curious child in search of shiny objects. You take one last look at the peaceful scene before you, at the gnarled tree that will bloom this year, at the water that burbles gently over the shining stone surface, and you continue on your way."
+  "You toss the sword away. It will rust and be swallowed by the earth soon. Its iron will be reclaimed and the shining jewel in the pommel will fall off and roll away, perhaps to be discovered by a curious crow in search of shiny objects. You take one last look at the peaceful scene before you, at the gnarled tree that will bloom this year, at the water that burbles gently over the shining stone surface, and you continue on your way."
 ]
 
 export const tipTexts = {
@@ -223,16 +218,20 @@ export const tipTexts = {
     [toolTypes.GLOVES]: {
       [targetTypes.FLOWERS]: "Probably shouldn't pick these, even with gloves",
       [targetTypes.PIPES]: "It looks like these pipes are somehow connected to the stone, underneath all the soil and vines",
+      [targetTypes.STONE]: "Several deep cracks run though the luminous crystal",
       [otherTargetTypes.STREAM]: "WET GLOVES :(",
       [otherTargetTypes.CROW_B]: "This flappy friend cannot be caught",
+      TREE: "This tree is not doing well. Despite the nearby stream, its roots don't seem to be getting enough water" // need to add TREE target
     },
     [toolTypes.LUNCH]: {
       [otherTargetTypes.CROW_A]: "CAW! Thank you for the breadcrumbs, flightless friend",
-      [toolTypes.COW]: "Why would you give cheese to a cow? Yikes"
+      [toolTypes.COW]: "Why would you give cheese to a cow? Yikes",
+      [otherTargetTypes.SKULL]: "Ew"
     },
     [toolTypes.SHOVEl]: {
       [targetTypes.MENHIR]: "You'll probably disturb the spring if you dig here"
     },
+    [targetTypes.SHARDS]: {},
     undefined: {}
   },
   [characterTypes.KNIGHT]: {
@@ -241,19 +240,23 @@ export const tipTexts = {
     },
     [toolTypes.LASSO]: {
       [targetTypes.SWORD]: "You're not strong enough to rope this out by yourself", //will be broken 
+      [targetTypes.SUN]: "YEEHAW",
       [otherTargetTypes.MUSHROOM01]: "Time to rope some dinner",
       [otherTargetTypes.FLOCK]: "Your range is good, but not that good",
-      [otherTargetTypes.CROW_B]: "Rude"
+      [otherTargetTypes.CROW_B]: "Rude",
+      [targetTypes.MENHIR]: "It looks like the stream should connect to the pipes, but the spring seems blocked"
     },
     [toolTypes.LANCE]: {
-      [targetTypes.COW]: "How could you?",
-      [targetTypes.SWORD]: "Bold, but ineffective", // will be broken
+      [targetTypes.COW]: "Those horns are definitely going to win if you try to joust this cow", //OR, "how could you?"
+      [targetTypes.STONE]: "Bold, but ineffective",
       [targetTypes.SHRINE]: "Seems like a great way to piss off the local diety"
     },
+    [targetTypes.COW]: {},
     undefined: {}
   },
   [characterTypes.MONK]: {
     [toolTypes.STAFF]: {
+      [targetTypes.MENHIR]: "Though the place has fallen into deep disrepair, you can sense that this glade was once a sacred sanctuary"
     },
     [toolTypes.SICKLE]: {
       [targetTypes.CLOUDS]: "You're reminded of a joke from your childhood: old man yells at cloud",
@@ -261,8 +264,9 @@ export const tipTexts = {
     },
     [toolTypes.BALM]: {
       [otherTargetTypes.SKULL]: "It may be a little late for that",
-      [targetTypes.SHARDS]: "These are too sharp to pick up"
+      [targetTypes.SHARDS]: "These are too sharp to pick up" // "you're going to need the healing balm if  you..."
     },
+    [targetTypes.FLOWERS]: {},
     undefined: {}
   }
 }

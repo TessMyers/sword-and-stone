@@ -33,6 +33,7 @@ function returnFreshCharState() {
     activeTool: "",
     successes: returnStringArray(),
     inventory: inventory,
+    hasSeenCharacterIntro: false
   };
 }
 
@@ -64,6 +65,9 @@ export default new Vuex.Store({
     },
     canClaim: state => {
       return state.charState.successes.length === 3;
+    },
+    getHasSeenCharIntro: state => {
+      return state.charState.hasSeenCharacterIntro;
     }
   },
   mutations: {
@@ -90,6 +94,9 @@ export default new Vuex.Store({
           tool.isHidden = !shouldShow;
         }
       });
+    },
+    seenCharIntro (state) {
+      state.charState.hasSeenCharacterIntro = true;
     },
     endGameForCharacter (state) {
       state.finishedCharacters.push(state.charState.character);

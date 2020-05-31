@@ -59,7 +59,7 @@ export default {
   text-align: left;
   padding: 100px;
   font-size: 14pt;
-  width: 900px;
+  width: 800px;
   margin: auto;
 }
 .button {
