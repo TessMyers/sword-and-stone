@@ -5,6 +5,8 @@ import { pageTypes } from "../constants";
 
 Vue.use(Vuex);
 
+export const EventBus = new Vue();
+
 const vuexPersist = new VuexPersist({
   key: 'destiny',
   storage: window.sessionStorage

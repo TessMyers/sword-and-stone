@@ -50,8 +50,8 @@
 </template>
 <script>
 import store from "@/store";
-import { pageTypes, toolTypes, targetTypes } from "@/constants";
-import { modalTexts, modalTypes, modalTips, tipTexts } from "@/text";
+import { pageTypes, toolTypes, targetTypes, characterTypes } from "@/constants";
+import { modalTexts, modalTypes, modalTips, tipTexts, modalCharacterIntros } from "@/text";
 import Tool from "@/components/Tool.vue";
 import Modal from "@/components/Modal";
 import Tooltip from "@/components/Tooltip";
@@ -133,13 +133,13 @@ export default {
   },
   data() {
     return {
-      isModalVisible: false,
+      isModalVisible: true,
       isTooltipVisible: false,
       constants: {
         pageTypes,
         targetTypes
       },
-      modalProps: this.getHowTo(),
+      modalProps: modalCharacterIntros[store.getters.getCharacter],
       tooltipProps: {}
     };
   },
@@ -149,7 +149,6 @@ export default {
     tryClaimSword,
     showTooltip,
     hideTooltip(e) {
-      console.log(e);
       this.isTooltipVisible = false;
     },
     getHowTo() {
@@ -173,7 +172,6 @@ export default {
       }
     },
     hideTool() {
-      console.log("hiding tool");
       store.commit("showHiddenTool", false);
     },
     newGame() {

@@ -11,7 +11,7 @@
       preload="true"
       controlsList="nodownload"
       v-bind:class="{ hidden: isChoosePage }"
-      @play="onPlay"
+      ref="audio"
     >
       Your browser does not support the audio element.
     </audio>
@@ -19,19 +19,19 @@
 </template>
 
 <script>
-import store from "./store";
+import store, { EventBus } from "./store";
 
 export default {
   name: "App",
-  methods: {
-    onPlay() {
-      console.log("PLAYING!");
-    }
-  },
   computed: {
     isChoosePage() {
       return store.getters.getCurrentPage === "CHOOSE";
     }
+  },
+  mounted() {
+    EventBus.$on("play", () => {
+      this.$refs.audio.play();
+    });
   }
 };
 </script>

@@ -18,7 +18,8 @@
 
 <script>
 import { narratives } from "@/text";
-
+import { EventBus } from "@/store";
+ 
 export default {
   name: "modal",
   data() {
@@ -29,7 +30,8 @@ export default {
   props: {
     bodyText: String,
     options: Array,
-    tip: String
+    tip: String,
+    type: String
   },
   methods: {
     selectOption(index) {
@@ -45,6 +47,9 @@ export default {
     close() {
       this.result = null;
       this.$emit("close");
+      if (this.type === "INTRO") {
+        EventBus.$emit("play");
+      }
     }
   }
 };
@@ -52,8 +57,6 @@ export default {
 
 <style scoped>
 button {
-  position: absolute;
-  bottom: 30px;
   font-family: "Ringbearer";
   font-size: 14pt;
 }
@@ -68,12 +71,12 @@ button {
 
 .modal {
   /* pointer-events: auto; */
-  height: 220px;
+  max-height: 260px;
   width: 400px;
   padding: 30px;
   background-color: rgb(46, 44, 51);
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 50%;
   margin-left: -200px;
   z-index: 1;

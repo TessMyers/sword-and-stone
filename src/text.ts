@@ -16,7 +16,7 @@ export const modalTypes = {
 };
 
 export const modalTexts = {
-  SHARDS: {
+  [modalTypes.SHARDS]: {
     bodyText: "With your sturdy gardening gloves, you pick up the very sharp stone shards. You:",
     options: [
       {
@@ -33,7 +33,7 @@ export const modalTexts = {
       }
     ]
   },
-  FLOWERS: {
+  [modalTypes.FLOWERS]: {
     bodyText: "With your sharp sickle, you carefully harvest the purple flowers. You:",
     options: [
       {
@@ -50,7 +50,7 @@ export const modalTexts = {
       }
     ]
   },
-  COW: {
+  [modalTypes.COW]: {
     bodyText: "You have captured a wild Longhorn cow with your knightly lassoing skills. You:",
     options: [
       {
@@ -67,25 +67,43 @@ export const modalTexts = {
       }
     ]
   },
-  DONE: {
+  [modalTypes.DONE]: {
     bodyText: "You have already done this!",
     options: []
   },
-  HOWTO: {
+  [modalTypes.HOWTO]: {
     bodyText: "Your task is to pull the sword from the stone. You have three tools in your inventory, and each tool can be used in some way to help free the sword. Select a tool, and use your mouse to click on elements in the scene to use the tool on that element. Click around and see what happens!",
     options: []
   }
 }
 
+export const modalCharacterIntros = {
+  [characterTypes.FARMHAND]: { 
+    bodyText: "You are The Farmhand. Gentle and curious, you are a plucky youngster on a quest to heal the land. This country was once verdant and prosperous, but decades of drought and blight have marred the fields and left the people hungry. As a child, you heard tales of a Legendary Sword that had the power to grant abundance and fruitfulness. Now, you have left your family’s struggling farm in search of this blade, hoping that you can restore prosperity and plenty.",
+    options: [],
+    type: "INTRO"
+  },
+  [characterTypes.KNIGHT]: {
+    bodyText: "You are The Knight. Strong and resourceful, you have been seeking an end to the war and conflict that has besieged this country. Though your nation was once peaceful, civil war and external skirmishes now rage, and you have seen far too many innocents slaughtered. You have heard of a Legendary Sword with the power to bring peace to whichever nation holds it, and now you search diligently for this fabled weapon.",
+    options: [],
+    type: "INTRO"
+  },
+  [characterTypes.MONK]: { 
+    bodyText: "You are the monk, nuff said",
+    options: [],
+    type: "INTRO"
+  }
+}
+
 export const modalTips = {
-  FARMHAND: "You are The Farmhand, and you are <b>gentle</b> and <b>curious</b>",
-  KNIGHT: "You are The Knight, and you are <b>strong</b> and <b>resourceful</b>",
-  MONK: "You are The Monk, and you are <b>confident</b> and <b>cunning</b>"
+  [characterTypes.FARMHAND]: "You are The Farmhand, and you are <b>gentle</b> and <b>curious</b>",
+  [characterTypes.KNIGHT]: "You are The Knight, and you are <b>strong</b> and <b>resourceful</b>",
+  [characterTypes.MONK]: "You are The Monk, and you are <b>confident</b> and <b>cunning</b>"
 }
 
 export const narratives = {
   // FARMHAND NARRATIVES
-  SHOVEL: {
+  [toolTypes.SHOVEl]: {
     bodyText: ["As you explore the area, you see the remnants of <b>ancient pipes</b> surrounding the stone, partially buried in soil and wrapped in overgrown greenery. Many passing years have left the plumbing rusty and inoperative.", 
     "With your gardener’s instincts and your trusty shovel, you laboriously dig out the pipes and clear away the entwining vines and weeds.",
     "Inspecting the now-visible machinery, you see that the pipes should connect to the nearby spring, bringing water to flow through the stone as if it were a fountain. As you reconnect several junctions and clear a blockage, the ancient pipes begin to rattle, clunking and wheezing as they fill with the rapid influx of water. Spring water rushes into a center channel of the stone and soon meets the obstructing sword."],
@@ -95,7 +113,7 @@ export const narratives = {
       "With the hiss of water under high pressure, the sword slowly rises from the stone until, with a sudden spray of water, it pops free."
     ]
   },
-  LUNCH: {
+  [toolTypes.LUNCH]: {
     bodyText: ["A tree stands to your right, its aged branches gnarled and bare. You recognize the signs of ill-health in the wood, and know with sadness that the venerable tree is dying.",
     "Noticing a small shrine in the tangled roots, you place half your lunch of bread and cheese in the little offering bowl. You step back respectfully, placing your palms together and bowing your head as you ask for assistance.",
     "As if in a sudden breeze, the branches of the tree begin to shake, and the stone figurine rattles. The tree spirit is pleased with your small but generous gift."],
@@ -105,7 +123,7 @@ export const narratives = {
       "The ground trembles, and the sword finally slides gently out of the stone. The rustling branches subside. With the help of the tree spirit, you have freed the sword!"
     ]
   },
-  SHARDS: {
+  [toolTypes.SHARDS]: {
     bodyText: ["Inspecting the stone, you find several <b>deep cracks</b> in the crystalline material. With a steady hand, you carefully slide the crystal shards into place.  As you step back, the stone begins to emit a subtle glow as it becomes whole once more."],
     swordStatus: [
       "Humming gently, the healing stone pushes the blade part way out as if rejecting a splinter. Emerging a third of the way, the progress of the sword halts and the glow subsides. You must continue from here.",
@@ -119,7 +137,7 @@ export const narratives = {
     swordStatus: [0,0,0,""]
   },
   // MONK NARRATIVES
-  STAFF: {
+  [toolTypes.STAFF]: {
     bodyText: ["With slow, rhythmic strikes, you beat your holy staff against the earth. Raising your free arm above your head, you reach towards the dark clouds and cry out an invocation to your god. With a thundering crash and the smell of ozone, a blinding branch of lightning snakes down and strikes the crystal stone."],
     swordStatus: [
       "As the spots clear from your eyes, you see that the sword has been pushed partway out of the stone. Smoke curls around the sword’s hilt, but it remains partially embedded in the stone.",
@@ -127,7 +145,7 @@ export const narratives = {
       "As the spots clear from your eyes, you see that the lightning strike has blown the sword free from the stone. Soot streaks the blade, but the hilt shines bright."
     ]
   },
-  BALM: {
+  [toolTypes.BALM]: {
     bodyText: ["You know a solution to this problem! Reaching into your robes, you pull out the jar of healing balm that you always keep with you. With a quiet pop, the cork comes free and you carefully smear some of the balm at the junction of sword and stone. After a few moments, the balm has done its work; no mere sword can withstand the power of a soothing balm made for cracked old hands."],
     swordStatus: [
       "With a heave, you haul on the hilt of the sword. Greased by the balm, the blade slides out part way but shudders to a halt. You will need to try something else, if you wish to free this sword completely",
@@ -135,7 +153,7 @@ export const narratives = {
       "With a heave, you haul on the hilt of the sword and are rewarded with a smooth draw as the blade, greased by a simple herbal balm, slides free."
     ]
   },
-  FLOWERS: {
+  [toolTypes.FLOWERS]: {
     bodyText: ["You take the freshly harvested flowers and examine them carefully. Pale purple, these flowers are powerfully hallucinogenic in the right dose but deadly otherwise. Your monastic order has a very specific use for this herb. Carefully selecting an exact number of flower petals, you place them under your tongue and settle down to wait, breathing deeply.",
     "Soon your breaths have slowed to twice a minute, and you feel your substance flying apart, each fragment intertwining with everything around you. In such a state you can clearly see the interconnected web in this glade - spring, stone, and tree linked together in a cyclic relationship. But this web is in disorder, bulging and attenuated where a blockage has prevented normal flow. Identifying the block, you PUSH.. and pass into a dream."],
     swordStatus: [
@@ -152,7 +170,7 @@ export const narratives = {
     swordStatus: [0,0,0,""]
   },
   // KNIGHT NARRATIVES
-  LANCE: {
+  [toolTypes.LANCE]: {
     bodyText: ["You notice that the flow of water in the spring is obstructed, and aside from a small trickle, the pipes that seem to connect the stone to the spring are dry. The stone appears to be connected to some kind of hydro system that has fallen into disrepair, but you have neither the tools nor the know-how to try and fix the pipes themselves.",
     "Throwing caution to the winds, you opt for a brute force approach and dig your sturdy lance into the cleft between stones. Heaving on the other end with a monumental effort, you hear a grating sound as the largest rock shifts, and then a gushing of released water as the blocked spring surges.",
     "Increased pressure from the newly liberated stream blows through the pipes, clearing away decades of debris. The hydro system trembles to life as flow is restored through the pipes and to the stone itself, the blocked center channel of the stone filling with water."
@@ -163,7 +181,7 @@ export const narratives = {
       "Pushed by the growing pressure, the last few inches of the obstructing blade shriek upwards as the water jets from the stone. The sword is out!"
     ]
   },
-  SHIELD: {
+  [toolTypes.SHIELD]: {
     bodyText: ["You unstrap your shield, and turn it over to expose the highly reflective convex back surface. With an eye to the sky, you estimate the angles required and position your shield such that the sun’s bright light is caught and reflected into the stone. Passing through the crystal material, the solar rays hit the blade of the sword and begin to heat the glimmering steel.",
     "You probably should have brought eye protection for this."
     ],
@@ -173,7 +191,7 @@ export const narratives = {
       "As centuries of grime and rust begin to loosen in the heat, you give the hilt a sharp tug and enjoy a thrill of satisfaction as the last few inches of blade slide free of the still-warm crystal."
     ]
   },
-  COW: {
+  [toolTypes.COW]: {
     bodyText: ["Driving your sturdy lance into the ground to create a fulcrum, you loop one end of your lasso around the sword hilt and hitch the other end to the placid Longhorn cow. After some initial resistance she is cajoled into forward progress, exerting her considerable strength and mass against the firmly stuck sword.",
      "Your lance creaks under the strain, but the heavy wood holds fast. Archimedes would be proud of your improvised lever."
     ],
@@ -204,8 +222,9 @@ export const tipTexts = {
   [characterTypes.FARMHAND]: {
     [toolTypes.GLOVES]: {
       [targetTypes.FLOWERS]: "Probably shouldn't pick these, even with gloves",
+      [targetTypes.PIPES]: "It looks like these pipes are somehow connected to the stone, underneath all the soil and vines",
       [otherTargetTypes.STREAM]: "WET GLOVES :(",
-      [otherTargetTypes.CROW_B]: "This flappy friend cannot be caught"
+      [otherTargetTypes.CROW_B]: "This flappy friend cannot be caught",
     },
     [toolTypes.LUNCH]: {
       [otherTargetTypes.CROW_A]: "CAW! Thank you for the breadcrumbs, flightless friend",
