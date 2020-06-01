@@ -5,7 +5,7 @@
     <audio
       controls
       volume="0.1"
-      src="@/assets/audio/river-flute.mp3"
+      src="@/assets/audio/river-flute_trimmed.mp3"
       type="audio/mpeg"
       loop
       preload="true"
