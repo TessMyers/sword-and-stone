@@ -6,7 +6,7 @@
       <p>{{ result }}</p>
     </div>
     <div class="modal_body" v-else>
-      <p>{{ bodyText }}</p>
+      <p v-html="bodyText"></p>
       <div v-for="(option, index) in options" v-bind:key="index">
         <p class="option" @click="selectOption(index)">{{ `> ${option.actionText}` }}</p>
       </div>

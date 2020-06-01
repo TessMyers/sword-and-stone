@@ -80,17 +80,17 @@ export const modalTexts = {
 
 export const modalCharacterIntros = {
   [characterTypes.FARMHAND]: { 
-    bodyText: "You are The Farmhand. Gentle and curious, you are a plucky youngster on a quest to heal the land. This country was once verdant and prosperous, but decades of drought and blight have marred the fields and left the people hungry. As a child, you heard tales of a Legendary Sword that had the power to grant abundance and fruitfulness. Now, you have left your family’s struggling farm in search of this blade, hoping that you can restore prosperity and plenty. You have just now stumbled upon this stark but peaceful glade.",
+    bodyText: "You are <b>The Farmhand</b>. Gentle and curious, you are a plucky youngster on a quest to heal the land. This country was once verdant and prosperous, but decades of drought and blight have marred the fields and left the people hungry. As a child, you heard tales of a Legendary Sword that had the power to grant abundance and fruitfulness. Now, you have left your family’s struggling farm in search of this blade, hoping that you can restore prosperity and plenty. You have just now stumbled upon this stark but peaceful glade.",
     options: [],
     type: "INTRO"
   },
   [characterTypes.KNIGHT]: {
-    bodyText: "You are The Knight. Strong and resourceful, you have been seeking an end to the war and conflict that has besieged this country. Though your nation was once peaceful, civil war and external skirmishes now rage, and you have seen far too many innocents slaughtered. You have heard of a Legendary Sword with the power to bring peace to whichever nation holds it, and now your diligent search for this fabled weapon has brought you to this glade.",
+    bodyText: "You are <b>The Knight</b>. Strong and resourceful, you have been seeking an end to the war and conflict that has besieged this country. Though your nation was once peaceful, civil war and external skirmishes now rage, and you have seen far too many innocents slaughtered. You have heard of a Legendary Sword with the power to bring peace to whichever nation holds it, and now your diligent search for this fabled weapon has brought you to this glade.",
     options: [],
     type: "INTRO"
   },
   [characterTypes.MONK]: { 
-    bodyText: "You are the monk, nuff said",
+    bodyText: "You are <b>The Monk</b>. Adept and cunning, you have traveled the land for many years seeking to relieve the strife and imbalance in the soul of this country. Though this realm was once known as a paragon of learning and compassion, it has declined steeply in the last few generations. In your wanderings you have heard whispers of an ancient artifact, a Legendary Sword that once lent wisdom and forbearance to those who ruled. In hopeful search of such a device, you have followed those whisperings to this strange glade.",
     options: [],
     type: "INTRO"
   }
@@ -221,7 +221,7 @@ export const tipTexts = {
       [targetTypes.STONE]: "Several deep cracks run though the luminous crystal",
       [otherTargetTypes.STREAM]: "WET GLOVES :(",
       [otherTargetTypes.CROW_B]: "This flappy friend cannot be caught",
-      TREE: "This tree is not doing well. Despite the nearby stream, its roots don't seem to be getting enough water" // need to add TREE target
+      [otherTargetTypes.TREE]: "This tree is not doing well. Despite the nearby stream, its roots don't seem to be getting enough water" // need to add TREE target
     },
     [toolTypes.LUNCH]: {
       [otherTargetTypes.CROW_A]: "CAW! Thank you for the breadcrumbs, flightless friend",

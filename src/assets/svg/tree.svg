@@ -1,0 +1,13 @@
+<svg class="tree">
+<defs>
+  <style>
+    .tree {
+      left: 735px;
+      top: 224px;
+      height: 90px;
+      width: 90px;
+    }
+  </style>
+</defs>
+  <circle id="TREE" cx="50" cy="50" r="40" fill="red" />
+</svg>

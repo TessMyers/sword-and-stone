@@ -31,6 +31,7 @@ export default {
   mounted() {
     EventBus.$on("introOKClicked", () => {
       if (!store.getters.getHasSeenCharIntro) {
+        this.$refs.audio.volume = 0.5;
         this.$refs.audio.play();
         store.commit("seenCharIntro");
         console.log("PLAYING, COMMIT SEENCHARINTRO");

@@ -18,8 +18,10 @@ export default {
   watch: {
     $props: {
       handler() {
+        // Absolutely terrible offset calc, but it works for what I got
+        const offsetWidth = Math.min(this.text.length * 7, 300);
         const xWithinTableau = this.mouseEvent.clientX - this.boundingRect.left;
-        const leftness = xWithinTableau > 700 ? this.boundingRect.left + 300 : this.boundingRect.left;
+        const leftness = xWithinTableau > 1000 - offsetWidth ? this.boundingRect.left + offsetWidth : this.boundingRect.left;
         this.xPosition = Math.round(this.mouseEvent.clientX - leftness) + 2;
         this.yPosition = Math.round(this.mouseEvent.clientY - this.boundingRect.top) + 2;
       },
@@ -30,7 +32,7 @@ export default {
 </script>
 <style scoped>
 .tooltip {
-  background-color: rgba(0, 0, 0, 0.801);
+  background-color: rgba(0, 0, 0, 0.8);
   color: rgb(255, 255, 255);
   position: absolute;
   left: 50%;
@@ -40,5 +42,6 @@ export default {
   padding: 2px 5px;
   border-radius: 3px;
   z-index: 2;
+  display: inline-block;
 }
 </style>
