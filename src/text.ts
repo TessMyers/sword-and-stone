@@ -128,7 +128,7 @@ export const narratives = {
   },
   FARMHAND_ENDING: {
     bodyText: ["You reach out and take the sword. Balancing it gently across both hands, you survey the scene. Now that you have removed the obstructive sword, it’s clear that the stone is a kind of fountain. The pipes that you have repaired now effortlessly carry water from the spring to and through the stone, where it burbles up and flows over the crystal surface in a gentle cascade. You see that the growing pool of water at the base of the stone and understand with relief that the ancient tree may now survive, nourished by these flowing waters.", 
-    "The sword lies heavy in your hands, light glittering along the chipped edges. It is now yours."],
+    "The sword lies heavy in your hands, light glittering along the chipped edges. It is now yours, and you must decide what to do with it."],
     swordStatus: [0,0,0,""]
   },
   // MONK NARRATIVES
@@ -136,15 +136,15 @@ export const narratives = {
     bodyText: ["With slow, rhythmic strikes, you beat your holy staff against the earth. Raising your free arm above your head, you reach towards the dark clouds and cry out an invocation to your god. With a thundering crash and the smell of ozone, a blinding branch of lightning snakes down and strikes the crystal stone."],
     swordStatus: [
       "As the spots clear from your eyes, you see that the sword has been pushed partway out of the stone. Smoke curls around the sword’s hilt, but it remains partially embedded in the stone.",
-      "As the spots clear from your eyes, you see that the sword has been pushed another third of the way out of the stone. Smoke curls gently around the sword’s hilt, but it is not yet free",
+      "As the spots clear from your eyes, you see that the sword has been pushed another third of the way out of the stone. Smoke curls gently around the sword’s hilt, but it is not yet free.",
       "As the spots clear from your eyes, you see that the lightning strike has blown the sword free from the stone. Soot streaks the blade, but the hilt shines bright."
     ]
   },
   [toolTypes.BALM]: {
     bodyText: ["You know a solution to this problem! Reaching into your robes, you pull out the jar of healing balm that you always keep with you. With a quiet pop, the cork comes free and you carefully smear some of the balm at the junction of sword and stone. After a few moments, the balm has done its work; no mere sword can withstand the power of a soothing balm made for cracked old hands."],
     swordStatus: [
-      "With a heave, you haul on the hilt of the sword. Greased by the balm, the blade slides out part way but shudders to a halt. You will need to try something else, if you wish to free this sword completely",
-      "With a heave, you haul on the hilt of the sword. Greased by the balm, the blade slides a further few inches out of the entrapping stone. You seem to have reached the limits of your physical power",
+      "With a heave, you haul on the hilt of the sword. Greased by the balm, the blade slides out part way but shudders to a halt. You will need to try something else, if you wish to free this sword completely.",
+      "With a heave, you haul on the hilt of the sword. Greased by the balm, the blade slides a further few inches out of the entrapping stone. You seem to have reached the limits of your physical power.",
       "With a heave, you haul on the hilt of the sword and are rewarded with a smooth draw as the blade, greased by a simple herbal balm, slides free."
     ]
   },
@@ -152,7 +152,7 @@ export const narratives = {
     bodyText: ["You take the freshly harvested flowers and examine them carefully. Pale purple, these flowers are powerfully hallucinogenic in the right dose but deadly otherwise. Your monastic order has a very specific use for this herb. Carefully selecting an exact number of flower petals, you place them under your tongue and settle down to wait, breathing deeply.",
     "Soon your breaths have slowed to twice a minute, and you feel your substance flying apart, each fragment intertwining with everything around you. In such a state you can clearly see the interconnected web in this glade - spring, stone, and tree linked together in a cyclic relationship. But this web is in disorder, bulging and attenuated where a blockage has prevented normal flow. Identifying the block, you force your entire will against it... and pass into a dream."],
     swordStatus: [
-      "When you awake, you see that you have met with some success. Your astral efforts have coaxed the blade partway out of the stone",
+      "When you awake, you see that you have met with some success. Your astral efforts have coaxed the blade partway out of the stone.",
       "When you awake, you see that you have met with some success. Your astral efforts have coaxed the blade yet further out of the stone, though several inches remain firmly imbedded in the crystal.",
       "You awaken to the gentle gurgle of water, now flowing freely through the center channel of the crystal stone. The sword lies a few feet away, where it has landed after being blown free by the might of your astral extertions."
     ]
@@ -161,7 +161,7 @@ export const narratives = {
     bodyText: ["Grasping your staff for support, you slowly raise the weight of the heavy sword. Its pommel shimmers brightly at you, winking in the sun. You peer along the edge, noting areas of rust and corrosion",
     "Taking a seat on a nearby rock, you observe the glade. Your psychic venture into the inner workings of this place has given you a deep knowledge of its purpose and function. Once, deep spring water flowed into pipes and passed through the crystal stone. Purified and blessed, the resulting fountain fed a pool that sustained the land. Many tired, hurt, and struggling individuals found themselves drawn to this quiet place where they discovered rest and healing in the waters and in the shade of the ancient tree.", 
     "Your work here has restored the balance of this delicate system. Water now flows freely from spring to stone, where it bubbles up uninterrupted through the sacred crystal. The small pool that grows at the base of the fountain will provide for flora and fauna alike, and soon the formerly lush glade will be restored.", 
-    "In your aged hands rests the legendary sword, still sharp and deadly after all this time. It is yours now."],
+    "In your aged hands rests the legendary sword, still sharp and deadly after all this time. It is yours now, and you must decide what to do with it."],
     swordStatus: [0,0,0,""]
   },
   // KNIGHT NARRATIVES

@@ -28,6 +28,8 @@ export default {
       const successes = store.getters.getSuccesses;
       if (successes.length === 3) {
         playSound("SWORD");
+      } else {
+        playSound("SWORD_SCRAPE");
       }
       if (successes.length === 4) {
         store.commit("endGameForCharacter");

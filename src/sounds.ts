@@ -8,6 +8,7 @@ import sunWink from "./assets/audio/wink.mp3";
 import clinkBreeze from "./assets/audio/clink_and_breeze.mp3";
 import diggingPipes from "./assets/audio/digging_and_pipes.mp3";
 import swordDraw from "./assets/audio/sworddraw.mp3";
+import swordScrape from "./assets/audio/scrape02.mp3";
 import flock from "./assets/audio/flock01.mp3";
 
 import caw1 from "./assets/audio/caw01.mp3";
@@ -69,6 +70,7 @@ import humE from "./assets/audio/humE.mp3";
 
 export const soundMap:any = {
   [targetTypes.SWORD]: { audio: [new Audio(swordDraw)] },
+  "SWORD_SCRAPE": { audio: [new Audio(swordScrape)] },
 
   "PIPES_SUCCESS": { audio: [new Audio(diggingPipes)] },
   "SHRINE_SUCCESS": { audio: [new Audio(clinkBreeze)] },

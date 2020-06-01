@@ -19,7 +19,7 @@
 <script>
 import { narratives } from "@/text";
 import { EventBus } from "@/store";
- 
+
 export default {
   name: "modal",
   data() {
