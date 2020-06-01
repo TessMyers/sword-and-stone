@@ -16,11 +16,10 @@
     <ul>
       <li>Wendell Britt</li>
       <li>Gangle the Worthy</li>
-      <li>some other people</li>
+      <li>Daniel Bullard-Bates</li>
       <li>someone else</li>
       <li>other name</li>
       <li>some other people</li>
-      <li>someone else</li>
     </ul>
     <div class="info">
       <p>
@@ -39,6 +38,7 @@
       <div class="button newGame" v-on:click="newGame">New Game</div>
     </center>
     <div class="links">
+      <router-link to="/">&laquo; BACK | </router-link>
       <a>MORE GAMES</a> |
       <a href="https://www.instagram.com/tesslacoiled/" target="_blank">MORE ART</a>
     </div>
@@ -77,7 +77,7 @@ li {
 
 .about {
   text-align: left;
-  margin: 50px auto;
+  margin: 50px 0px;
   /* color: #cecece; */
   color: white;
   max-width: 900px;

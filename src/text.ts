@@ -72,7 +72,7 @@ export const modalTexts = {
     options: []
   },
   [modalTypes.HOWTO]: {
-    bodyText: "Your task is to pull the sword from the stone. You have three tools in your inventory, and each tool can be used in some way to help free the sword. Select a tool, and use your mouse to click on elements in the scene to use the tool on that element. Click around and see what happens!",
+    bodyText: "Your task is to pull the sword from the stone. You have three tools in your inventory, and each tool can be used in some way to help free the sword. Select a tool, and use your mouse to click on elements in the scene to use the tool on that element. Click around and see what happens! You can't mess up.",
     tip: "Turn your sound on; headphones are recommended. Consider using the zoom function to correct for variable screen size. (<b>CMD +/- </b> on Mac or <b>CTRL +/-</b> for a PC)",
     options: []
   }
@@ -158,7 +158,7 @@ export const narratives = {
     ]
   },
   MONK_ENDING: {
-    bodyText: ["Grasping your staff for support, you slowly raise the weight of the heavy sword. Its pommel shimmers brightly at you, winking in the sun. You peer along the edge, noting areas of rust and corrosion",
+    bodyText: ["Grasping your staff for support, you slowly raise the weight of the heavy sword. Its pommel shimmers brightly at you, winking in the sun. You peer along the edge, noting areas of rust and corrosion.",
     "Taking a seat on a nearby rock, you observe the glade. Your psychic venture into the inner workings of this place has given you a deep knowledge of its purpose and function. Once, deep spring water flowed into pipes and passed through the crystal stone. Purified and blessed, the resulting fountain fed a pool that sustained the land. Many tired, hurt, and struggling individuals found themselves drawn to this quiet place where they discovered rest and healing in the waters and in the shade of the ancient tree.", 
     "Your work here has restored the balance of this delicate system. Water now flows freely from spring to stone, where it bubbles up uninterrupted through the sacred crystal. The small pool that grows at the base of the fountain will provide for flora and fauna alike, and soon the formerly lush glade will be restored.", 
     "In your aged hands rests the legendary sword, still sharp and deadly after all this time. It is yours now, and you must decide what to do with it."],
@@ -167,7 +167,7 @@ export const narratives = {
   // KNIGHT NARRATIVES
   [toolTypes.LANCE]: {
     bodyText: ["You notice that the flow of water in the spring is obstructed, and aside from a small trickle, the pipes that seem to connect the stone to the spring are dry. The stone appears to be connected to some kind of hydro system that has fallen into disrepair, but you have neither the tools nor the know-how to try and fix the pipes themselves.",
-    "Throwing caution to the winds, you opt for a brute force approach and dig your sturdy lance into the cleft between stones. Heaving on the other end with a monumental effort, you hear a grating sound as the largest rock shifts, and then a gushing of released water as the blocked spring surges.",
+    "Throwing caution to the winds, you opt for a brute force approach and dig your sturdy lance into the cleft between stones. Heaving on the other end with a monumental effort, you hear a grating sound as the largest rock shifts, and then a gush of released water as the blocked spring surges.",
     "Increased pressure from the newly liberated stream blows through the pipes, clearing away decades of debris. The hydro system trembles to life as flow is restored through the pipes and to the stone itself, the blocked center channel of the stone filling with water."
     ],
     swordStatus: [
