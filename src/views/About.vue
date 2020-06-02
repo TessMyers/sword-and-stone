@@ -17,6 +17,7 @@
       <li>Wendell Britt</li>
       <li>Gangle the Worthy</li>
       <li>Daniel Bullard-Bates</li>
+      <li>Zina Jenny</li>
       <li>someone else</li>
       <li>other name</li>
       <li>some other people</li>
