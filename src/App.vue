@@ -75,7 +75,7 @@ audio.pinned {
 .button {
   cursor: pointer;
   font-family: Ringbearer;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 #app {

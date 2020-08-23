@@ -18,7 +18,7 @@
       <li>Gangle the Worthy</li>
       <li>Daniel Bullard-Bates</li>
       <li>Zina Jenny</li>
-      <li>someone else</li>
+      <li>Kristin Jacobs</li>
       <li>other name</li>
       <li>some other people</li>
     </ul>
@@ -28,7 +28,7 @@
         <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC License</a>
       </p>
       <p>
-        This was my first browser-based game, inspired by a love of fantasy, legends, and exploratory puzzle games. DESTINY is built in Vue.js with
+        This was my first full-size game, inspired by a love of fantasy, legends, and exploratory puzzle games. DESTINY is built in Vue.js with
         Typescript: See the code <a href="https://github.com/TessMyers/sword-and-stone/" target="_blank">here</a>. Sound effects were created in
         Audacity: please see
         <a target="_blank" href="https://github.com/TessMyers/sword-and-stone/blob/master/SOUNDCREDITS.md">full attribution list</a> for sources. The

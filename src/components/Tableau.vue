@@ -7,7 +7,11 @@
     <div class="tableau" v-bind:style="{ backgroundImage: backgroundImageUrl }" ref="tableau" @mouseup="hideTooltip($event)">
       <!-- SVG click masks -->
       <div v-for="target in constants.allSvgTargets" v-bind:key="target">
-        <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/${target.toLowerCase()}.svg`)"></div>
+        <div v-on:mousedown="attemptClick($event)" 
+          v-on:mouseover="showTooltip($event)"
+          v-on:mouseout="hideTooltip"
+          v-html="require(`!svg-inline-loader!../assets/svg/${target.toLowerCase()}.svg`)"
+        ></div>
       </div>
       <!-- End SVG click masks -->
     </div>
@@ -50,11 +54,13 @@ function trySuccess(clickTarget, event) {
   const character = store.getters.getCharacter;
   const successes = store.getters.getSuccesses;
   // console.log(character, currentTool.type, clickTarget);
-  const tipText = tipTexts[character][currentTool.type][clickTarget];
 
-  if (tipText) {
-    this.showTooltip(tipText, event);
-  }
+  // const tipText = tipTexts[character][currentTool.type][clickTarget];
+
+  // if (tipText) {
+  //   this.showTooltip(tipText, event);
+  // }
+
   // if the tool is correct for the target
   if (currentTool.target === clickTarget || currentTool.type === clickTarget) {
     // display secondary tool if there is one and return
@@ -89,9 +95,14 @@ function tryClaimSword() {
   return;
 }
 
-function showTooltip(tipText, event) {
-  if (this.$refs.tableau) {
-    // try to remove if clause, might not need
+function showTooltip(event) {
+  const currentTool = store.getters.getActiveTool;
+  const character = store.getters.getCharacter;
+  const clickTarget = event.target.id;
+  const tipText = tipTexts[character][currentTool.type][clickTarget];
+
+  if (this.$refs.tableau && tipText) {
+    // try to remove if.tableau clause, might not need
     this.tooltipProps = {
       mouseEvent: event,
       boundingRect: this.$refs.tableau.getBoundingClientRect(),
