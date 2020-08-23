@@ -71,7 +71,7 @@ button {
 
 .modal {
   /* pointer-events: auto; */
-  max-height: 260px;
+  max-height: 270px;
   width: 400px;
   padding: 30px;
   background-color: rgb(46, 44, 51);

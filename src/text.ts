@@ -150,7 +150,7 @@ export const narratives = {
   },
   [toolTypes.FLOWERS]: {
     bodyText: ["You take the freshly harvested flowers and examine them carefully. Pale purple, these flowers are powerfully hallucinogenic in the right dose but deadly otherwise. Your monastic order has a very specific use for this herb. Carefully selecting an exact number of flower petals, you place them under your tongue and settle down to wait, breathing deeply.",
-    "Soon your breaths have slowed to twice a minute, and you feel your substance flying apart, each fragment intertwining with everything around you. In such a state you can clearly see the interconnected web in this glade - spring, stone, and tree linked together in a cyclic relationship. But this web is in disorder, bulging and attenuated where a blockage has prevented normal flow. Identifying the block, you force your entire will against it... and pass into a dream."],
+    "Soon your breaths have slowed to twice a minute, and you feel your substance flying apart, each fragment intertwining with everything around you. In such a state you can clearly see the interconnected web in this glade - spring, stone, and tree linked together in a cyclic relationship. But this web is in disorder, bulging and attenuated where a blockage has prevented normal flow. Identifying the block, you push to the limits of your strength. Somewhere, something shifts; drained, you pass into a dream."],
     swordStatus: [
       "When you awake, you see that you have met with some success. Your astral efforts have coaxed the blade partway out of the stone.",
       "When you awake, you see that you have met with some success. Your astral efforts have coaxed the blade yet further out of the stone, though several inches remain firmly imbedded in the crystal.",
@@ -236,7 +236,7 @@ export const tipTexts = {
   },
   [characterTypes.KNIGHT]: {
     [toolTypes.SHIELD]: {
-      [otherTargetTypes.STREAM]: "You use your shield to take a drink of water. Mmm. Silty."
+      [otherTargetTypes.STREAM]: "You could use your shield to take a drink of water. Mmm. Silty."
     },
     [toolTypes.LASSO]: {
       [targetTypes.SWORD]: "You're not strong enough to rope this out by yourself", //will be broken 
