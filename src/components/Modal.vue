@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="modal_container" @click="noop($event)"> -->
   <div class="modal">
     <p class="tip" v-if="tip" v-html="tip"></p>
     <div class="modal_body" v-if="result">
@@ -13,7 +12,6 @@
     </div>
     <button class="button" v-show="options.length === 0 || result" @click="close">OK</button>
   </div>
-  <!-- </div> -->
 </template>
 
 <script>
@@ -61,16 +59,7 @@ button {
   font-size: 14pt;
 }
 
-.modal_container {
-  /* pointer-events: none; */
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
-  height: 100vh;
-  width: 100%;
-}
-
 .modal {
-  /* pointer-events: auto; */
   max-height: 270px;
   width: 400px;
   padding: 30px;
@@ -81,9 +70,6 @@ button {
   margin-left: -200px;
   z-index: 1;
   color: whitesmoke;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .modal_body {

@@ -74,8 +74,6 @@ export default {
 .introText {
   text-align: center;
   margin-top: 30px;
-
-  /* padding-bottom: 10px; */
 }
 
 .gameTitle {
@@ -96,9 +94,6 @@ export default {
   width: 170px;
   background-size: contain;
   margin-top: 8px;
-    /* background-image: url("../assets/swordbw.png"); */
-  /* height: 50px;
-  width: 150px; */
 }
 
 .reverse {
@@ -168,7 +163,5 @@ export default {
 .introText {
   text-align: center;
   margin-top: 30px;
-
-  /* padding-bottom: 10px; */
 }
 </style>

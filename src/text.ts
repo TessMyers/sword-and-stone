@@ -1,7 +1,7 @@
 import { toolTypes, characterTypes, targetTypes, otherTargetTypes } from "./constants"
 
 export const continueOptions = [
-  "Continue", // continue, Try again,
+  "Continue",
   "Almost there",
   "Take the sword",
   "Play again as a different character"
@@ -239,7 +239,7 @@ export const tipTexts = {
       [otherTargetTypes.STREAM]: "You could use your shield to take a drink of water. Mmm. Silty."
     },
     [toolTypes.LASSO]: {
-      [targetTypes.SWORD]: "You're not strong enough to rope this out by yourself", //will be broken 
+      [targetTypes.SWORD]: "You're not strong enough to rope this out by yourself", // todo: sword could act as a click target
       [targetTypes.SUN]: "YEEHAW",
       [otherTargetTypes.MUSHROOM01]: "Time to rope some dinner",
       [otherTargetTypes.FLOCK]: "Your range is good, but not that good",
@@ -247,7 +247,7 @@ export const tipTexts = {
       [targetTypes.MENHIR]: "It looks like the stream should connect to the pipes, but the spring seems blocked"
     },
     [toolTypes.LANCE]: {
-      [targetTypes.COW]: "Those horns are definitely going to win if you try to joust this cow", //OR, "how could you?"
+      [targetTypes.COW]: "Those horns are definitely going to win if you try to joust this cow",
       [targetTypes.STONE]: "Bold, but ineffective",
       [targetTypes.SHRINE]: "Seems like a great way to piss off the local diety"
     },
@@ -264,7 +264,7 @@ export const tipTexts = {
     },
     [toolTypes.BALM]: {
       [otherTargetTypes.SKULL]: "It may be a little late for that",
-      [targetTypes.SHARDS]: "These are too sharp to pick up" // "you're going to need the healing balm if  you..."
+      [targetTypes.SHARDS]: "These are too sharp to pick up"
     },
     [targetTypes.FLOWERS]: {},
     undefined: {}

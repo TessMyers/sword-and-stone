@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Gentium" rel="stylesheet" /> -->
     <router-view></router-view>
     <audio
       controls
@@ -80,7 +79,6 @@ audio.pinned {
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  /* font-family: "Gentium Basic", serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

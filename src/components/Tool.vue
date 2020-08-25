@@ -49,8 +49,6 @@ export default {
   height: 130px;
   width: 130px;
   margin: 20px 8px;
-  /* position: relative; */
-  /* background-image: url("../assets/tools/cow_image.png"); */
   background-size: contain;
   border: 3px solid black;
   opacity: 0.7;
@@ -58,13 +56,11 @@ export default {
 }
 
 .tool_text {
-  /* position: absolute; */
   height: 130px;
   width: 130px;
   font-size: 14pt;
   display: table;
   opacity: 0;
-  /* background-color: rgba(0, 0, 0, 0.3); */
 }
 
 .tool_text p {
@@ -85,7 +81,6 @@ export default {
 }
 
 .active {
-  /* consider adding white border back in: */
   border: 3px solid white;
   opacity: 1;
 }

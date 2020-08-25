@@ -20,7 +20,6 @@
       <li>Zina Jenny</li>
       <li>Kristin Jacobs</li>
       <li>other name</li>
-      <li>some other people</li>
     </ul>
     <div class="info">
       <p>

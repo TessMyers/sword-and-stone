@@ -53,10 +53,8 @@ function trySuccess(clickTarget, event) {
   const currentTool = store.getters.getActiveTool;
   const character = store.getters.getCharacter;
   const successes = store.getters.getSuccesses;
-  // console.log(character, currentTool.type, clickTarget);
 
   // const tipText = tipTexts[character][currentTool.type][clickTarget];
-
   // if (tipText) {
   //   this.showTooltip(tipText, event);
   // }
@@ -102,7 +100,7 @@ function showTooltip(event) {
   const tipText = tipTexts[character][currentTool.type][clickTarget];
 
   if (this.$refs.tableau && tipText) {
-    // try to remove if.tableau clause, might not need
+    // if.tableau clause?
     this.tooltipProps = {
       mouseEvent: event,
       boundingRect: this.$refs.tableau.getBoundingClientRect(),
@@ -154,6 +152,8 @@ export default {
       this.modalProps = this.getHowTo();
     },
     handleToolClicked(toolObj) {
+      if (this.isModalVisible) { return; }
+
       store.commit("setActiveTool", toolObj);
       if (modalTexts[toolObj.type]) {
         this.modalProps = modalTexts[toolObj.type];
@@ -197,10 +197,7 @@ svg {
   opacity: 0;
 }
 .container {
-  /* height: 677px;
-  width: 1000px; */
   position: relative;
-  /* margin: 13px auto 0px auto; */
   background-color:black;
 }
 
