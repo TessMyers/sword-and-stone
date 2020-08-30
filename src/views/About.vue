@@ -19,7 +19,7 @@
       <li>Daniel Bullard-Bates</li>
       <li>Zina Jenny</li>
       <li>Kristin Jacobs</li>
-      <li>other name</li>
+      <li>Seth Crawford</li>
     </ul>
     <div class="info">
       <p>

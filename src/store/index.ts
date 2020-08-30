@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import VuexPersist from 'vuex-persist'
+import VuexPersist from "vuex-persist";
 import { pageTypes } from "../constants";
 
 Vue.use(Vuex);
@@ -8,17 +8,17 @@ Vue.use(Vuex);
 export const EventBus = new Vue();
 
 const vuexPersist = new VuexPersist({
-  key: 'destiny',
+  key: "destiny",
   storage: window.sessionStorage
-})
+});
 
 interface Tool {
-  type: string,
-  flavorText: string,
-  imageSrc: string,
-  target: string,
-  isActive?: boolean,
-  isHidden?: boolean
+  type: string;
+  flavorText: string;
+  imageSrc: string;
+  target: string;
+  isActive?: boolean;
+  isHidden?: boolean;
 }
 
 function returnStringArray() {
@@ -27,13 +27,13 @@ function returnStringArray() {
 }
 
 function returnFreshCharState() {
-  const inventory:Tool[] = [];
+  const inventory: Tool[] = [];
   return {
     character: "",
     activeTool: "",
     successes: returnStringArray(),
     inventory: inventory,
-    hasSeenCharacterIntro: false
+    hasSeenCharacterIntro: false,
   };
 }
 
@@ -50,7 +50,7 @@ export default new Vuex.Store({
     },
     getCurrentPage: state => {
       return state.currentPage;
-    }, 
+    },
     getActiveTool: state => {
       return state.charState.activeTool;
     },
@@ -71,43 +71,42 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    setCharacter (state, characterObject) {
-      console.log('Setting character to (name):', characterObject.name);
+    setCharacter(state, characterObject) {
+      console.log("Setting character to (name):", characterObject.name);
       state.charState.character = characterObject.name;
       state.charState.inventory = JSON.parse(JSON.stringify(characterObject.tools));
     },
-    setCurrentPage (state, newValue:string) {
-      console.log('Setting current page to: ', newValue);
+    setCurrentPage(state, newValue: string) {
+      console.log("Setting current page to: ", newValue);
       state.currentPage = newValue;
     },
-    setActiveTool (state, newValue) {
+    setActiveTool(state, newValue) {
       console.log("Setting active tool to (type): ", newValue.type);
       state.charState.activeTool = newValue;
     },
-    addSuccess (state, newSuccess:string) {
-      console.log(`Adding success ${newSuccess} to success array: ${state.charState.successes}`)
+    addSuccess(state, newSuccess: string) {
+      console.log(`Adding success ${newSuccess} to success array: ${state.charState.successes}`);
       state.charState.successes.push(newSuccess);
     },
-    showHiddenTool (state, shouldShow:boolean) {
+    showHiddenTool(state, shouldShow: boolean) {
       state.charState.inventory.forEach(tool => {
         if (Object.prototype.hasOwnProperty.call(tool, "isHidden")) {
           tool.isHidden = !shouldShow;
         }
       });
     },
-    seenCharIntro (state) {
+    seenCharIntro(state) {
       state.charState.hasSeenCharacterIntro = true;
     },
-    endGameForCharacter (state) {
+    endGameForCharacter(state) {
       state.finishedCharacters.push(state.charState.character);
       state.charState = returnFreshCharState();
       state.currentPage = pageTypes.CHOOSE;
       console.log("state reassigned", state);
     },
-    newGame (state) {
+    newGame(state) {
       state.charState = returnFreshCharState();
-      state.currentPage = pageTypes.CHOOSE,
-      state.finishedCharacters = returnStringArray();
+      (state.currentPage = pageTypes.CHOOSE), (state.finishedCharacters = returnStringArray());
     }
   }
 });

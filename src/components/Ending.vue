@@ -6,7 +6,7 @@
     <div class="centered">
       <h3>THE END</h3>
       <div>
-        <span v-on:click="newGame">Reset</span>  |  
+        <span class="link" v-on:click="newGame">Reset</span> |
         <span class="link"><router-link to="/about" class="aboutLink">About</router-link></span>
       </div>
     </div>

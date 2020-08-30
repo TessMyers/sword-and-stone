@@ -45,11 +45,12 @@ export default {
     blob() {
       const successes = store.getters.getSuccesses;
       const mostRecentSuccess = successes[successes.length - 1];
+      const isFinal = store.getters.getFinishedCharacters.length === 2 && store.getters.getSuccesses.length === 4;
 
       return {
         bodyText: wrap(narratives[mostRecentSuccess].bodyText),
         status: narratives[mostRecentSuccess].swordStatus[successes.length - 1],
-        continueText: continueOptions[successes.length - 1]
+        continueText: isFinal ? 'Now what?' : continueOptions[successes.length - 1],
       };
     }
   }

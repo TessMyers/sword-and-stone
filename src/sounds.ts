@@ -1,7 +1,7 @@
 import { targetTypes, otherTargetTypes } from "@/constants";
 
 import thunderSmacks from "./assets/audio/thunder_with_thumps.mp3";
-import distantThunder from "./assets/audio/distant_thunder.mp3"
+import distantThunder from "./assets/audio/distant_thunder.mp3";
 import cork from "./assets/audio/cork.mp3";
 import rocksSplash from "./assets/audio/rocksplash.mp3";
 // import sunWink from "./assets/audio/wink.mp3";
@@ -54,14 +54,14 @@ import bone02 from "./assets/audio/bone02.mp3";
 import bone03 from "./assets/audio/bone03.mp3";
 import bone04 from "./assets/audio/bone04.mp3";
 
-import grass01 from "./assets/audio/grass01.mp3";
-import grass02 from "./assets/audio/grass02.mp3";
+// import grass01 from "./assets/audio/grass01.mp3";
+// import grass02 from "./assets/audio/grass02.mp3";
 
 import hiccup from "./assets/audio/hiccup.mp3";
 import squeak from "./assets/audio/squeak02.mp3";
-import weeSqueak from "./assets/audio/squeak01.mp3";
+// import weeSqueak from "./assets/audio/squeak01.mp3";
 import fart from "./assets/audio/squish_fart.mp3";
-import wetSquish from "./assets/audio/squish_wet.mp3";
+// import wetSquish from "./assets/audio/squish_wet.mp3";
 
 import humA from "./assets/audio/humA.mp3";
 import humB from "./assets/audio/humB.mp3";
@@ -69,30 +69,30 @@ import humCsharp from "./assets/audio/humCsharp.mp3";
 import humD from "./assets/audio/humD.mp3";
 import humE from "./assets/audio/humE.mp3";
 
-export const soundMap:any = {
+export const soundMap: any = {
   [targetTypes.SWORD]: { audio: [new Audio(swordDraw)] },
-  "SWORD_SCRAPE": { audio: [new Audio(swordScrape)] },
+  SWORD_SCRAPE: { audio: [new Audio(swordScrape)] },
 
-  "PIPES_SUCCESS": { audio: [new Audio(diggingPipes)] },
-  "SHRINE_SUCCESS": { audio: [new Audio(clinkBreeze)] },
-  "STONE_SUCCESS": { audio: [new Audio(cork)] },
-  "CLOUDS_SUCCESS": { audio: [new Audio(thunderSmacks)] },
-  "MENHIR_SUCCESS": { audio: [new Audio(rocksSplash)] },
-  "SUN_SUCCESS": { audio: [new Audio(sunSizzle)] },
+  PIPES_SUCCESS: { audio: [new Audio(diggingPipes)] },
+  SHRINE_SUCCESS: { audio: [new Audio(clinkBreeze)] },
+  STONE_SUCCESS: { audio: [new Audio(cork)] },
+  CLOUDS_SUCCESS: { audio: [new Audio(thunderSmacks)] },
+  MENHIR_SUCCESS: { audio: [new Audio(rocksSplash)] },
+  SUN_SUCCESS: { audio: [new Audio(sunSizzle)] },
 
-  "FLOWERS_SECONDARY": { audio: [new Audio(flowersSecondary)] },
-  "COW_SECONDARY": { audio: [new Audio(mooSecondary)] },
-  "SHARDS_SECONDARY": { audio: [new Audio(rattleSecondary)] },
+  FLOWERS_SECONDARY: { audio: [new Audio(flowersSecondary)] },
+  COW_SECONDARY: { audio: [new Audio(mooSecondary)] },
+  SHARDS_SECONDARY: { audio: [new Audio(rattleSecondary)] },
   // Dead end targets
   [otherTargetTypes.CROW_A]: { audio: [new Audio(caw1), new Audio(caw2), new Audio(caw3)], counter: 0 },
   [otherTargetTypes.CROW_B]: { audio: [new Audio(caw1), new Audio(caw2), new Audio(caw3)], counter: 0 },
-  [targetTypes.SHRINE]: { audio: [new Audio(bowlRattle01), new Audio(bowlRattle02), new Audio(bowlRattle03)], counter: 0},
+  [targetTypes.SHRINE]: { audio: [new Audio(bowlRattle01), new Audio(bowlRattle02), new Audio(bowlRattle03)], counter: 0 },
   [targetTypes.CLOUDS]: { audio: [new Audio(distantThunder)] },
   [otherTargetTypes.FLOCK]: { audio: [new Audio(flock)] },
   [targetTypes.COW]: { audio: [new Audio(moo01), new Audio(moo02), new Audio(moo03)], counter: 0 },
   [targetTypes.SHARDS]: { audio: [new Audio(rattle03), new Audio(rattle04), new Audio(rattle06), new Audio(rattle07)], counter: 0 },
-  [targetTypes.PIPES]: { audio: [new Audio(clank01) ,new Audio(clank02), new Audio(clank03)], counter: 0 },
-  [targetTypes.MENHIR]: { audio: [new Audio(rockRattle01) ,new Audio(rockRattle02), new Audio(rockRattle03)], counter: 0 },
+  [targetTypes.PIPES]: { audio: [new Audio(clank01), new Audio(clank02), new Audio(clank03)], counter: 0 },
+  [targetTypes.MENHIR]: { audio: [new Audio(rockRattle01), new Audio(rockRattle02), new Audio(rockRattle03)], counter: 0 },
   [targetTypes.FLOWERS]: { audio: [new Audio(flowers02), new Audio(flowers03), new Audio(flowers04)], counter: 0 },
   [otherTargetTypes.STREAM]: { audio: [new Audio(splash01), new Audio(splash02), new Audio(splash03), new Audio(splash04)], counter: 0 },
   [otherTargetTypes.SKULL]: { audio: [new Audio(bone01), new Audio(bone02), new Audio(bone03), new Audio(bone04)], counter: 0 },
@@ -105,19 +105,16 @@ export const soundMap:any = {
   [otherTargetTypes.MUSHROOM01]: { audio: [new Audio(fart)] },
   [otherTargetTypes.MUSHROOM02]: { audio: [new Audio(squeak)] },
   [otherTargetTypes.MUSHROOM03]: { audio: [new Audio(hiccup)] }
+};
 
-  
-}
-
-export function playSound(target:string) {
+export function playSound(target: string) {
   const sound = soundMap[target];
   if (sound) {
     let clip = sound.audio[0];
     if (!isNaN(sound.counter)) {
       clip = sound.audio[sound.counter];
-      sound.counter = (sound.counter == (sound.audio.length - 1)) ? 0 : sound.counter + 1;
+      sound.counter = sound.counter == sound.audio.length - 1 ? 0 : sound.counter + 1;
     }
     clip.play();
-  };
-};
-
+  }
+}

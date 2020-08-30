@@ -13,6 +13,7 @@
         who will put the country to rights. Could it be you? Choose your identity:
       </p>
     </div>
+    <Modal v-show="isModalVisible" @close="closeModal" v-bind="modalProps"></Modal>
     <div class="panels">
       <div v-on:click="beginGame(constants.characters.FARMHAND)">
         <div class="characterTitle">The Farmhand</div>
@@ -38,14 +39,21 @@
 <script>
 import store from "@/store";
 import { pageTypes, characters } from "../constants";
+import { modalTexts, modalTypes } from "@/text";
+import Modal from "@/components/Modal";
 
 export default {
   name: "chooseYourCharacter",
+  components: {
+    Modal,
+  },
   data() {
     return {
+      isModalVisible: true,
+      modalProps: modalTexts[modalTypes.SMALL_SCREEN],
       constants: {
         pageTypes,
-        characters
+        characters,
       }
     };
   },
@@ -55,7 +63,10 @@ export default {
         store.commit("setCharacter", character);
         store.commit("setCurrentPage", pageTypes.TABLEAU);
       }
-    }
+    },
+    closeModal() {
+    this.isModalVisible = false;
+  },
   },
   computed: {
     completedChars() {
@@ -65,7 +76,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @font-face {
   font-family: "Ringbearer";
   src: url("../assets/fonts/ringbearer/RINGM___.TTF") format("truetype");
@@ -111,7 +122,7 @@ export default {
   height: 677px;
   width: 1000px;
   margin: 13px auto 0px auto;
-  background-color:black;
+  background-color: black;
   color: whitesmoke;
 }
 
@@ -132,6 +143,7 @@ export default {
 
 .characterTitle {
   /* import font if using */
+  cursor: pointer;
   font-family: Ringbearer;
   font-size: 20pt;
   padding: 15px;
@@ -142,6 +154,7 @@ export default {
   padding: 10px;
   color: lightgray;
   font-style: italic;
+  cursor: pointer;
 }
 
 .knight {
@@ -163,5 +176,18 @@ export default {
 .introText {
   text-align: center;
   margin-top: 30px;
+}
+
+/* external styles */
+.modal {
+  display: none;
+}
+
+@media (max-width: 479px) {
+  .modal {
+    display: inline-block;
+    background-color: whitesmoke;
+    color: black;
+  }
 }
 </style>

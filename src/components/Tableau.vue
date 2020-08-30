@@ -7,13 +7,16 @@
     <div class="tableau" v-bind:style="{ backgroundImage: backgroundImageUrl }" ref="tableau" @mouseup="hideTooltip($event)">
       <!-- SVG click masks -->
       <div v-for="target in constants.allSvgTargets" v-bind:key="target">
-        <div v-on:mousedown="attemptClick($event)" 
+        <div
+          v-on:mousedown="attemptClick($event)"
           v-on:mouseover="showTooltip($event)"
           v-on:mouseout="hideTooltip"
           v-html="require(`!svg-inline-loader!../assets/svg/${target.toLowerCase()}.svg`)"
         ></div>
       </div>
       <!-- End SVG click masks -->
+      <div class="sunCircle" ref="sunCircle"></div>
+      <div class="swordCircle" ref="swordCircle"></div>
     </div>
     <div class="inventory">
       <div class="infoLinks">
@@ -24,7 +27,7 @@
       <div v-for="tool in characterTools" :key="tool.type">
         <Tool v-bind="tool" @toolClicked="handleToolClicked"></Tool>
       </div>
-      <div class="characterImage" @click="showCharIntro" v-bind:style="{ backgroundImage: characterImageUrl }"></div>
+      <div class="characterImage" @click="showCharIntro()" v-bind:style="{ backgroundImage: characterImageUrl }"></div>
     </div>
   </div>
 </template>
@@ -36,6 +39,7 @@ import Tool from "@/components/Tool.vue";
 import Modal from "@/components/Modal";
 import Tooltip from "@/components/Tooltip";
 import { playSound } from "@/sounds";
+import { expandRing } from "@/cssEffectHelper";
 
 function attemptClick(event) {
   if (event.target.matches("polygon") || event.target.matches("circle")) {
@@ -44,6 +48,9 @@ function attemptClick(event) {
       this.tryClaimSword();
     } else {
       this.trySuccess(clickTarget, event);
+    }
+    if (clickTarget === "SUN") {
+      expandRing(this.$refs.sunCircle, 'sun');
     }
   }
   return;
@@ -86,7 +93,9 @@ function trySuccess(clickTarget, event) {
 }
 
 function tryClaimSword() {
-  if (!store.getters.canClaim) { return; }
+  if (!store.getters.canClaim) {
+    return;
+  }
   const characterEnding = `${store.getters.getCharacter}_ENDING`;
   store.commit("addSuccess", characterEnding);
   store.commit("setCurrentPage", pageTypes.NARRATIVE);
@@ -133,6 +142,7 @@ export default {
     attemptClick,
     trySuccess,
     tryClaimSword,
+    expandRing,
     showTooltip,
     hideTooltip() {
       this.isTooltipVisible = false;
@@ -152,8 +162,9 @@ export default {
       this.modalProps = this.getHowTo();
     },
     handleToolClicked(toolObj) {
-      if (this.isModalVisible) { return; }
-
+      if (this.isModalVisible) {
+        return;
+      }
       store.commit("setActiveTool", toolObj);
       if (modalTexts[toolObj.type]) {
         this.modalProps = modalTexts[toolObj.type];
@@ -165,7 +176,7 @@ export default {
     },
     newGame() {
       store.commit("newGame");
-    }
+    },
   },
   computed: {
     characterTools() {
@@ -188,7 +199,10 @@ export default {
     if (!store.getters.getHasSeenCharIntro) {
       this.showCharIntro();
     }
-  }
+    if (store.getters.getSuccesses.length > 0) {
+      expandRing(this.$refs.swordCircle, 'sword');
+    }
+  },
 };
 </script>
 <style>
@@ -198,7 +212,7 @@ svg {
 }
 .container {
   position: relative;
-  background-color:black;
+  background-color: black;
 }
 
 .tableau {
@@ -230,6 +244,7 @@ svg {
   text-decoration: none;
   color: white;
   margin-top: 6px;
+  cursor: pointer;
 }
 
 .characterImage {
@@ -248,4 +263,48 @@ svg {
   height: 150px;
   margin: 8px 0px;
 }
+
+.sunCircle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 29px;
+  right: 136px;
+  pointer-events: none;
+
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;  
+  -o-transition: all 2s ease;  
+  -ms-transition: all 2s ease;  
+  transition: all 2s ease;
+}
+
+.sunCircleOpen {
+  background-color:white;
+  box-shadow: 0 0 5px 20px rgba(255, 255, 255, 0.5);
+}
+
+.swordCircle {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 283px;
+  right: 478px;
+  pointer-events: none;
+
+  -webkit-transition: all 2s ease-out;  
+  -moz-transition: all 2s ease-out;  
+  -o-transition: all 2s ease-out;  
+  -ms-transition: all 2s ease-out;  
+  transition: all 2s ease-out;
+}
+
+.swordCircleOpen {
+  background-color:rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 5px 20px rgba(255, 255, 255, 0.5);
+}
+
+
 </style>

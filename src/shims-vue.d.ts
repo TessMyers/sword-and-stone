@@ -3,7 +3,7 @@ declare module "*.vue" {
   export default Vue;
 }
 
-declare module '*.mp3' {
+declare module "*.mp3" {
   const src: string;
   export default src;
 }

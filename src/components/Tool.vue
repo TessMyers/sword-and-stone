@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import store from "@/store/index";
 import { tools } from "@/constants";
 
 export default {
@@ -72,7 +71,7 @@ export default {
 }
 
 .tool_text:hover {
-  background-color:rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   opacity: 1;
 }
 
