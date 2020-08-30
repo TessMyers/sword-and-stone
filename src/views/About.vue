@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <span class="title">Destiny</span>
+    <span class="title">Destiny</span><span class="betaRequest">* Please scroll down to leave beta feedback *</span>
     <h2>Design, art, and development by <a href="http://www.tessmyers.com/" target="_blank">Tess Myers</a></h2>
     <h4>
       With thanks to <a href="https://www.instagram.com/_the_sum_/" target="_blank">Ally Yancey</a>: my sounding board, supporter, and photoshop
@@ -27,7 +27,7 @@
         <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC License</a>
       </p>
       <p>
-        This was my first full-size game, inspired by a love of fantasy, legends, and exploratory puzzle games. DESTINY is built in Vue.js with
+        This was my first full-size browser game, inspired by a love of fantasy, legends, and exploratory puzzle games. DESTINY is built in Vue.js with
         Typescript: See the code <a href="https://github.com/TessMyers/sword-and-stone/" target="_blank">here</a>. Sound effects were created in
         Audacity: please see
         <a target="_blank" href="https://github.com/TessMyers/sword-and-stone/blob/master/SOUNDCREDITS.md">full attribution list</a> for sources. The
@@ -42,6 +42,7 @@
       <a>MORE GAMES</a> |
       <a href="https://www.instagram.com/tesslacoiled/" target="_blank">MORE ART</a>
     </div>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdi0N-MMoDhY9PUPOqqJNNQybL8W03eVAq3NDWFCsOn3v8sSg/viewform?embedded=true" width="640" height="1374" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
 </template>
 <script>
@@ -73,6 +74,11 @@ li {
   font-family: Ringbearer;
   font-size: 34pt;
   margin-left: 0px;
+}
+
+.betaRequest {
+  color: red;
+  margin-left: 50px;
 }
 
 .about {

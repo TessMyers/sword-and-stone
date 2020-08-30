@@ -1,4 +1,4 @@
-# Destiny (NOTE: THIS IS A WIP! PLEASE COME BACK LATER)
+# Destiny (currently in Beta)
 
 A fantasy point-and-click puzzle game with a bit of text adventure thrown in.  
 Play it here: https://tessmyers.github.io/sword-and-stone/  
