@@ -159,7 +159,9 @@ export default {
     },
     closeModal() {
       this.isModalVisible = false;
-      this.modalProps = this.getHowTo();
+      setTimeout(() => {
+        this.modalProps = this.getHowTo();
+      }, 500);
     },
     handleToolClicked(toolObj) {
       if (this.isModalVisible) {

@@ -43,7 +43,7 @@ export default {
       this.$emit("hideTool");
     },
     close() {
-      this.result = null;
+      // this.result = null;
       this.$emit("close");
       if (this.type === "INTRO") {
         EventBus.$emit("introOKClicked");
