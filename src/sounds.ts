@@ -54,6 +54,10 @@ import bone02 from "./assets/audio/bone02.mp3";
 import bone03 from "./assets/audio/bone03.mp3";
 import bone04 from "./assets/audio/bone04.mp3";
 
+import swordTing01 from "./assets/audio/swordTing01.mp3";
+import swordTing02 from "./assets/audio/swordTing02.mp3";
+import swordTing03 from "./assets/audio/swordTing03.mp3";
+
 // import grass01 from "./assets/audio/grass01.mp3";
 // import grass02 from "./assets/audio/grass02.mp3";
 
@@ -96,6 +100,7 @@ export const soundMap: any = {
   [targetTypes.FLOWERS]: { audio: [new Audio(flowers02), new Audio(flowers03), new Audio(flowers04)], counter: 0 },
   [otherTargetTypes.STREAM]: { audio: [new Audio(splash01), new Audio(splash02), new Audio(splash03), new Audio(splash04)], counter: 0 },
   [otherTargetTypes.SKULL]: { audio: [new Audio(bone01), new Audio(bone02), new Audio(bone03), new Audio(bone04)], counter: 0 },
+  [otherTargetTypes.SWORDHAFT]: { audio: [new Audio(swordTing01), new Audio(swordTing02), new Audio(swordTing03)], counter: 0}, 
   // mushrooms
   [otherTargetTypes.MUSHROOM_A]: { audio: [new Audio(humA)] },
   [otherTargetTypes.MUSHROOM_C]: { audio: [new Audio(humB)] },

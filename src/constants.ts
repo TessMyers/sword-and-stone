@@ -50,6 +50,7 @@ export const otherTargetTypes = Object.freeze({
   FLOCK: "FLOCK",
   SKULL: "SKULL",
   TREE: "TREE",
+  SWORDHAFT: 'SWORDHAFT',
   MUSHROOM01: "MUSHROOM01",
   MUSHROOM02: "MUSHROOM02",
   MUSHROOM03: "MUSHROOM03",
