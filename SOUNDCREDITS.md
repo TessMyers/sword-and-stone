@@ -8,10 +8,10 @@ License: http://creativecommons.org/licenses/by/4.0/
 
 *Sound effects were sourced from https://freesound.org/ and edited in Audacity. I made multiple very short clips from most of these tracks, but a few sources were used in entirety. Thank you to all the foley artists out there who record weird stuff so I don't have to!*
 
-Knife Sounds by ProductionNow -- https://freesound.org/s/473087/ -- License: Creative Commons 0
-METAL SFX & FOLEY, metal scrapes on stone.wav by Alexbuk -- https://freesound.org/s/392050/ -- License: Creative Commons 0
-CrackingDryWood.wav by HerbertBoland -- https://freesound.org/s/33206/ -- License: Attribution
-Scale by thejoshuachang -- https://freesound.org/s/197969/ -- License: Attribution Noncommercial  
+Knife Sounds by ProductionNow -- https://freesound.org/s/473087/ -- License: Creative Commons 0  
+METAL SFX & FOLEY, metal scrapes on stone.wav by Alexbuk -- https://freesound.org/s/392050/ -- License: Creative Commons 0  
+CrackingDryWood.wav by HerbertBoland -- https://freesound.org/s/33206/ -- License: Attribution  
+Scale by thejoshuachang -- https://freesound.org/s/197969/ -- License: Attribution Noncommercial    
 Water Trickling.wav by kristinhamby -- https://freesound.org/s/381202/ -- License: Creative Commons 0  
 Tomato squish;wet.wav by HonorHunter -- https://freesound.org/s/271666/ -- License: Creative Commons 0  
 Squish.wav by davidou -- https://freesound.org/s/88497/ -- License: Creative Commons 0  
