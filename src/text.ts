@@ -247,7 +247,7 @@ export const tipTexts = {
       [targetTypes.STONE]: "Several deep cracks run though the luminous crystal",
       [otherTargetTypes.STREAM]: "WET GLOVES :(",
       [otherTargetTypes.CROW_B]: "This flappy friend cannot be caught",
-      [otherTargetTypes.TREE]: "This tree is not doing well. Despite the nearby stream, its roots don't seem to be getting enough water" // need to add TREE target
+      // [otherTargetTypes.TREE]: "This tree is not doing well. Despite the nearby stream, its roots don't seem to be getting enough water" // need to add TREE target
     },
     [toolTypes.LUNCH]: {
       [otherTargetTypes.CROW_A]: "CAW! Thank you for the breadcrumbs, flightless friend",
