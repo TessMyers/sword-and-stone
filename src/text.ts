@@ -262,11 +262,11 @@ export const tipTexts = {
   },
   [characterTypes.KNIGHT]: {
     [toolTypes.SHIELD]: {
-      [otherTargetTypes.STREAM]: "You could use your shield to take a drink of water. Mmm. Silty."
+      [otherTargetTypes.STREAM]: "You use your shield to take a drink of water. Mmm. Silty."
     },
     [toolTypes.LASSO]: {
-      [targetTypes.SWORD]: "You're not strong enough to rope this out by yourself", // todo: sword could act as a click target
       [targetTypes.SUN]: "YEEHAW",
+      [otherTargetTypes.SWORDHAFT]: "You're not strong enough to rope this out by yourself",
       [otherTargetTypes.MUSHROOM01]: "Time to rope some dinner",
       [otherTargetTypes.FLOCK]: "Your range is good, but not that good",
       [otherTargetTypes.CROW_B]: "Rude",
@@ -275,6 +275,7 @@ export const tipTexts = {
     [toolTypes.LANCE]: {
       [targetTypes.COW]: "Those horns are definitely going to win if you try to joust this cow",
       [targetTypes.STONE]: "Bold, but ineffective",
+      [otherTargetTypes.SWORDHAFT]: "Bold, but ineffective",
       [targetTypes.SHRINE]: "Seems like a great way to piss off the local diety"
     },
     [targetTypes.COW]: {},

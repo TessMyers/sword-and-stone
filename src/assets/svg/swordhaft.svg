@@ -2,12 +2,12 @@
 <defs>
   <style>
     .swordHaft {
-      left: 499px;
+      left: 497px;
       top: 225px;
-      width: 15px;
+      width: 20px;
       height: 60px;
     }
   </style>
 </defs>
-  <rect id="SWORDHAFT" width="15" height="60" fill="red"/>
+  <rect id="SWORDHAFT" width="20" height="60" fill="red"/>
 </svg>

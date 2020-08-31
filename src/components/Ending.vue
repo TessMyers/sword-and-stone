@@ -5,6 +5,7 @@
     </p>
     <div class="centered">
       <h3>THE END</h3>
+      <span class="betaRequest">* Thanks for playing the beta! If you like, feedback can be left on the About page *</span>
       <div>
         <span class="link" v-on:click="newGame">Reset</span> |
         <span class="link"><router-link to="/about" class="aboutLink">About</router-link></span>
@@ -46,5 +47,11 @@ a {
 
 .centered {
   text-align: center;
+}
+
+.betaRequest {
+  color:red;
+  font-style: italic;
+  font-size: 12pt;
 }
 </style>

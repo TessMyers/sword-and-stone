@@ -16,7 +16,7 @@
 
 <script>
 import { narratives } from "@/text";
-import { EventBus } from "@/store";
+import store, { EventBus } from "@/store";
 
 export default {
   name: "modal",
@@ -41,9 +41,13 @@ export default {
         this.result = outcome;
       }
       this.$emit("hideTool");
+      store.commit("setActiveTool", "");
+
     },
     close() {
-      // this.result = null;
+      setTimeout(() => {
+        this.result = null;
+      }, 500); 
       this.$emit("close");
       if (this.type === "INTRO") {
         EventBus.$emit("introOKClicked");

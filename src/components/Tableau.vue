@@ -37,7 +37,6 @@ import { playSound } from "@/sounds";
 import { expandRing } from "@/cssEffectHelper";
 
 function attemptClick(event) {
-  console.log('attempt click');
   if (event.target.matches("polygon") || event.target.matches("circle") || event.target.matches("rect")) {
     const clickTarget = event.target.id;
     if (clickTarget === "SWORD") {
