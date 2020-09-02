@@ -33,7 +33,7 @@
         <a target="_blank" href="https://github.com/TessMyers/sword-and-stone/blob/master/SOUNDCREDITS.md">full attribution list</a> for sources. The
         art is watercolor, micron pen, and white ink with minor digital editing. Thank you for playing!
       </p>
-      <span><em>This game is free! If you loved it, consider donating to the <a href="https://www.bufor.org/mission">Black United Fund of Oregon</a></em></span>
+      <span><em>This game is free! If you loved it, consider donating to the <a v-on:click="onDonateLinkClicked" href="https://www.bufor.org/mission">Black United Fund of Oregon</a></em></span>
     </div>
     <center>
       <div class="button newGame" v-on:click="newGame">New Game</div>
@@ -56,6 +56,9 @@ export default {
     newGame: () => {
       store.commit("newGame");
       router.push("/");
+    },
+    onDonateLinkClicked: () => {
+      gtag('event', "donateLinkClicked");
     }
   }
 };
