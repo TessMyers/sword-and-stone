@@ -3,7 +3,7 @@
     <transition name="modal_fade">
       <Modal v-show="isModalVisible" @close="closeModal" @success="trySuccess" @hideTool="hideTool" v-bind="modalProps"></Modal>
     </transition>
-    <Tooltip v-show="isTooltipVisible" @hideTooltip="hideTooltip" v-bind="tooltipProps"></Tooltip>
+    <Tooltip v-show="isTooltipVisible" v-bind="tooltipProps"></Tooltip>
     <div class="tableau" v-bind:style="{ backgroundImage: backgroundImageUrl }" ref="tableau" @mouseup="hideTooltip($event)">
       <!-- SVG click masks -->
       <div v-for="target in constants.allSvgTargets" v-bind:key="target">
@@ -22,6 +22,7 @@
       <div v-for="tool in characterTools" :key="tool.type">
         <Tool v-bind="tool" @toolClicked="handleToolClicked"></Tool>
       </div>
+      <div class="mushroom" @click="toggleInversion()" v-html="require(`!svg-inline-loader!../assets/svg/mushie.svg`)" v-bind:style="getMushDisplay()"></div>
       <div class="characterImage" @click="showCharIntro()" v-bind:style="{ backgroundImage: characterImageUrl }"></div>
     </div>
   </div>
@@ -34,7 +35,7 @@ import Tool from "@/components/Tool.vue";
 import Modal from "@/components/Modal";
 import Tooltip from "@/components/Tooltip";
 import { playSound } from "@/sounds";
-import { expandRing } from "@/cssEffectHelper";
+import { expandRing, checkMushroomRun } from "@/helpers";
 
 function attemptClick(event) {
   if (event.target.matches("polygon") || event.target.matches("circle") || event.target.matches("rect")) {
@@ -46,6 +47,11 @@ function attemptClick(event) {
     }
     if (clickTarget === "SUN") {
       expandRing(this.$refs.sunCircle, 'sun');
+    } if (checkMushroomRun(clickTarget)){
+      setTimeout(() => {
+        store.commit("showMushroom");
+        playSound("mushie");
+      }, 500);
     }
   }
   return;
@@ -169,6 +175,15 @@ export default {
     newGame() {
       store.commit("newGame");
     },
+    toggleInversion() {
+      store.commit("toggleMushroomInversion");
+    },
+    getMushDisplay() {
+      return {
+        display: store.getters.getIsMushroomVisible ? "block" : "none",
+        fill: store.getters.getIsMushroomInvertOn ? "#cc4231" : "#33bdce"
+      }
+    }
   },
   computed: {
     characterTools() {
@@ -184,7 +199,8 @@ export default {
     },
     backgroundImageUrl() {
       const points = store.getters.getSuccesses.length;
-      return "url(" + require(`@/assets/versions/tableau${points}.jpg`) + ")";
+      const isInverted = store.getters.getIsMushroomInvertOn ? "inverted" : "";
+      return "url(" + require(`@/assets/versions/tableau${points}${isInverted}.jpg`) + ")";
     }
   },
   mounted() {
@@ -254,6 +270,14 @@ svg {
   justify-content: center;
   height: 150px;
   margin: 8px 0px;
+}
+
+.mushroom {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 591px;
+  right: 138px;
 }
 
 .sunCircle {

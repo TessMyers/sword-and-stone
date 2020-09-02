@@ -42,7 +42,9 @@ export default new Vuex.Store({
   state: {
     charState: returnFreshCharState(),
     currentPage: pageTypes.CHOOSE,
-    finishedCharacters: returnStringArray()
+    finishedCharacters: returnStringArray(),
+    isMushroomVisible: false,
+    isMushroomInvertOn: false
   },
   getters: {
     getCharacter: state => {
@@ -68,6 +70,12 @@ export default new Vuex.Store({
     },
     getHasSeenCharIntro: state => {
       return state.charState.hasSeenCharacterIntro;
+    },
+    getIsMushroomVisible: state => {
+      return state.isMushroomVisible;
+    },
+    getIsMushroomInvertOn: state => {
+      return state.isMushroomInvertOn;
     }
   },
   mutations: {
@@ -107,6 +115,14 @@ export default new Vuex.Store({
     newGame(state) {
       state.charState = returnFreshCharState();
       (state.currentPage = pageTypes.CHOOSE), (state.finishedCharacters = returnStringArray());
+    },
+    showMushroom(state) {
+      state.isMushroomVisible = true;
+    },
+    toggleMushroomInversion(state) {
+      if (state.isMushroomVisible) {
+        state.isMushroomInvertOn = !state.isMushroomInvertOn;
+      }
     }
   }
 });

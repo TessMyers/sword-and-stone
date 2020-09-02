@@ -247,22 +247,31 @@ export const tipTexts = {
       [targetTypes.STONE]: "Several deep cracks run though the luminous crystal",
       [otherTargetTypes.STREAM]: "WET GLOVES :(",
       [otherTargetTypes.CROW_B]: "This flappy friend cannot be caught",
+      [otherTargetTypes.SWORDHAFT]: "That's the right idea, but even gloved hands won't pull this sword out",
       // [otherTargetTypes.TREE]: "This tree is not doing well. Despite the nearby stream, its roots don't seem to be getting enough water" // need to add TREE target
     },
     [toolTypes.LUNCH]: {
+      [targetTypes.MENHIR]: "Maybe... try something else",
       [otherTargetTypes.CROW_A]: "CAW! Thank you for the breadcrumbs, flightless friend",
       [toolTypes.COW]: "Why would you give cheese to a cow? Yikes",
-      [otherTargetTypes.SKULL]: "Ew"
+      [otherTargetTypes.SKULL]: "Ew",
+      [otherTargetTypes.SWORDHAFT]: "That's one way to cut your bread",
     },
     [toolTypes.SHOVEl]: {
-      [targetTypes.MENHIR]: "You'll probably disturb the spring if you dig here"
+      [targetTypes.MENHIR]: "You'll probably disturb the spring if you dig here",
+      [targetTypes.STONE]: "Yeah, poke it with the shovel. Maybe that will work",
+      [targetTypes.SHRINE]: "Be careful where you swing that thing!",
+      [otherTargetTypes.SWORDHAFT]: "Yeah, poke it with the shovel. Maybe that will work",
+      [otherTargetTypes.CROW_A]: "Why tho"
     },
     [targetTypes.SHARDS]: {},
     undefined: {}
   },
   [characterTypes.KNIGHT]: {
     [toolTypes.SHIELD]: {
-      [otherTargetTypes.STREAM]: "You use your shield to take a drink of water. Mmm. Silty."
+      [otherTargetTypes.STREAM]: "You use your shield to take a drink of water. Mmm. Silty.",
+      // [otherTargetTypes.FLOCK]: "You know from experience that your shield make for a terrible frisbee",
+      [targetTypes.CLOUDS]: "You know from experience that your shield make for a terrible frisbee"
     },
     [toolTypes.LASSO]: {
       [targetTypes.SUN]: "YEEHAW",
@@ -270,7 +279,9 @@ export const tipTexts = {
       [otherTargetTypes.MUSHROOM01]: "Time to rope some dinner",
       [otherTargetTypes.FLOCK]: "Your range is good, but not that good",
       [otherTargetTypes.CROW_B]: "Rude",
-      [targetTypes.MENHIR]: "It looks like the stream should connect to the pipes, but the spring seems blocked"
+      [otherTargetTypes.CROW_A]: "Hey",
+      [targetTypes.MENHIR]: "It looks like the stream should connect to the pipes, but the spring seems blocked",
+      [targetTypes.SHRINE]: "Your princess is in another castle",
     },
     [toolTypes.LANCE]: {
       [targetTypes.COW]: "Those horns are definitely going to win if you try to joust this cow",
@@ -278,22 +289,35 @@ export const tipTexts = {
       [otherTargetTypes.SWORDHAFT]: "Bold, but ineffective",
       [targetTypes.SHRINE]: "Seems like a great way to piss off the local diety"
     },
-    [targetTypes.COW]: {},
+    [targetTypes.COW]: {
+      // [otherTargetTypes.SKULL]: ":("
+    },
     undefined: {}
   },
   [characterTypes.MONK]: {
     [toolTypes.STAFF]: {
-      [targetTypes.MENHIR]: "Though the place has fallen into deep disrepair, you can sense that this glade was once a sacred sanctuary"
+      [targetTypes.MENHIR]: "Though the place has fallen into deep disrepair, you can sense that this glade was once a sacred sanctuary",
+      [targetTypes.SUN]: "Hmm, not quite the right element for this kind of staff",
+      [targetTypes.SHRINE]: "Whoops, wrong diety!",
+      [otherTargetTypes.SWORDHAFT]: "You poke the sword with your ancient and magical staff"
     },
     [toolTypes.SICKLE]: {
       [targetTypes.CLOUDS]: "You're reminded of a joke from your childhood: old man yells at cloud",
-      [otherTargetTypes.CROW_B]: "The crow does not seem to appreciate this"
+      [otherTargetTypes.CROW_B]: "The crow does not seem to appreciate this",
+      [otherTargetTypes.MUSHROOM01]: "Nope",
+      [otherTargetTypes.MUSHROOM02]: "Too small!",
+      [otherTargetTypes.MUSHROOM03]: "That's the one",
+      [otherTargetTypes.SWORDHAFT]: "What are you going to do, fight the sword?",
     },
     [toolTypes.BALM]: {
       [otherTargetTypes.SKULL]: "It may be a little late for that",
-      [targetTypes.SHARDS]: "These are too sharp to pick up"
+      [otherTargetTypes.CROW_B]: 'You wonder about the phrase "faster than a greased crow"',
+      [targetTypes.SHARDS]: "These are too sharp to pick up. You'll definitely need the healing balm if you try"
     },
-    [targetTypes.FLOWERS]: {},
+    [targetTypes.FLOWERS]: {
+      // [targetTypes.COW]: "Please do not feed these to the cow", // adding tooltips to the secret tools might encourage people to click when the modal is open
+      // [otherTargetTypes.SKULL]: "Dearly beloved, we are gathered here today..."
+    },
     undefined: {}
   }
 };

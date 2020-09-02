@@ -73,6 +73,8 @@ import humCsharp from "./assets/audio/humCsharp.mp3";
 import humD from "./assets/audio/humD.mp3";
 import humE from "./assets/audio/humE.mp3";
 
+import doubleDrop from "./assets/audio/double-drop.mp3";
+
 export const soundMap: any = {
   [targetTypes.SWORD]: { audio: [new Audio(swordDraw)] },
   SWORD_SCRAPE: { audio: [new Audio(swordScrape)] },
@@ -89,7 +91,7 @@ export const soundMap: any = {
   SHARDS_SECONDARY: { audio: [new Audio(rattleSecondary)] },
   // Dead end targets
   [otherTargetTypes.CROW_A]: { audio: [new Audio(caw1), new Audio(caw2), new Audio(caw3)], counter: 0 },
-  [otherTargetTypes.CROW_B]: { audio: [new Audio(caw1), new Audio(caw2), new Audio(caw3)], counter: 0 },
+  [otherTargetTypes.CROW_B]: { audio: [new Audio(caw3), new Audio(caw2), new Audio(caw1)], counter: 0 },
   [targetTypes.SHRINE]: { audio: [new Audio(bowlRattle01), new Audio(bowlRattle02), new Audio(bowlRattle03)], counter: 0 },
   [targetTypes.CLOUDS]: { audio: [new Audio(distantThunder)] },
   [otherTargetTypes.FLOCK]: { audio: [new Audio(flock)] },
@@ -109,7 +111,8 @@ export const soundMap: any = {
   [otherTargetTypes.MUSHROOM_G]: { audio: [new Audio(humE)] },
   [otherTargetTypes.MUSHROOM01]: { audio: [new Audio(fart)] },
   [otherTargetTypes.MUSHROOM02]: { audio: [new Audio(squeak)] },
-  [otherTargetTypes.MUSHROOM03]: { audio: [new Audio(hiccup)] }
+  [otherTargetTypes.MUSHROOM03]: { audio: [new Audio(hiccup)] },
+  mushie: { audio: [new Audio(doubleDrop)]}
 };
 
 export function playSound(target: string) {
