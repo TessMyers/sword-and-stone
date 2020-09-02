@@ -7,6 +7,7 @@ Vue.use(Vuex);
 
 export const EventBus = new Vue();
 
+declare let gtag: Function;
 const vuexPersist = new VuexPersist({
   key: "destiny",
   storage: window.sessionStorage
@@ -116,7 +117,10 @@ export default new Vuex.Store({
       state.charState = returnFreshCharState();
       (state.currentPage = pageTypes.CHOOSE), (state.finishedCharacters = returnStringArray());
     },
-    showMushroom(state) {
+    showMushroom(state, payload) {
+      if (!state.isMushroomVisible) {
+        gtag('event', "foundMushroomEasterEgg");
+      }
       state.isMushroomVisible = true;
     },
     toggleMushroomInversion(state) {
