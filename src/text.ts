@@ -306,7 +306,7 @@ export const tipTexts = {
       [otherTargetTypes.CROW_B]: "The crow does not seem to appreciate this",
       [otherTargetTypes.MUSHROOM01]: "Nope",
       [otherTargetTypes.MUSHROOM02]: "Too small!",
-      [otherTargetTypes.MUSHROOM03]: "That's the one",
+      [otherTargetTypes.MUSHROOM03]: "...",
       [otherTargetTypes.SWORDHAFT]: "What are you going to do, fight the sword?",
     },
     [toolTypes.BALM]: {
