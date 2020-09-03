@@ -27,6 +27,11 @@ export default {
       },
       deep: true
     }
+  },
+  updated() {
+    setTimeout(() => {
+      this.$emit("hide");
+    }, 3000);
   }
 };
 </script>
@@ -43,5 +48,16 @@ export default {
   border-radius: 3px;
   z-index: 2;
   display: inline-block;
+}
+
+.tooltip_fade-enter-active,
+.tooltip_fade-leave-active {
+  transition: opacity 0.25s ease-out;
+}
+
+
+.tooltip_fade-enter,
+.tooltip_fade-leave-to {
+  opacity: 0;
 }
 </style>

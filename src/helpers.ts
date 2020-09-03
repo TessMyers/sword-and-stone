@@ -32,3 +32,7 @@ export function checkMushroomRun(target:string): boolean {
   }
   return false;
 }
+
+export function isSVGTarget(target:HTMLTextAreaElement): boolean {
+    return target.matches("polygon") || target.matches("circle") || target.matches("rect");
+}

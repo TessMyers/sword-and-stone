@@ -3,8 +3,8 @@
     <transition name="modal_fade">
       <Modal v-show="isModalVisible" @close="closeModal" @success="trySuccess" @hideTool="hideTool" v-bind="modalProps"></Modal>
     </transition>
-    <Tooltip v-show="isTooltipVisible" v-bind="tooltipProps"></Tooltip>
-    <div class="tableau" v-bind:style="{ backgroundImage: backgroundImageUrl }" ref="tableau" @mouseup="hideTooltip($event)">
+    <transition name="tooltip_fade"><Tooltip v-show="isTooltipVisible" v-bind="tooltipProps" @hide="hideTooltip()"></Tooltip></transition>
+    <div class="tableau" v-bind:style="{ backgroundImage: backgroundImageUrl }" ref="tableau" @mousedown="hideTooltip($event)">
       <!-- SVG click masks -->
       <div v-for="target in constants.allSvgTargets" v-bind:key="target">
         <div v-on:mousedown="attemptClick($event)" v-html="require(`!svg-inline-loader!../assets/svg/${target.toLowerCase()}.svg`)"></div>
@@ -35,10 +35,10 @@ import Tool from "@/components/Tool.vue";
 import Modal from "@/components/Modal";
 import Tooltip from "@/components/Tooltip";
 import { playSound } from "@/sounds";
-import { expandRing, checkMushroomRun } from "@/helpers";
+import { expandRing, checkMushroomRun, isSVGTarget } from "@/helpers";
 
 function attemptClick(event) {
-  if (event.target.matches("polygon") || event.target.matches("circle") || event.target.matches("rect")) {
+  if (isSVGTarget(event.target)) {
     const clickTarget = event.target.id;
     if (clickTarget === "SWORD") {
       this.tryClaimSword();
@@ -88,7 +88,6 @@ function trySuccess(clickTarget, event) {
       return;
     }
   }
-  // if the target has a sound, play it
   playSound(clickTarget);
   return;
 }
@@ -140,8 +139,12 @@ export default {
     tryClaimSword,
     expandRing,
     showTooltip,
-    hideTooltip() {
+    hideTooltip(event) {
+      if(event && isSVGTarget(event.target)) {
+        return;
+      }
       this.isTooltipVisible = false;
+      
     },
     getHowTo() {
       return modalTexts[modalTypes.HOWTO];
