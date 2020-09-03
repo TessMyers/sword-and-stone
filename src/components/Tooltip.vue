@@ -29,9 +29,10 @@ export default {
     }
   },
   updated() {
+    const delay = Math.max(this.text.length * 40, 800);
     setTimeout(() => {
       this.$emit("hide");
-    }, 3000);
+    }, delay);
   }
 };
 </script>

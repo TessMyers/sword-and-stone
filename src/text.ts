@@ -64,7 +64,7 @@ export const modalTexts = {
     ]
   },
   [modalTypes.DONE]: {
-    bodyText: "You have already done this!",
+    bodyText: "You have already done this! Try something else.",
     options: []
   },
   [modalTypes.HOWTO]: {
@@ -281,7 +281,7 @@ export const tipTexts = {
       [otherTargetTypes.CROW_B]: "Rude",
       [otherTargetTypes.CROW_A]: "Hey",
       [targetTypes.MENHIR]: "It looks like the stream should connect to the pipes, but the spring seems blocked",
-      [targetTypes.SHRINE]: "Your princess is in another castle",
+      [targetTypes.SHRINE]: " Sorry, but your princess is in another castle",
     },
     [toolTypes.LANCE]: {
       [targetTypes.COW]: "Those horns are definitely going to win if you try to joust this cow",
