@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: "/sword-and-stone/"
+  publicPath: "./" //todo switch back to "sword-and-stone" to update gh-page deployment
 };
