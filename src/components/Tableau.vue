@@ -235,7 +235,7 @@ svg {
 .infoLinks {
   position: absolute;
   left: 0px;
-  bottom: 50px;
+  bottom: 57px;
   display: inline-block;
   text-align: left;
   cursor: pointer;
@@ -272,7 +272,7 @@ svg {
   align-items: center;
   justify-content: center;
   height: 150px;
-  margin: 8px 0px;
+  margin: 10px 0px;
 }
 
 .mushroom {

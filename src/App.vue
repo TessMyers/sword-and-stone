@@ -52,7 +52,7 @@ audio {
   outline: none;
   height: 35px;
   width: 200px;
-  top: -50px;
+  top: -56px;
   float: left;
   position: relative;
 }
@@ -65,10 +65,6 @@ audio.hidden,
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
   display: none;
-}
-
-audio.pinned {
-  margin-top: 100px;
 }
 
 .button {
@@ -86,6 +82,6 @@ audio.pinned {
   /* my styles below */
   height: 677px;
   width: 1000px;
-  margin: 20px auto 0px auto;
+  margin: 25px auto 0px auto;
 }
 </style>

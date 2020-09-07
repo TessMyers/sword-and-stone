@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <div class="backButton"><router-link to="/">&laquo; BACK</router-link></div>
     <span class="title">Destiny</span>
     <h2>Design, art, and development by <a href="http://www.tessmyers.com/" target="_blank">Tess Myers</a></h2>
     <h4>
@@ -13,7 +14,7 @@
       for initial consults about game tech and essential feedback,
     </h4>
     <h4>And to my early beta testers,</h4>
-    <ul>
+    <ul class="list">
       <li>Wendell Britt</li>
       <li>Gangle the Worthy</li>
       <li>Daniel Bullard-Bates</li>
@@ -64,6 +65,15 @@ export default {
 li {
   list-style-type: none;
 }
+
+.list {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  margin: 35px 0;
+  width: 370px;
+}
+
 .about a {
   color: white;
   text-decoration: underline;
@@ -73,20 +83,21 @@ li {
   margin: 15px 0px;
 }
 
+.backButton {
+  margin-bottom: 18px;
+  opacity: 0.5;
+}
+
 .title {
   font-family: Ringbearer;
   font-size: 34pt;
   margin-left: 0px;
 }
 
-.betaRequest {
-  color: rgb(219, 68, 55);
-  margin-left: 50px;
-}
 
 .about {
   text-align: left;
-  margin: 30px 0 -30px;
+  margin: 30px 0 -25px;
   color: white;
   max-width: 950px;
 }
@@ -105,7 +116,8 @@ li {
   margin: 40px auto;
 }
 
-.links > a {
+.links > a,
+.backButton > a {
   text-decoration: none;
 }
 </style>
