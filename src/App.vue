@@ -52,7 +52,7 @@ audio {
   outline: none;
   height: 35px;
   width: 200px;
-  top: -35px;
+  top: -50px;
   float: left;
   position: relative;
 }
@@ -86,6 +86,6 @@ audio.pinned {
   /* my styles below */
   height: 677px;
   width: 1000px;
-  margin: 13px auto 0px auto;
+  margin: 20px auto 0px auto;
 }
 </style>

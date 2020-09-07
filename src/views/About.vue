@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <span class="title">Destiny</span><span class="betaRequest">* Please scroll down to leave beta feedback *</span>
+    <span class="title">Destiny</span>
     <h2>Design, art, and development by <a href="http://www.tessmyers.com/" target="_blank">Tess Myers</a></h2>
     <h4>
       With thanks to <a href="https://www.instagram.com/_the_sum_/" target="_blank">Ally Yancey</a>: my sounding board, supporter, and photoshop
@@ -43,7 +43,6 @@
       <a>MORE GAMES</a> |
       <a href="https://www.instagram.com/tesslacoiled/" target="_blank">MORE ART</a>
     </div>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdi0N-MMoDhY9PUPOqqJNNQybL8W03eVAq3NDWFCsOn3v8sSg/viewform?embedded=true" width="640" height="1374" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
 </template>
 <script>
@@ -65,10 +64,13 @@ export default {
 li {
   list-style-type: none;
 }
-
 .about a {
   color: white;
   text-decoration: underline;
+}
+
+.about h4, h2 {
+  margin: 15px 0px;
 }
 
 .title {
@@ -84,9 +86,9 @@ li {
 
 .about {
   text-align: left;
-  margin: 50px 0px;
+  margin: 30px 0 -30px;
   color: white;
-  max-width: 900px;
+  max-width: 950px;
 }
 
 .newGame {
