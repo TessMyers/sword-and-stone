@@ -1,7 +1,7 @@
-# Destiny (currently in Beta)
+# Destiny
 
 A fantasy point-and-click puzzle game with a bit of text adventure thrown in.  
-Play it here: https://tessmyers.github.io/sword-and-stone/  
+Play it here: https://tessmyers.github.io/sword-and-stone/  (beta)
 Headphones recommended.
 
 ------------

@@ -6,7 +6,7 @@ Music is River Flute by Kevin MacLeod
 Link: https://incompetech.filmmusic.io/song/4713-river-flute
 License: http://creativecommons.org/licenses/by/4.0/
 
-*Sound effects were sourced from https://freesound.org/ and edited in Audacity. I made multiple very short clips from most of these tracks, but a few sources were used in entirety. Thank you to all the foley artists out there who record weird stuff so I don't have to!*
+*Sound effects were sourced from https://freesound.org/ and edited in Audacity. I used many very short clips from most of these tracks, but a few sources were used in entirety. Thank you to all the foley artists out there who record weird stuff so I don't have to!*
 
 Knife Sounds by ProductionNow -- https://freesound.org/s/473087/ -- License: Creative Commons 0  
 METAL SFX & FOLEY, metal scrapes on stone.wav by Alexbuk -- https://freesound.org/s/392050/ -- License: Creative Commons 0  
