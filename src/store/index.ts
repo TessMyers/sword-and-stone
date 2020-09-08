@@ -115,6 +115,8 @@ export default new Vuex.Store({
     },
     newGame(state) {
       state.charState = returnFreshCharState();
+      state.isMushroomVisible = false;
+      state.isMushroomInvertOn = false;
       (state.currentPage = pageTypes.CHOOSE), (state.finishedCharacters = returnStringArray());
     },
     showMushroom(state, payload) {
