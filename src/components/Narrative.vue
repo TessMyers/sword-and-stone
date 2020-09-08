@@ -60,7 +60,7 @@ export default {
 .narrativePage {
   color: whitesmoke;
   text-align: left;
-  padding: 100px;
+  padding: 70px;
   font-size: 14pt;
   width: 800px;
   margin: auto;

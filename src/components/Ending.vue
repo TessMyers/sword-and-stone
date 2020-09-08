@@ -1,11 +1,13 @@
 <template>
   <div class="endingPage">
-    <p v-for="(paragraph, index) in endText" v-bind:key="index">
-      {{ paragraph }}
-    </p>
+    <div class="mainText">
+      <p v-for="(paragraph, index) in endText" v-bind:key="index">
+        {{ paragraph }}
+      </p>
+    </div>
+    <div class="mainTextOverlay">&#8595;&#8595;&#8595;</div>
     <div class="centered">
       <h3>THE END</h3>
-      <span class="betaRequest">* Thanks for playing the beta! If you like, feedback can be left on the About page *</span>
       <div>
         <span class="link" v-on:click="newGame">Reset</span> |
         <span class="link"><router-link to="/about" class="aboutLink">About</router-link></span>
@@ -45,13 +47,27 @@ a {
   margin: auto;
 }
 
+.mainText {
+  height: 496px;
+  overflow: auto;
+}
+
+.mainTextOverlay {
+  position: absolute;
+  height: 100px;
+  width: 900px;
+  margin-top: -100px;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 20pt;
+  
+}
+
 .centered {
   text-align: center;
 }
 
-.betaRequest {
-  color:red;
-  font-style: italic;
-  font-size: 12pt;
-}
 </style>
