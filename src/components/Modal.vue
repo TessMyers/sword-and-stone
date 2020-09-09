@@ -67,13 +67,14 @@ button {
   max-height: 270px;
   width: 400px;
   padding: 30px;
-  background-color: rgb(46, 44, 51);
+  background-color: rgb(35, 34, 39);
   position: absolute;
   top: 15%;
   left: 50%;
   margin-left: -200px;
   z-index: 1;
   color: whitesmoke;
+  border-radius: 6px;
 }
 
 .modal_body {

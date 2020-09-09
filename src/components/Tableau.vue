@@ -223,7 +223,7 @@ svg {
 }
 .container {
   position: relative;
-  background-color: black;
+  height: 100%;
 }
 
 .tableau {
@@ -239,6 +239,7 @@ svg {
   display: inline-block;
   text-align: left;
   cursor: pointer;
+  opacity: 0.9;
 }
 
 .circle {

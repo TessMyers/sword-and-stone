@@ -45,16 +45,17 @@ a {
 }
 
 body {
-  background-color: black;
+  background: linear-gradient(rgb(35, 34, 39), black);
+  height: 100vh;
 }
 
 audio {
   outline: none;
   height: 35px;
-  width: 200px;
-  top: -56px;
-  float: left;
-  position: relative;
+  width: 150px;
+  top: 666px;
+  left: 25px;
+  position: fixed;
 }
 
 audio::-webkit-media-controls-panel {

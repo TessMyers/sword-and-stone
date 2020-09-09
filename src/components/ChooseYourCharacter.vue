@@ -122,7 +122,6 @@ export default {
   height: 677px;
   width: 1000px;
   margin: 13px auto 0px auto;
-  background-color: black;
   color: whitesmoke;
 }
 
@@ -131,6 +130,7 @@ export default {
   align-items: center;
   justify-content: center;
   width: 100%;
+
 }
 
 .panel {
@@ -139,6 +139,7 @@ export default {
   margin: 0px 10px;
   background-size: contain;
   cursor: pointer;
+  border-radius: 6px;
 }
 
 .characterTitle {

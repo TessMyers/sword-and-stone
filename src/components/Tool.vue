@@ -52,6 +52,7 @@ export default {
   border: 3px solid black;
   opacity: 0.7;
   cursor: pointer;
+  border-radius: 8px;
 }
 
 .tool_text {
@@ -73,6 +74,7 @@ export default {
 .tool_text:hover {
   background-color: rgba(255, 255, 255, 0.6);
   opacity: 1;
+  border-radius: 8px;
 }
 
 .hidden {
@@ -82,5 +84,6 @@ export default {
 .active {
   border: 3px solid white;
   opacity: 1;
+  border-radius: 12px;
 }
 </style>

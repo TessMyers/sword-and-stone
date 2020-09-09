@@ -41,7 +41,7 @@
     </center>
     <div class="links">
       <router-link to="/">&laquo; BACK | </router-link>
-      <a>MORE GAMES</a> |
+      <a href="https://goblinwife.itch.io/" target="_blank">MORE GAMES</a> |
       <a href="https://www.instagram.com/tesslacoiled/" target="_blank">MORE ART</a>
     </div>
   </div>
@@ -85,7 +85,7 @@ li {
 
 .backButton {
   margin-bottom: 18px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .title {
@@ -97,7 +97,7 @@ li {
 
 .about {
   text-align: left;
-  margin: 30px 0 -25px;
+  margin: 30px 0;
   color: white;
   max-width: 950px;
 }
