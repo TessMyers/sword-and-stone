@@ -31,7 +31,7 @@
 import store from "@/store";
 import { pageTypes, toolTypes, allSvgTargets } from "@/constants";
 import { modalTexts, modalTypes, tipTexts, modalCharacterIntros } from "@/text";
-import Tool from "@/components/Tool.vue";
+import Tool from "@/components/Tool";
 import Modal from "@/components/Modal";
 import Tooltip from "@/components/Tooltip";
 import { playSound } from "@/sounds";

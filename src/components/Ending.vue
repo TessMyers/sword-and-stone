@@ -4,10 +4,14 @@
       <p v-for="(paragraph, index) in endText" v-bind:key="index">
         {{ paragraph }}
       </p>
+      <div class="centered">
+        <h3>The End</h3>
+        <br>
+        <br>
+      </div>
     </div>
     <div class="mainTextOverlay">&#8595;&#8595;&#8595;</div>
-    <div class="centered">
-      <h3>THE END</h3>
+    <div class="centered links">
       <div>
         <span class="link" v-on:click="newGame">Reset</span> |
         <span class="link"><router-link to="/about" class="aboutLink">About</router-link></span>
@@ -48,7 +52,7 @@ a {
 }
 
 .mainText {
-  height: 496px;
+  height: 530px;
   overflow: auto;
 }
 
@@ -63,11 +67,15 @@ a {
   justify-content: center;
   align-items: flex-end;
   font-size: 20pt;
-  
+  color: rgba(255, 255, 255, 0.4)
 }
 
 .centered {
   text-align: center;
+}
+
+.links {
+  margin: 20px auto;
 }
 
 </style>
